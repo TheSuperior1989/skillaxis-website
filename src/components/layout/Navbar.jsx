@@ -2,6 +2,7 @@ import { useState, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faBars, faTimes } from '@fortawesome/free-solid-svg-icons';
+import skillAxisLogo from '../../assets/skillaxis-logo.svg';
 import './Navbar.css';
 
 const Navbar = () => {
@@ -36,7 +37,7 @@ const Navbar = () => {
     <nav className={`navbar ${scrolled ? 'scrolled' : ''}`}>
       <div className="navbar-container">
         <Link to="/" className="navbar-logo">
-          <img src="/src/assets/skillaxis-logo.svg" alt="SkillAxis Dynamics" className="logo-image" />
+          <img src={skillAxisLogo} alt="SkillAxis Dynamics" className="logo-image" />
         </Link>
 
         <div className="menu-icon" onClick={toggleMenu}>
