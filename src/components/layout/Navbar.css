@@ -1,6 +1,6 @@
 .navbar {
   background-color: transparent;
-  height: 90px;
+  height: 80px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -35,10 +35,18 @@
 }
 
 .logo-image {
-  height: 80px;
+  height: 50px;
   width: auto;
   transition: all 0.3s ease;
   filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.1));
+  /* Ensure crisp rendering for SVG */
+  image-rendering: -webkit-optimize-contrast;
+  image-rendering: crisp-edges;
+}
+
+/* Make logo white/light when navbar is scrolled (dark background) */
+.navbar.scrolled .logo-image {
+  filter: brightness(0) invert(1) drop-shadow(0 2px 4px rgba(255, 255, 255, 0.1));
 }
 
 .logo-image:hover {
@@ -70,7 +78,7 @@
 }
 
 .nav-item {
-  height: 90px;
+  height: 80px;
   display: flex;
   align-items: center;
 }
@@ -118,7 +126,7 @@
     width: 100%;
     height: 90vh;
     position: absolute;
-    top: 90px;
+    top: 80px;
     left: -100%;
     opacity: 1;
     transition: all 0.5s ease;
