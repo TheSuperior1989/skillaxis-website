@@ -64,7 +64,7 @@ const ServiceItem = ({ service, index }) => {
         <button className="btn btn-primary">Request a Quote</button>
       </motion.div>
       <motion.div className="service-image" variants={itemVariants}>
-        <img src={`/src/assets/images/services/service-${service.id}.jpg`} alt={service.title} />
+        <img src={service.image} alt={service.title} />
       </motion.div>
     </motion.div>
   );
@@ -76,6 +76,7 @@ const services = [
     icon: faCogs,
     title: 'Mill & Lathe CNC Conversions',
     description: 'Transform traditional machinery into precision CNC equipment with our expert conversion services.',
+    image: 'https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?w=600&h=400&fit=crop',
     details: [
       'Complete retrofitting of manual mills and lathes to CNC operation',
       'Custom software integration for specific manufacturing needs',
@@ -89,6 +90,7 @@ const services = [
     icon: faPaintBrush,
     title: 'Creative Design & Visualization',
     description: 'Bring your ideas to life with stunning visualizations and creative design solutions.',
+    image: 'https://images.unsplash.com/photo-1558655146-d09347e92766?w=600&h=400&fit=crop',
     details: [
       '3D modeling and rendering for product visualization',
       'Concept development and prototyping',
@@ -102,6 +104,7 @@ const services = [
     icon: faDesktop,
     title: 'Website Development',
     description: 'Custom, responsive websites built with modern technologies to showcase your brand.',
+    image: 'https://images.unsplash.com/photo-1467232004584-a241de8bcf5d?w=600&h=400&fit=crop',
     details: [
       'Custom website design and development',
       'E-commerce solutions with secure payment processing',
@@ -115,6 +118,7 @@ const services = [
     icon: faPaintBrush,
     title: 'Graphic Design & Branding',
     description: 'Establish a strong brand identity with professional graphic design services.',
+    image: 'https://images.unsplash.com/photo-1561070791-2526d30994b5?w=600&h=400&fit=crop',
     details: [
       'Logo design and brand identity development',
       'Marketing materials (brochures, business cards, etc.)',
@@ -128,6 +132,7 @@ const services = [
     icon: faHashtag,
     title: 'Social Media Marketing',
     description: 'Engage your audience and grow your brand with strategic social media management.',
+    image: 'https://images.unsplash.com/photo-1611224923853-80b023f02d71?w=600&h=400&fit=crop',
     details: [
       'Social media strategy development',
       'Content creation and scheduling',
@@ -141,6 +146,7 @@ const services = [
     icon: faCode,
     title: 'Software Development',
     description: 'Custom software solutions for web, Android, and iOS platforms.',
+    image: 'https://images.unsplash.com/photo-1555066931-4365d14bab8c?w=600&h=400&fit=crop',
     details: [
       'Web application development',
       'Mobile app development for iOS and Android',
