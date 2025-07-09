@@ -95,6 +95,20 @@
   color: #4361ee;
 }
 
+/* Contact links styling */
+.footer-links li a[href^="mailto:"],
+.footer-links li a[href^="tel:"] {
+  color: #4361ee;
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+.footer-links li a[href^="mailto:"]:hover,
+.footer-links li a[href^="tel:"]:hover {
+  color: #3a86ff;
+  text-decoration: underline;
+}
+
 .contact-info {
   font-style: normal;
   line-height: 1.6;

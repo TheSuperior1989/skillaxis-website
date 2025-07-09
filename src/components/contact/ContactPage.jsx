@@ -102,8 +102,8 @@ const ContactPage = () => {
                 <FontAwesomeIcon icon={faPhone} />
               </div>
               <h3>Phone Number</h3>
-              <p>+27 78 296 4786</p>
-              <p>+27 82 465 1089</p>
+              <p><a href="tel:+27782964786">+27 78 296 4786</a></p>
+              <p><a href="tel:+27824651089">+27 82 465 1089</a></p>
             </motion.div>
 
             <motion.div className="info-card" variants={itemVariants}>
@@ -111,8 +111,8 @@ const ContactPage = () => {
                 <FontAwesomeIcon icon={faEnvelope} />
               </div>
               <h3>Email Address</h3>
-              <p>info@skillaxisdynamics.com</p>
-              <p>support@skillaxisdynamics.com</p>
+              <p><a href="mailto:info@skillaxisdynamics.co.za">info@skillaxisdynamics.co.za</a></p>
+              <p><a href="mailto:support@skillaxisdynamics.co.za">support@skillaxisdynamics.co.za</a></p>
             </motion.div>
 
             <motion.div className="info-card" variants={itemVariants}>

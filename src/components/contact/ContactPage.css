@@ -94,6 +94,19 @@
   margin-bottom: 5px;
 }
 
+/* Contact links styling */
+.info-card p a {
+  color: #4361ee;
+  text-decoration: none;
+  font-weight: 500;
+  transition: all 0.3s ease;
+}
+
+.info-card p a:hover {
+  color: #3a86ff;
+  text-decoration: underline;
+}
+
 .contact-form-section {
   padding: 80px 0;
   background-color: #f8f9fa;

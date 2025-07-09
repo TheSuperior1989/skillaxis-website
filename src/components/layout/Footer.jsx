@@ -59,9 +59,9 @@ const Footer = () => {
         <div className="footer-section">
           <h3 className="footer-title">Contact Us</h3>
           <ul className="footer-links">
-            <li>Email: info@skillaxisdynamics.com</li>
-            <li>Phone: +27 78 296 4786</li>
-            <li>Phone: +27 82 465 1089</li>
+            <li>Email: <a href="mailto:info@skillaxisdynamics.co.za">info@skillaxisdynamics.co.za</a></li>
+            <li>Phone: <a href="tel:+27782964786">+27 78 296 4786</a></li>
+            <li>Phone: <a href="tel:+27824651089">+27 82 465 1089</a></li>
             <li>Location: South Africa, Pretoria</li>
           </ul>
         </div>
