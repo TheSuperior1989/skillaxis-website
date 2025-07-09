@@ -12,6 +12,12 @@ const Navbar = () => {
 
   const toggleMenu = () => {
     setIsOpen(!isOpen);
+    // Prevent body scroll when menu is open
+    if (!isOpen) {
+      document.body.style.overflow = 'hidden';
+    } else {
+      document.body.style.overflow = 'unset';
+    }
   };
 
   useEffect(() => {
@@ -31,7 +37,16 @@ const Navbar = () => {
 
   useEffect(() => {
     setIsOpen(false);
+    // Reset body scroll when navigating
+    document.body.style.overflow = 'unset';
   }, [location]);
+
+  // Cleanup effect to reset body scroll on unmount
+  useEffect(() => {
+    return () => {
+      document.body.style.overflow = 'unset';
+    };
+  }, []);
 
   return (
     <nav className={`navbar ${scrolled ? 'scrolled' : ''}`}>
