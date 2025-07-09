@@ -1,5 +1,5 @@
 import { useEffect } from 'react';
-import { useLocation } from 'react-router-dom';
+import { useLocation, Link } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import {
   faDesktop,
@@ -61,7 +61,7 @@ const ServiceItem = ({ service, index }) => {
             <li key={i}>{detail}</li>
           ))}
         </ul>
-        <button className="btn btn-primary">Request a Quote</button>
+        <Link to="/quote" className="btn btn-primary">Request a Quote</Link>
       </motion.div>
       <motion.div className="service-image" variants={itemVariants}>
         <img src={service.image} alt={service.title} />
@@ -213,7 +213,7 @@ const ServicesPage = () => {
             <p>
               Contact us today to discuss your project and discover how SkillAxis Dynamics can help you achieve your goals.
             </p>
-            <button className="btn btn-primary">Contact Us</button>
+            <Link to="/contact" className="btn btn-primary">Contact Us</Link>
           </div>
         </div>
       </section>
