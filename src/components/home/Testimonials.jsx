@@ -9,24 +9,21 @@ import './Testimonials.css';
 const testimonials = [
   {
     id: 1,
-    name: 'John Smith',
+    name: 'Pieter van der Merwe',
     position: 'CEO, TechInnovate',
-    content: 'SkillAxis Dynamics transformed our outdated manufacturing process with their CNC conversion services. The precision and efficiency gains have been remarkable, and their ongoing support is exceptional.',
-    image: '/src/assets/images/team/testimonial1.jpg'
+    content: 'SkillAxis Dynamics transformed our outdated manufacturing process with their CNC conversion services. The precision and efficiency gains have been remarkable, and their ongoing support is exceptional.'
   },
   {
     id: 2,
-    name: 'Sarah Johnson',
+    name: 'Nomsa Mthembu',
     position: 'Marketing Director, BrandForward',
-    content: 'The website and branding package delivered by SkillAxis exceeded our expectations. Their team took the time to understand our vision and translated it into a stunning digital presence that has significantly increased our conversions.',
-    image: '/src/assets/images/team/testimonial2.jpg'
+    content: 'The website and branding package delivered by SkillAxis exceeded our expectations. Their team took the time to understand our vision and translated it into a stunning digital presence that has significantly increased our conversions.'
   },
   {
     id: 3,
-    name: 'Michael Chen',
+    name: 'Johan Botha',
     position: 'Founder, InnovateMech',
-    content: 'Working with SkillAxis on our custom software development project was a seamless experience. Their technical expertise combined with creative problem-solving resulted in an application that has streamlined our operations.',
-    image: '/src/assets/images/team/testimonial3.jpg'
+    content: 'Working with SkillAxis on our custom software development project was a seamless experience. Their technical expertise combined with creative problem-solving resulted in an application that has streamlined our operations.'
   }
 ];
 
@@ -87,9 +84,6 @@ const Testimonials = () => {
             </div>
             <p className="testimonial-content">{testimonials[currentIndex].content}</p>
             <div className="testimonial-author">
-              <div className="author-image">
-                <img src={testimonials[currentIndex].image} alt={testimonials[currentIndex].name} />
-              </div>
               <div className="author-info">
                 <h4 className="author-name">{testimonials[currentIndex].name}</h4>
                 <p className="author-position">{testimonials[currentIndex].position}</p>

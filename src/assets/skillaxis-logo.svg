@@ -1,0 +1,31 @@
+<svg width="240" height="70" viewBox="0 0 240 70" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="logoGradient" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#4361ee;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#3a86ff;stop-opacity:1" />
+    </linearGradient>
+  </defs>
+  
+  <!-- Icon/Symbol -->
+  <g transform="translate(10, 10)">
+    <!-- Gear/Cog representing engineering -->
+    <circle cx="20" cy="20" r="12" fill="none" stroke="url(#logoGradient)" stroke-width="2"/>
+    <circle cx="20" cy="20" r="6" fill="url(#logoGradient)"/>
+    
+    <!-- Gear teeth -->
+    <rect x="18" y="2" width="4" height="6" fill="url(#logoGradient)"/>
+    <rect x="18" y="32" width="4" height="6" fill="url(#logoGradient)"/>
+    <rect x="2" y="18" width="6" height="4" fill="url(#logoGradient)"/>
+    <rect x="32" y="18" width="6" height="4" fill="url(#logoGradient)"/>
+    
+    <!-- Diagonal teeth -->
+    <rect x="28" y="8" width="4" height="4" fill="url(#logoGradient)" transform="rotate(45 30 10)"/>
+    <rect x="28" y="28" width="4" height="4" fill="url(#logoGradient)" transform="rotate(45 30 30)"/>
+    <rect x="8" y="8" width="4" height="4" fill="url(#logoGradient)" transform="rotate(45 10 10)"/>
+    <rect x="8" y="28" width="4" height="4" fill="url(#logoGradient)" transform="rotate(45 10 30)"/>
+  </g>
+  
+  <!-- Text -->
+  <text x="55" y="30" font-family="Arial, sans-serif" font-size="18" font-weight="bold" fill="url(#logoGradient)">SkillAxis</text>
+  <text x="55" y="48" font-family="Arial, sans-serif" font-size="14" font-weight="normal" fill="#666">Dynamics</text>
+</svg>

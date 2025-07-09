@@ -9,7 +9,7 @@ const projects = [
     id: 1,
     title: 'CNC Mill Conversion',
     category: 'Engineering',
-    image: '/src/assets/images/projects/project1.jpg',
+    image: 'https://www.zintilon.com/wp-content/webp-express/webp-images/uploads/2023/11/Large-finely-toothed-metal-gear-positioned-on-a-CNC-machine-bed-with-blue-coolant-tubes-nearby.jpg.webp',
     description: 'Conversion of a traditional mill to a fully automated CNC system with custom software integration.',
     link: '/portfolio/cnc-mill-conversion'
   },

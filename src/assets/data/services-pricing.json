@@ -485,7 +485,7 @@
             "id": "enterprise-software",
             "name": "Enterprise Solution",
             "description": "Complex system with multiple modules, integrations, and advanced reporting",
-            "priceRange": [150000, 500000]
+            "priceRange": [150000, null]
           }
         ]
       },

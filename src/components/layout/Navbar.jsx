@@ -36,7 +36,7 @@ const Navbar = () => {
     <nav className={`navbar ${scrolled ? 'scrolled' : ''}`}>
       <div className="navbar-container">
         <Link to="/" className="navbar-logo">
-          <span className="logo-text">SkillAxis Dynamics</span>
+          <img src="/src/assets/skillaxis-logo.svg" alt="SkillAxis Dynamics" className="logo-image" />
         </Link>
 
         <div className="menu-icon" onClick={toggleMenu}>

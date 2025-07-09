@@ -15,7 +15,7 @@ const Footer = () => {
             Transforming ideas into digital masterpieces with precision in code and creativity in design.
           </p>
           <div className="social-icons">
-            <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" className="social-icon">
+            <a href="https://www.facebook.com/profile.php?id=100092689467268" target="_blank" rel="noopener noreferrer" className="social-icon">
               <FontAwesomeIcon icon={faFacebook} />
             </a>
             <a href="https://twitter.com" target="_blank" rel="noopener noreferrer" className="social-icon">
@@ -58,11 +58,12 @@ const Footer = () => {
 
         <div className="footer-section">
           <h3 className="footer-title">Contact Us</h3>
-          <div className="contact-info">
-            <p>Email: info@skillaxisdynamics.com</p>
-            <p>Phone: (555) 123-4567</p>
-            <p>Address: 123 Innovation Way, Tech City, TC 12345</p>
-          </div>
+          <ul className="footer-links">
+            <li>Email: info@skillaxisdynamics.com</li>
+            <li>Phone: +27 78 296 4786</li>
+            <li>Phone: +27 82 465 1089</li>
+            <li>Location: South Africa, Pretoria</li>
+          </ul>
         </div>
       </div>
 

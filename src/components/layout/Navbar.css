@@ -34,6 +34,16 @@
   align-items: center;
 }
 
+.logo-image {
+  height: 60px;
+  width: auto;
+  transition: all 0.3s ease;
+}
+
+.logo-image:hover {
+  transform: scale(1.05);
+}
+
 .logo-text {
   background: linear-gradient(90deg, #4361ee, #3a86ff);
   -webkit-background-clip: text;

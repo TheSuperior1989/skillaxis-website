@@ -104,6 +104,10 @@ const QuotingTool = () => {
       if (service.price) {
         return total + (service.price * service.quantity);
       } else if (service.priceRange) {
+        if (service.priceRange[1] === null) {
+          // For open-ended ranges, use the minimum price
+          return total + (service.priceRange[0] * service.quantity);
+        }
         // For price ranges, use the average
         const avgPrice = (service.priceRange[0] + service.priceRange[1]) / 2;
         return total + (avgPrice * service.quantity);
@@ -128,6 +132,9 @@ const QuotingTool = () => {
       }
       return priceDisplay;
     } else if (service.priceRange) {
+      if (service.priceRange[1] === null) {
+        return `${formatPrice(service.priceRange[0])}+`;
+      }
       return `${formatPrice(service.priceRange[0])} - ${formatPrice(service.priceRange[1])}`;
     }
     return 'Contact for pricing';
@@ -137,6 +144,9 @@ const QuotingTool = () => {
     if (service.price) {
       return formatPrice(service.price * service.quantity);
     } else if (service.priceRange) {
+      if (service.priceRange[1] === null) {
+        return `${formatPrice(service.priceRange[0] * service.quantity)}+`;
+      }
       const avgPrice = (service.priceRange[0] + service.priceRange[1]) / 2;
       return formatPrice(avgPrice * service.quantity);
     }

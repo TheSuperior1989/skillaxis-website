@@ -1,5 +1,7 @@
 import { motion } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faUser, faUserTie } from '@fortawesome/free-solid-svg-icons';
 import './AboutPage.css';
 
 const AboutPage = () => {
@@ -63,7 +65,7 @@ const AboutPage = () => {
               </p>
             </motion.div>
             <motion.div className="about-image" variants={itemVariants}>
-              <img src="/src/assets/images/team/team1.jpg" alt="SkillAxis Dynamics Team" />
+              <img src="https://images.unsplash.com/photo-1497366216548-37526070297c?w=800&h=600&fit=crop" alt="Modern Technology Workspace" />
             </motion.div>
           </motion.div>
         </div>
@@ -100,53 +102,31 @@ const AboutPage = () => {
 
       <section className="about-team">
         <div className="container">
-          <h2 className="section-title">Our Team</h2>
+          <h2 className="section-title">Our Founders</h2>
           <p className="section-subtitle">
-            Meet the talented professionals behind SkillAxis Dynamics
+            Meet the visionary founders behind SkillAxis Dynamics
           </p>
 
           <div className="team-grid">
             <div className="team-member">
-              <div className="member-image">
-                <img src="/src/assets/images/team/team1.jpg" alt="John Doe" />
+              <div className="member-icon">
+                <FontAwesomeIcon icon={faUserTie} />
               </div>
-              <h3 className="member-name">John Doe</h3>
+              <h3 className="member-name">Christiaan Von Stade</h3>
               <p className="member-position">Founder & CEO</p>
               <p className="member-bio">
-                With over 15 years of experience in engineering and digital technology, John leads our team with vision and expertise.
+                With over 15 years of experience in engineering and digital technology, Christiaan leads our team with vision and expertise.
               </p>
             </div>
 
             <div className="team-member">
-              <div className="member-image">
-                <img src="/src/assets/images/team/team2.jpg" alt="Jane Smith" />
+              <div className="member-icon">
+                <FontAwesomeIcon icon={faUser} />
               </div>
-              <h3 className="member-name">Jane Smith</h3>
-              <p className="member-position">Creative Director</p>
+              <h3 className="member-name">Sure Von Stade</h3>
+              <p className="member-position">Co-Founder & Creative Director</p>
               <p className="member-bio">
-                Jane brings creative flair and design expertise to every project, ensuring our solutions are both functional and beautiful.
-              </p>
-            </div>
-
-            <div className="team-member">
-              <div className="member-image">
-                <img src="/src/assets/images/team/team3.jpg" alt="Mike Johnson" />
-              </div>
-              <h3 className="member-name">Mike Johnson</h3>
-              <p className="member-position">Technical Lead</p>
-              <p className="member-bio">
-                Mike's technical knowledge and problem-solving skills drive the innovation behind our engineering solutions.
-              </p>
-            </div>
-
-            <div className="team-member">
-              <div className="member-image">
-                <img src="/src/assets/images/team/team4.jpg" alt="Sarah Williams" />
-              </div>
-              <h3 className="member-name">Sarah Williams</h3>
-              <p className="member-position">Digital Marketing Specialist</p>
-              <p className="member-bio">
-                Sarah's expertise in digital marketing helps our clients reach their target audience and achieve their business goals.
+                Sure brings creative flair and design expertise to every project, ensuring our solutions are both functional and beautiful.
               </p>
             </div>
           </div>

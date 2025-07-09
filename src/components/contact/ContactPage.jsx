@@ -93,8 +93,8 @@ const ContactPage = () => {
                 <FontAwesomeIcon icon={faMapMarkerAlt} />
               </div>
               <h3>Our Location</h3>
-              <p>123 Innovation Way</p>
-              <p>Tech City, TC 12345</p>
+              <p>South Africa</p>
+              <p>Pretoria</p>
             </motion.div>
 
             <motion.div className="info-card" variants={itemVariants}>
@@ -102,8 +102,8 @@ const ContactPage = () => {
                 <FontAwesomeIcon icon={faPhone} />
               </div>
               <h3>Phone Number</h3>
-              <p>(555) 123-4567</p>
-              <p>(555) 987-6543</p>
+              <p>+27 78 296 4786</p>
+              <p>+27 82 465 1089</p>
             </motion.div>
 
             <motion.div className="info-card" variants={itemVariants}>
@@ -235,14 +235,7 @@ const ContactPage = () => {
         </div>
       </section>
 
-      <section className="contact-map">
-        <div className="map-container">
-          {/* In a real application, you would embed a Google Map here */}
-          <div className="map-placeholder">
-            <p>Google Map would be embedded here</p>
-          </div>
-        </div>
-      </section>
+
     </div>
   );
 };
