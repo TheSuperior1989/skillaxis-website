@@ -17,7 +17,7 @@ const projects = [
     id: 2,
     title: 'E-Commerce Website',
     category: 'Web Development',
-    image: '/src/assets/images/projects/project2.jpg',
+    image: 'https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=600&h=400&fit=crop',
     description: 'Custom e-commerce platform with integrated payment processing and inventory management.',
     link: '/portfolio/ecommerce-website'
   },
@@ -25,7 +25,7 @@ const projects = [
     id: 3,
     title: 'Brand Identity Design',
     category: 'Graphic Design',
-    image: '/src/assets/images/projects/project3.jpg',
+    image: 'https://images.unsplash.com/photo-1561070791-2526d30994b5?w=600&h=400&fit=crop',
     description: 'Complete brand identity package including logo, color palette, typography, and brand guidelines.',
     link: '/portfolio/brand-identity'
   }
