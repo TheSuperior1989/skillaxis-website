@@ -12,7 +12,7 @@
 }
 
 .navbar.scrolled {
-  background-color: #1a1a2e;
+  background-color: #ffffff;
   box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
 }
 
@@ -44,11 +44,6 @@
   image-rendering: crisp-edges;
 }
 
-/* Make logo white/light when navbar is scrolled (dark background) */
-.navbar.scrolled .logo-image {
-  filter: brightness(0) invert(1) drop-shadow(0 2px 4px rgba(255, 255, 255, 0.1));
-}
-
 .logo-image:hover {
   transform: scale(1.05);
 }
@@ -66,6 +61,11 @@
   color: #fff;
   font-size: 1.8rem;
   cursor: pointer;
+}
+
+/* Change menu icon to dark when navbar is scrolled (white background) */
+.navbar.scrolled .menu-icon {
+  color: #1a1a2e;
 }
 
 .nav-menu {
@@ -93,6 +93,19 @@
   font-weight: 500;
   position: relative;
   transition: all 0.3s ease;
+}
+
+/* Change nav links to blue when navbar is scrolled (white background) */
+.navbar.scrolled .nav-link {
+  color: #1a1a2e;
+}
+
+.navbar.scrolled .nav-link:hover {
+  color: #4361ee;
+}
+
+.navbar.scrolled .nav-link.active {
+  color: #4361ee;
 }
 
 .nav-link:hover {
