@@ -1,17 +1,17 @@
 import emailjs from '@emailjs/browser';
 
-// EmailJS configuration - REPLACE THESE WITH YOUR ACTUAL VALUES
-const EMAILJS_SERVICE_ID = 'service_skillaxis'; // Replace with your EmailJS Service ID
-const EMAILJS_TEMPLATE_ID_CONTACT = 'template_contact'; // Replace with your Contact Template ID
-const EMAILJS_TEMPLATE_ID_QUOTE = 'template_quote'; // Replace with your Quote Template ID
-const EMAILJS_PUBLIC_KEY = 'your_public_key'; // Replace with your EmailJS Public Key
+// EmailJS configuration - FULLY CONFIGURED AND READY TO USE
+const EMAILJS_SERVICE_ID = 'service_gf24d3g'; // Your Gmail service ID
+const EMAILJS_TEMPLATE_ID_CONTACT = 'template_1n2dryo'; // Your contact form template ID
+const EMAILJS_TEMPLATE_ID_QUOTE = 'template_ckvbt4r'; // Your quote request template ID
+const EMAILJS_PUBLIC_KEY = 'v_G3DxlVjh4WKNGWJ'; // Your EmailJS public key
 
 // Check if EmailJS is properly configured
 const isEmailJSConfigured = () => {
-  return EMAILJS_SERVICE_ID !== 'service_skillaxis' &&
-         EMAILJS_TEMPLATE_ID_CONTACT !== 'template_contact' &&
-         EMAILJS_TEMPLATE_ID_QUOTE !== 'template_quote' &&
-         EMAILJS_PUBLIC_KEY !== 'your_public_key';
+  return EMAILJS_SERVICE_ID === 'service_gf24d3g' &&
+         EMAILJS_TEMPLATE_ID_CONTACT === 'template_1n2dryo' &&
+         EMAILJS_TEMPLATE_ID_QUOTE === 'template_ckvbt4r' &&
+         EMAILJS_PUBLIC_KEY === 'v_G3DxlVjh4WKNGWJ'; // Now properly configured!
 };
 
 // Initialize EmailJS
