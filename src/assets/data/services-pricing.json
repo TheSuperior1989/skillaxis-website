@@ -125,6 +125,13 @@
         "description": "Complete website design and development packages.",
         "services": [
           {
+            "id": "single-page-website",
+            "name": "Single Page Website ⭐ MOST POPULAR",
+            "description": "Perfect for small businesses! Professional single-page website with modern design, mobile responsive, contact form, and basic SEO. Great for showcasing your business essentials.",
+            "price": 1500,
+            "popular": true
+          },
+          {
             "id": "basic-website",
             "name": "Basic Website Package",
             "description": "Up to 5 custom-designed pages (Home, About, Services/Products, Contact, etc.), responsive design, basic SEO integration and contact form",

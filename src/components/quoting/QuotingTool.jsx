@@ -34,13 +34,13 @@ const QuotingTool = () => {
   const handleServiceSelect = (service) => {
     // Check if service is already selected
     const existingService = selectedServices.find(s => s.id === service.id);
-    
+
     if (existingService) {
       // If already selected, increment quantity
       setSelectedServices(
-        selectedServices.map(s => 
-          s.id === service.id 
-            ? { ...s, quantity: s.quantity + 1 } 
+        selectedServices.map(s =>
+          s.id === service.id
+            ? { ...s, quantity: s.quantity + 1 }
             : s
         )
       );
@@ -50,6 +50,19 @@ const QuotingTool = () => {
         ...selectedServices,
         { ...service, quantity: 1, category: activeCategory }
       ]);
+    }
+
+    // On mobile, scroll to quote summary after adding service
+    if (window.innerWidth <= 768) {
+      setTimeout(() => {
+        const quoteSummary = document.querySelector('.quote-summary');
+        if (quoteSummary) {
+          quoteSummary.scrollIntoView({
+            behavior: 'smooth',
+            block: 'start'
+          });
+        }
+      }, 100);
     }
   };
 
@@ -217,7 +230,7 @@ const QuotingTool = () => {
                     {category.services.map((service) => (
                       <motion.div
                         key={service.id}
-                        className="service-card"
+                        className={`service-card ${service.popular ? 'popular' : ''}`}
                         variants={itemVariants}
                         whileHover={{ y: -5, boxShadow: '0 10px 20px rgba(0, 0, 0, 0.1)' }}
                       >

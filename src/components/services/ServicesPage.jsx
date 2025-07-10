@@ -184,6 +184,28 @@ const ServicesPage = () => {
         </div>
       </div>
 
+      <section className="popular-service-highlight">
+        <div className="container">
+          <div className="popular-service-card">
+            <div className="popular-badge">⭐ MOST POPULAR</div>
+            <h2>Single Page Website - Only R1,500!</h2>
+            <p>Perfect for small businesses and startups! Get a professional, mobile-responsive single-page website that showcases your business essentials.</p>
+            <div className="popular-features">
+              <div className="feature">✓ Modern, Professional Design</div>
+              <div className="feature">✓ Mobile Responsive</div>
+              <div className="feature">✓ Contact Form Integration</div>
+              <div className="feature">✓ Basic SEO Optimization</div>
+              <div className="feature">✓ Fast Loading & Secure</div>
+            </div>
+            <div className="popular-price">
+              <span className="price">R1,500</span>
+              <span className="price-note">One-time payment</span>
+            </div>
+            <Link to="/quote" className="btn btn-primary popular-cta">Get Your Website Today!</Link>
+          </div>
+        </div>
+      </section>
+
       <section className="services-intro">
         <div className="container">
           <div className="intro-content">

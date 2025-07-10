@@ -7,11 +7,13 @@ import PortfolioPage from './components/portfolio/PortfolioPage';
 import BlogPage from './components/blog/BlogPage';
 import ContactPage from './components/contact/ContactPage';
 import QuotingPage from './components/quoting/QuotingPage';
+import ScrollToTop from './components/common/ScrollToTop';
 import './App.css';
 
 function App() {
   return (
     <Router>
+      <ScrollToTop />
       <Routes>
         <Route path="/" element={<Layout />}>
           <Route index element={<HomePage />} />

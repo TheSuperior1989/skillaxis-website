@@ -140,6 +140,29 @@
   flex-direction: column;
   justify-content: space-between;
   height: 100%;
+  position: relative;
+}
+
+.service-card.popular {
+  border: 2px solid #4361ee;
+  background: linear-gradient(135deg, rgba(67, 97, 238, 0.05) 0%, rgba(58, 134, 255, 0.05) 100%);
+  box-shadow: 0 8px 25px rgba(67, 97, 238, 0.15);
+  transform: scale(1.02);
+}
+
+.service-card.popular::before {
+  content: "⭐ MOST POPULAR";
+  position: absolute;
+  top: -10px;
+  right: 15px;
+  background: linear-gradient(90deg, #4361ee, #3a86ff);
+  color: white;
+  padding: 5px 12px;
+  border-radius: 15px;
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  z-index: 1;
 }
 
 .service-card:hover {
@@ -567,4 +590,27 @@
     width: 100%;
     justify-content: space-between;
   }
+
+  /* Enhanced quote summary visibility on mobile */
+  .quote-summary {
+    border: 2px solid #4361ee;
+    background: linear-gradient(135deg, rgba(67, 97, 238, 0.05) 0%, rgba(58, 134, 255, 0.05) 100%);
+    margin-top: 20px;
+  }
+
+  .quote-summary h3 {
+    color: #4361ee;
+    font-size: 1.3rem;
+  }
+
+  /* Animation when services are added */
+  .quote-summary:not(.empty) {
+    animation: highlightQuote 0.5s ease-in-out;
+  }
+}
+
+@keyframes highlightQuote {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.02); }
+  100% { transform: scale(1); }
 }

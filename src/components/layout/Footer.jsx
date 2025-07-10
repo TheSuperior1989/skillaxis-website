@@ -1,10 +1,16 @@
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faFacebook, faTwitter, faInstagram, faLinkedin } from '@fortawesome/free-brands-svg-icons';
 import './Footer.css';
 
 const Footer = () => {
   const currentYear = new Date().getFullYear();
+  const navigate = useNavigate();
+
+  const handleLinkClick = (path) => {
+    navigate(path);
+    window.scrollTo(0, 0);
+  };
 
   return (
     <footer className="footer">
@@ -33,26 +39,26 @@ const Footer = () => {
         <div className="footer-section">
           <h3 className="footer-title">Quick Links</h3>
           <ul className="footer-links">
-            <li><Link to="/">Home</Link></li>
-            <li><Link to="/about">About Us</Link></li>
-            <li><Link to="/services">Services</Link></li>
-            <li><Link to="/portfolio">Portfolio</Link></li>
-            <li><Link to="/blog">Blog</Link></li>
-            <li><Link to="/quote">Get a Quote</Link></li>
-            <li><Link to="/contact">Contact</Link></li>
+            <li><a href="#" onClick={(e) => { e.preventDefault(); handleLinkClick('/'); }}>Home</a></li>
+            <li><a href="#" onClick={(e) => { e.preventDefault(); handleLinkClick('/about'); }}>About Us</a></li>
+            <li><a href="#" onClick={(e) => { e.preventDefault(); handleLinkClick('/services'); }}>Services</a></li>
+            <li><a href="#" onClick={(e) => { e.preventDefault(); handleLinkClick('/portfolio'); }}>Portfolio</a></li>
+            <li><a href="#" onClick={(e) => { e.preventDefault(); handleLinkClick('/blog'); }}>Blog</a></li>
+            <li><a href="#" onClick={(e) => { e.preventDefault(); handleLinkClick('/quote'); }}>Get a Quote</a></li>
+            <li><a href="#" onClick={(e) => { e.preventDefault(); handleLinkClick('/contact'); }}>Contact</a></li>
           </ul>
         </div>
 
         <div className="footer-section">
           <h3 className="footer-title">Services</h3>
           <ul className="footer-links">
-            <li><Link to="/services#cnc">Mill and Lathe CNC Conversions</Link></li>
-            <li><Link to="/services#engineering">Engineering Design Services</Link></li>
-            <li><Link to="/services#design">Creative Design & Visualization</Link></li>
-            <li><Link to="/services#web">Website Development</Link></li>
-            <li><Link to="/services#graphic">Graphic Design & Branding</Link></li>
-            <li><Link to="/services#social">Social Media Marketing</Link></li>
-            <li><Link to="/services#software">Software Development</Link></li>
+            <li><a href="#" onClick={(e) => { e.preventDefault(); handleLinkClick('/services'); }}>Mill and Lathe CNC Conversions</a></li>
+            <li><a href="#" onClick={(e) => { e.preventDefault(); handleLinkClick('/services'); }}>Engineering Design Services</a></li>
+            <li><a href="#" onClick={(e) => { e.preventDefault(); handleLinkClick('/services'); }}>Creative Design & Visualization</a></li>
+            <li><a href="#" onClick={(e) => { e.preventDefault(); handleLinkClick('/services'); }}>Website Development</a></li>
+            <li><a href="#" onClick={(e) => { e.preventDefault(); handleLinkClick('/services'); }}>Graphic Design & Branding</a></li>
+            <li><a href="#" onClick={(e) => { e.preventDefault(); handleLinkClick('/services'); }}>Social Media Marketing</a></li>
+            <li><a href="#" onClick={(e) => { e.preventDefault(); handleLinkClick('/services'); }}>Software Development</a></li>
           </ul>
         </div>
 
