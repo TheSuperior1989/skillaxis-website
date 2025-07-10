@@ -2,6 +2,7 @@ import { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faPlus, faMinus, faTrash, faFileInvoice, faEnvelope } from '@fortawesome/free-solid-svg-icons';
+import { sendQuoteRequest } from '../../services/emailService';
 import './QuotingTool.css';
 import pricingData from '../../assets/data/services-pricing.json';
 
@@ -17,6 +18,8 @@ const QuotingTool = () => {
   });
   const [showContactForm, setShowContactForm] = useState(false);
   const [formSubmitted, setFormSubmitted] = useState(false);
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [submitMessage, setSubmitMessage] = useState('');
 
   const categories = [
     { id: 'graphicDesign', name: 'Graphic Design' },
@@ -92,24 +95,40 @@ const QuotingTool = () => {
     });
   };
 
-  const handleSubmitQuote = (e) => {
+  const handleSubmitQuote = async (e) => {
     e.preventDefault();
-    // In a real application, you would send the quote and contact info to a server here
-    console.log('Quote submitted:', { selectedServices, contactInfo });
-    setFormSubmitted(true);
-    
-    // Reset form after submission
-    setTimeout(() => {
-      setFormSubmitted(false);
-      setShowContactForm(false);
-      setContactInfo({
-        name: '',
-        email: '',
-        phone: '',
-        company: '',
-        message: ''
-      });
-    }, 3000);
+    setIsSubmitting(true);
+    setSubmitMessage('');
+
+    try {
+      const result = await sendQuoteRequest(selectedServices, contactInfo);
+
+      if (result.success) {
+        setFormSubmitted(true);
+        setSubmitMessage(result.message);
+
+        // Reset form after successful submission
+        setTimeout(() => {
+          setFormSubmitted(false);
+          setShowContactForm(false);
+          setContactInfo({
+            name: '',
+            email: '',
+            phone: '',
+            company: '',
+            message: ''
+          });
+          setSubmitMessage('');
+        }, 3000);
+      } else {
+        setSubmitMessage(result.message);
+      }
+    } catch (error) {
+      console.error('Error submitting quote:', error);
+      setSubmitMessage('Failed to send quote request. Please try again or contact us directly.');
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   const calculateTotal = () => {
@@ -433,8 +452,15 @@ const QuotingTool = () => {
                   </div>
                 </div>
 
-                <button type="submit" className="submit-quote-btn">
-                  <FontAwesomeIcon icon={faEnvelope} /> Submit Quote Request
+                {submitMessage && !formSubmitted && (
+                  <div className={`form-message ${submitMessage.includes('Failed') ? 'error' : 'success'}`}>
+                    {submitMessage}
+                  </div>
+                )}
+
+                <button type="submit" className="submit-quote-btn" disabled={isSubmitting}>
+                  <FontAwesomeIcon icon={faEnvelope} />
+                  {isSubmitting ? 'Sending...' : 'Submit Quote Request'}
                 </button>
               </form>
             )}

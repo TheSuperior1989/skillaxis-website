@@ -3,6 +3,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faMapMarkerAlt, faPhone, faEnvelope, faClock } from '@fortawesome/free-solid-svg-icons';
 import { motion } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
+import { sendContactForm } from '../../services/emailService';
 import './ContactPage.css';
 
 const ContactPage = () => {
@@ -16,6 +17,8 @@ const ContactPage = () => {
   });
 
   const [formSubmitted, setFormSubmitted] = useState(false);
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [submitMessage, setSubmitMessage] = useState('');
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -25,20 +28,35 @@ const ContactPage = () => {
     });
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    // In a real application, you would send the form data to a server here
-    console.log('Form submitted:', formData);
-    setFormSubmitted(true);
-    // Reset form after submission
-    setFormData({
-      name: '',
-      email: '',
-      phone: '',
-      subject: '',
-      message: '',
-      service: ''
-    });
+    setIsSubmitting(true);
+    setSubmitMessage('');
+
+    try {
+      const result = await sendContactForm(formData);
+
+      if (result.success) {
+        setFormSubmitted(true);
+        setSubmitMessage(result.message);
+        // Reset form after successful submission
+        setFormData({
+          name: '',
+          email: '',
+          phone: '',
+          subject: '',
+          message: '',
+          service: ''
+        });
+      } else {
+        setSubmitMessage(result.message);
+      }
+    } catch (error) {
+      console.error('Error submitting form:', error);
+      setSubmitMessage('Failed to send message. Please try again or contact us directly.');
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   const [ref, inView] = useInView({
@@ -226,8 +244,14 @@ const ContactPage = () => {
                   ></textarea>
                 </div>
 
-                <button type="submit" className="btn btn-primary">
-                  Send Message
+                {submitMessage && !formSubmitted && (
+                  <div className={`form-message ${submitMessage.includes('Failed') ? 'error' : 'success'}`}>
+                    {submitMessage}
+                  </div>
+                )}
+
+                <button type="submit" className="btn btn-primary" disabled={isSubmitting}>
+                  {isSubmitting ? 'Sending...' : 'Send Message'}
                 </button>
               </form>
             )}
