@@ -1,80 +1,87 @@
-import { Link, useNavigate } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faFacebook, faTwitter, faInstagram, faLinkedin } from '@fortawesome/free-brands-svg-icons';
+import { faFacebook, faInstagram, faLinkedin } from '@fortawesome/free-brands-svg-icons';
+import { faMapMarkerAlt, faPhone, faEnvelope } from '@fortawesome/free-solid-svg-icons';
 import './Footer.css';
 
 const Footer = () => {
-  const currentYear = new Date().getFullYear();
-  const navigate = useNavigate();
-
-  const handleLinkClick = (path) => {
-    navigate(path);
-    window.scrollTo(0, 0);
-  };
+  const year = new Date().getFullYear();
 
   return (
     <footer className="footer">
-      <div className="footer-container">
-        <div className="footer-section">
-          <h3 className="footer-title">SkillAxis Dynamics</h3>
-          <p className="footer-description">
-            Transforming ideas into digital masterpieces with precision in code and creativity in design.
+      <div className="footer-inner">
+        <div className="container footer-grid">
+        <div className="footer-brand">
+          <h3 className="footer-name">SkillAxis Dynamics</h3>
+          <p className="footer-tagline">
+            Precision engineering and digital solutions from Pretoria, South Africa. CNC conversions, automation, CAD drafting, custom machinery, web and software development.
           </p>
-          <div className="social-icons">
-            <a href="https://www.facebook.com/profile.php?id=100092689467268" target="_blank" rel="noopener noreferrer" className="social-icon">
+          <div className="footer-socials">
+            <a href="https://www.facebook.com/profile.php?id=100092689467268" target="_blank" rel="noopener noreferrer" aria-label="Facebook">
               <FontAwesomeIcon icon={faFacebook} />
             </a>
-            <a href="https://twitter.com" target="_blank" rel="noopener noreferrer" className="social-icon">
-              <FontAwesomeIcon icon={faTwitter} />
-            </a>
-            <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" className="social-icon">
+            <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
               <FontAwesomeIcon icon={faInstagram} />
             </a>
-            <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" className="social-icon">
+            <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
               <FontAwesomeIcon icon={faLinkedin} />
             </a>
           </div>
         </div>
 
-        <div className="footer-section">
-          <h3 className="footer-title">Quick Links</h3>
-          <ul className="footer-links">
-            <li><a href="#" onClick={(e) => { e.preventDefault(); handleLinkClick('/'); }}>Home</a></li>
-            <li><a href="#" onClick={(e) => { e.preventDefault(); handleLinkClick('/about'); }}>About Us</a></li>
-            <li><a href="#" onClick={(e) => { e.preventDefault(); handleLinkClick('/services'); }}>Services</a></li>
-            <li><a href="#" onClick={(e) => { e.preventDefault(); handleLinkClick('/portfolio'); }}>Portfolio</a></li>
-            <li><a href="#" onClick={(e) => { e.preventDefault(); handleLinkClick('/blog'); }}>Blog</a></li>
-            <li><a href="#" onClick={(e) => { e.preventDefault(); handleLinkClick('/quote'); }}>Get a Quote</a></li>
-            <li><a href="#" onClick={(e) => { e.preventDefault(); handleLinkClick('/contact'); }}>Contact</a></li>
+        <div className="footer-col">
+          <h4 className="footer-col-title">Services</h4>
+          <ul>
+            <li><Link to="/cnc-conversions">CNC Conversions</Link></li>
+            <li><Link to="/automation-retrofits">Automation Retrofits</Link></li>
+            <li><Link to="/cad-design-drafting">CAD Drafting</Link></li>
+            <li><Link to="/custom-machinery-design">Custom Machinery</Link></li>
+            <li><Link to="/web-software-engineering">Web & Software</Link></li>
+            <li><Link to="/google-ads">Google Ads</Link></li>
+            <li><Link to="/services">All Services</Link></li>
           </ul>
         </div>
 
-        <div className="footer-section">
-          <h3 className="footer-title">Services</h3>
-          <ul className="footer-links">
-            <li><a href="#" onClick={(e) => { e.preventDefault(); handleLinkClick('/services'); }}>Mill and Lathe CNC Conversions</a></li>
-            <li><a href="#" onClick={(e) => { e.preventDefault(); handleLinkClick('/services'); }}>Engineering Design Services</a></li>
-            <li><a href="#" onClick={(e) => { e.preventDefault(); handleLinkClick('/services'); }}>Creative Design & Visualization</a></li>
-            <li><a href="#" onClick={(e) => { e.preventDefault(); handleLinkClick('/services'); }}>Website Development</a></li>
-            <li><a href="#" onClick={(e) => { e.preventDefault(); handleLinkClick('/services'); }}>Graphic Design & Branding</a></li>
-            <li><a href="#" onClick={(e) => { e.preventDefault(); handleLinkClick('/services'); }}>Social Media Marketing</a></li>
-            <li><a href="#" onClick={(e) => { e.preventDefault(); handleLinkClick('/services'); }}>Software Development</a></li>
+        <div className="footer-col">
+          <h4 className="footer-col-title">Company</h4>
+          <ul>
+            <li><Link to="/">Home</Link></li>
+            <li><Link to="/about">About Us</Link></li>
+            <li><Link to="/case-studies">Case Studies</Link></li>
+            <li><Link to="/portfolio">Portfolio</Link></li>
+            <li><Link to="/pricing">Pricing</Link></li>
+            <li><Link to="/quote">Get a Quote</Link></li>
           </ul>
         </div>
 
-        <div className="footer-section">
-          <h3 className="footer-title">Contact Us</h3>
-          <ul className="footer-links">
-            <li>Email: <a href="mailto:info@skillaxisdynamics.co.za">info@skillaxisdynamics.co.za</a></li>
-            <li>Phone: <a href="tel:+27782964786">+27 78 296 4786</a></li>
-            <li>Phone: <a href="tel:+27824651089">+27 82 465 1089</a></li>
-            <li>Location: South Africa, Pretoria</li>
+        <div className="footer-col">
+          <h4 className="footer-col-title">Contact</h4>
+          <ul className="footer-contact">
+            <li>
+              <FontAwesomeIcon icon={faMapMarkerAlt} />
+              <span>Pretoria, Gauteng, South Africa</span>
+            </li>
+            <li>
+              <FontAwesomeIcon icon={faPhone} />
+              <a href="tel:+27782964786">+27 78 296 4786</a>
+            </li>
+            <li>
+              <FontAwesomeIcon icon={faPhone} />
+              <a href="tel:+27824651089">+27 82 465 1089</a>
+            </li>
+            <li>
+              <FontAwesomeIcon icon={faEnvelope} />
+              <a href="mailto:info@skillaxisdynamics.co.za">info@skillaxisdynamics.co.za</a>
+            </li>
           </ul>
+        </div>
         </div>
       </div>
 
       <div className="footer-bottom">
-        <p>&copy; {currentYear} SkillAxis Dynamics. All Rights Reserved.</p>
+        <div className="container">
+          <p>&copy; {year} SkillAxis Dynamics. All Rights Reserved.</p>
+        </div>
       </div>
     </footer>
   );

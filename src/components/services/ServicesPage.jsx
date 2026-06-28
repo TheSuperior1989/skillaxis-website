@@ -1,246 +1,146 @@
-import { useEffect } from 'react';
-import { useLocation, Link } from 'react-router-dom';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import {
-  faDesktop,
-  faPaintBrush,
-  faCode,
-  faHashtag,
-  faCogs
-} from '@fortawesome/free-solid-svg-icons';
-import { motion } from 'framer-motion';
-import { useInView } from 'react-intersection-observer';
+import { Link } from 'react-router-dom';
+import SEO from '../common/SEO';
 import './ServicesPage.css';
-
-// Separate component for service items to fix React Hooks violation
-const ServiceItem = ({ service, index }) => {
-  const [ref, inView] = useInView({
-    triggerOnce: true,
-    threshold: 0.1
-  });
-
-  const containerVariants = {
-    hidden: { opacity: 0, y: 50 },
-    visible: {
-      opacity: 1,
-      y: 0,
-      transition: {
-        duration: 0.6,
-        staggerChildren: 0.2
-      }
-    }
-  };
-
-  const itemVariants = {
-    hidden: { opacity: 0, y: 20 },
-    visible: {
-      opacity: 1,
-      y: 0,
-      transition: { duration: 0.4 }
-    }
-  };
-
-  return (
-    <motion.div
-      key={service.id}
-      id={service.id}
-      ref={ref}
-      variants={containerVariants}
-      initial="hidden"
-      animate={inView ? 'visible' : 'hidden'}
-      className={`service-item ${index % 2 === 0 ? '' : 'reverse'}`}
-    >
-      <motion.div className="service-content" variants={itemVariants}>
-        <div className="service-icon">
-          <FontAwesomeIcon icon={service.icon} />
-        </div>
-        <h2 className="service-title">{service.title}</h2>
-        <p className="service-description">{service.description}</p>
-        <ul className="service-details">
-          {service.details.map((detail, i) => (
-            <li key={i}>{detail}</li>
-          ))}
-        </ul>
-        <Link to="/quote" className="btn btn-primary">Request a Quote</Link>
-      </motion.div>
-      <motion.div className="service-image" variants={itemVariants}>
-        <img src={service.image} alt={service.title} />
-      </motion.div>
-    </motion.div>
-  );
-};
 
 const services = [
   {
-    id: 'cnc',
-    icon: faCogs,
-    title: 'Mill & Lathe CNC Conversions',
-    description: 'Transform traditional machinery into precision CNC equipment with our expert conversion services.',
-    image: 'https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?w=600&h=400&fit=crop',
-    details: [
-      'Complete retrofitting of manual mills and lathes to CNC operation',
-      'Custom software integration for specific manufacturing needs',
-      'Training and support for operators transitioning to CNC systems',
-      'Ongoing maintenance and troubleshooting services',
-      'Performance optimization for maximum efficiency'
-    ]
+    tag: 'Engineering',
+    title: 'CNC Conversions',
+    description: 'Convert manual mills and lathes to full CNC operation. LinuxCNC, Mach3, and GRBL-based systems. Servo and stepper drives. Full commissioning and operator training.',
+    from: 'From R25,000',
+    link: '/cnc-conversions',
   },
   {
-    id: 'design',
-    icon: faPaintBrush,
-    title: 'Creative Design & Visualization',
-    description: 'Bring your ideas to life with stunning visualizations and creative design solutions.',
-    image: 'https://images.unsplash.com/photo-1558655146-d09347e92766?w=600&h=400&fit=crop',
-    details: [
-      '3D modeling and rendering for product visualization',
-      'Concept development and prototyping',
-      'Technical illustrations and diagrams',
-      'Virtual reality (VR) and augmented reality (AR) experiences',
-      'Interactive product demonstrations'
-    ]
+    tag: 'Engineering',
+    title: 'Industrial Automation Retrofits',
+    description: 'Upgrade manual or legacy machines with modern PLC controls, sensors, HMIs, and safety interlocks. Reduce downtime and eliminate operator error.',
+    from: 'From R15,000',
+    link: '/automation-retrofits',
   },
   {
-    id: 'web',
-    icon: faDesktop,
-    title: 'Website Development',
-    description: 'Custom, responsive websites built with modern technologies to showcase your brand.',
-    image: 'https://images.unsplash.com/photo-1467232004584-a241de8bcf5d?w=600&h=400&fit=crop',
-    details: [
-      'Custom website design and development',
-      'E-commerce solutions with secure payment processing',
-      'Content management system (CMS) integration',
-      'Responsive design for all devices',
-      'Website maintenance and support'
-    ]
+    tag: 'Engineering',
+    title: 'Mechanical CAD Drafting',
+    description: 'Manufacturing-ready 2D and 3D drawings produced to ISO standard. GA drawings, part details, weld assemblies, machining drawings, and full project documentation packages.',
+    from: 'From R3,500',
+    link: '/cad-design-drafting',
   },
   {
-    id: 'graphic',
-    icon: faPaintBrush,
+    tag: 'Engineering',
+    title: 'Custom Machinery Design & Build',
+    description: 'Bespoke jigs, fixtures, production aids, and purpose-built machines. We manage the full project from concept design through fabrication management to on-site commissioning.',
+    from: 'From R45,000',
+    link: '/custom-machinery-design',
+  },
+  {
+    tag: 'Digital',
+    title: 'Web & Software Engineering',
+    description: 'Custom websites, web applications, e-commerce stores, and business automation tools. React, Node.js, Python, and WordPress. SEO-ready, mobile-first.',
+    from: 'From R1,500',
+    link: '/web-software-engineering',
+  },
+  {
+    tag: 'Digital',
+    title: 'Google Ads Management',
+    description: 'Google Ads campaigns that generate leads, not just clicks. Dedicated landing pages, conversion tracking, live dashboards, and weekly optimisation included in every package.',
+    from: 'From R4,400/month',
+    link: '/google-ads',
+  },
+  {
+    tag: 'Digital',
     title: 'Graphic Design & Branding',
-    description: 'Establish a strong brand identity with professional graphic design services.',
-    image: 'https://images.unsplash.com/photo-1561070791-2526d30994b5?w=600&h=400&fit=crop',
-    details: [
-      'Logo design and brand identity development',
-      'Marketing materials (brochures, business cards, etc.)',
-      'Packaging design',
-      'Social media graphics and templates',
-      'Brand style guides and visual standards'
-    ]
+    description: 'Logo design, full brand identity packages, stationery, marketing materials, and social media graphics. Clean, professional design that communicates competence.',
+    from: 'From R2,500',
+    link: '/quote',
   },
-  {
-    id: 'social',
-    icon: faHashtag,
-    title: 'Social Media Marketing',
-    description: 'Engage your audience and grow your brand with strategic social media management.',
-    image: 'https://images.unsplash.com/photo-1611224923853-80b023f02d71?w=600&h=400&fit=crop',
-    details: [
-      'Social media strategy development',
-      'Content creation and scheduling',
-      'Community management and engagement',
-      'Social media advertising campaigns',
-      'Performance analytics and reporting'
-    ]
-  },
-  {
-    id: 'software',
-    icon: faCode,
-    title: 'Software Development',
-    description: 'Custom software solutions for web, Android, and iOS platforms.',
-    image: 'https://images.unsplash.com/photo-1555066931-4365d14bab8c?w=600&h=400&fit=crop',
-    details: [
-      'Web application development',
-      'Mobile app development for iOS and Android',
-      'Custom software solutions for specific business needs',
-      'API development and integration',
-      'Software maintenance and updates'
-    ]
-  }
 ];
 
-const ServicesPage = () => {
-  const location = useLocation();
-  const hash = location.hash.replace('#', '');
+const ServicesPage = () => (
+  <div className="service-page">
+    <SEO
+      title="Engineering & Digital Services — Pretoria, South Africa"
+      description="CNC conversions, automation retrofits, CAD drafting, custom machinery, web development, and graphic design. Full-spectrum engineering and digital services from Pretoria, South Africa."
+      canonical="/services"
+      schema={{
+        '@context': 'https://schema.org',
+        '@type': 'WebPage',
+        name: 'Services',
+        description: 'Engineering and digital services from SkillAxis Dynamics, Pretoria, South Africa.',
+        provider: { '@type': 'LocalBusiness', name: 'SkillAxis Dynamics' },
+      }}
+    />
 
-  useEffect(() => {
-    if (hash) {
-      const element = document.getElementById(hash);
-      if (element) {
-        element.scrollIntoView({ behavior: 'smooth' });
-      }
-    } else {
-      window.scrollTo(0, 0);
-    }
-  }, [hash]);
-
-  return (
-    <div className="services-page">
-      <div className="services-hero">
-        <div className="services-hero-overlay"></div>
-        <div className="container">
-          <h1 className="services-hero-title">Our Services</h1>
-          <p className="services-hero-subtitle">
-            Comprehensive solutions tailored to your specific needs
-          </p>
+    <section className="sp-hero">
+      <div className="container">
+        <span className="page-hero-tag">Services · Pretoria, South Africa</span>
+        <h1>Engineering &amp; Digital Services — Pretoria</h1>
+        <p>Five engineering disciplines and two digital verticals — all under one technical team. We don't subcontract to generalists. Every service is delivered by someone with hands-on experience in that specific discipline.</p>
+        <div className="sp-hero-meta">
+          <span>Fixed-price quotes</span><span className="sp-meta-div">·</span>
+          <span>Quote within 24 hours</span><span className="sp-meta-div">·</span>
+          <span>Pretoria-based, nationwide delivery</span>
         </div>
       </div>
+    </section>
 
-      <section className="popular-service-highlight">
-        <div className="container">
-          <div className="popular-service-card">
-            <div className="popular-badge">⭐ MOST POPULAR</div>
-            <h2>Single Page Website - Only R1,500!</h2>
-            <p>Perfect for small businesses and startups! Get a professional, mobile-responsive single-page website that showcases your business essentials.</p>
-            <div className="popular-features">
-              <div className="feature">✓ Modern, Professional Design</div>
-              <div className="feature">✓ Mobile Responsive</div>
-              <div className="feature">✓ Contact Form Integration</div>
-              <div className="feature">✓ Basic SEO Optimization</div>
-              <div className="feature">✓ Fast Loading & Secure</div>
-            </div>
-            <div className="popular-price">
-              <span className="price">R1,500</span>
-              <span className="price-note">One-time payment</span>
-            </div>
-            <Link to="/quote" className="btn btn-primary popular-cta">Get Your Website Today!</Link>
-          </div>
+    <section className="sp-section">
+      <div className="container">
+        <div className="section-header">
+          <span className="section-tag">What We Do</span>
+          <h2 className="section-title">All Services</h2>
         </div>
-      </section>
-
-      <section className="services-intro">
-        <div className="container">
-          <div className="intro-content">
-            <h2>How We Can Help You</h2>
-            <p>
-              At SkillAxis Dynamics, we offer a wide range of services designed to help your business thrive in today's competitive landscape. From engineering solutions to digital marketing, our team of experts is committed to delivering high-quality results that exceed your expectations.
-            </p>
-            <p>
-              Each service is customized to meet your specific needs and goals, ensuring that you receive the most effective solution for your business. Explore our services below to learn more about how we can help you succeed.
-            </p>
-          </div>
-        </div>
-      </section>
-
-      <section className="services-list">
-        <div className="container">
-          {services.map((service, index) => (
-            <ServiceItem key={service.id} service={service} index={index} />
+        <div className="svc-hub-grid">
+          {services.map((svc) => (
+            <Link to={svc.link} key={svc.title} className="svc-hub-card">
+              <div className="svc-hub-top">
+                <span className={`svc-hub-tag ${svc.tag === 'Engineering' ? 'tag-eng' : 'tag-digital'}`}>{svc.tag}</span>
+                <span className="svc-hub-from">{svc.from}</span>
+              </div>
+              <h3 className="svc-hub-title">{svc.title}</h3>
+              <p className="svc-hub-desc">{svc.description}</p>
+              <span className="svc-hub-link">Full details →</span>
+            </Link>
           ))}
         </div>
-      </section>
+      </div>
+    </section>
 
-      <section className="services-cta">
-        <div className="container">
-          <div className="cta-content">
-            <h2>Ready to Get Started?</h2>
-            <p>
-              Contact us today to discuss your project and discover how SkillAxis Dynamics can help you achieve your goals.
-            </p>
-            <Link to="/contact" className="btn btn-primary">Contact Us</Link>
+    <section className="sp-section sp-alt">
+      <div className="container">
+        <div className="section-header">
+          <span className="section-tag">Why SkillAxis</span>
+          <h2 className="section-title">What Makes Us Different</h2>
+        </div>
+        <div className="sp-pain-grid">
+          <div className="sp-pain-card">
+            <span className="sp-pain-num">01</span>
+            <h3>Specialist delivery, not generalist outsourcing</h3>
+            <p>CNC work is done by engineers who operate CNC machines. Web work is done by developers who build production systems. We don't use a VA or a subcontractor to deliver work we can't do ourselves.</p>
+          </div>
+          <div className="sp-pain-card">
+            <span className="sp-pain-num">02</span>
+            <h3>Fixed-price contracts, not hourly retainers</h3>
+            <p>Every project is scoped upfront and priced as a fixed cost. You know what you're paying before we start. We absorb overruns — they're not passed to you as a "change order."</p>
+          </div>
+          <div className="sp-pain-card">
+            <span className="sp-pain-num">03</span>
+            <h3>You own everything we produce</h3>
+            <p>Source code, CAD files, drawings, brand assets — you receive full ownership and copies of everything we create. No vendor lock-in, no withholding deliverables.</p>
           </div>
         </div>
-      </section>
-    </div>
-  );
-};
+      </div>
+    </section>
+
+    <section className="cta-section">
+      <div className="container">
+        <h2>Which Service Do You Need?</h2>
+        <p>Tell us what you're trying to solve — engineering or digital. We'll respond within 4 business hours with a scoping response or preliminary quote.</p>
+        <div className="cta-buttons">
+          <Link to="/quote" className="btn btn-cta">Get a Quote</Link>
+          <a href="https://wa.me/27782964786?text=Hi%2C%20I%27d%20like%20to%20discuss%20a%20project%20with%20SkillAxis%20Dynamics." target="_blank" rel="noopener noreferrer" className="btn btn-ghost">WhatsApp Us</a>
+        </div>
+      </div>
+    </section>
+  </div>
+);
 
 export default ServicesPage;
