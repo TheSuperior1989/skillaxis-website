@@ -1,79 +1,67 @@
-.contact-cta {
-  padding: 100px 0;
-  background-image: url('/src/assets/images/hero/cta-bg.jpg');
+.contact-cta-section {
+  padding: 96px 0;
+  background-color: var(--bg-primary);
   background-size: cover;
   background-position: center;
-  background-attachment: fixed;
-  position: relative;
-  color: #fff;
+  border-top: 1px solid var(--border);
 }
 
-.cta-overlay {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: linear-gradient(135deg, rgba(67, 97, 238, 0.9) 0%, rgba(58, 134, 255, 0.9) 100%);
-  z-index: 1;
-}
-
-.cta-content {
-  position: relative;
-  z-index: 2;
+.contact-cta-inner {
   text-align: center;
-  max-width: 800px;
+  max-width: 640px;
   margin: 0 auto;
 }
 
-.cta-title {
-  font-size: 2.5rem;
-  font-weight: 700;
-  margin-bottom: 20px;
+.cta-urgency {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  justify-content: center;
+  margin-bottom: 24px;
+  flex-wrap: wrap;
 }
 
-.cta-subtitle {
-  font-size: 1.1rem;
-  margin-bottom: 40px;
-  line-height: 1.6;
+.cta-badge {
+  display: inline-block;
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: #93c5fd;
+  border: 1px solid rgba(30, 58, 138, 0.5);
+  background: rgba(30, 58, 138, 0.2);
+  padding: 4px 12px;
+  border-radius: 4px;
+}
+
+.cta-lead-time {
+  font-size: 0.82rem;
+  color: var(--text-muted);
+}
+
+.cta-main-title {
+  font-size: clamp(1.75rem, 3.5vw, 2.5rem);
+  font-weight: 900;
+  color: var(--text-primary);
+  margin-bottom: 16px;
+  line-height: 1.15;
+}
+
+.cta-main-sub {
+  font-size: 1rem;
+  color: var(--text-secondary);
+  line-height: 1.7;
+  margin-bottom: 36px;
 }
 
 .cta-buttons {
   display: flex;
+  gap: 14px;
   justify-content: center;
-  gap: 20px;
+  flex-wrap: wrap;
 }
 
-.btn-secondary {
-  background: transparent;
-  color: #fff;
-  border: 2px solid #fff;
-}
-
-.btn-secondary:hover {
-  background: rgba(255, 255, 255, 0.1);
-  transform: translateY(-3px);
-}
-
-@media screen and (max-width: 768px) {
-  .contact-cta {
-    padding: 70px 0;
-  }
-
-  .cta-title {
-    font-size: 2rem;
-  }
-
-  .cta-subtitle {
-    font-size: 1rem;
-  }
-
-  .cta-buttons {
-    flex-direction: column;
-    gap: 15px;
-  }
-
-  .btn {
-    width: 100%;
-  }
+@media (max-width: 560px) {
+  .cta-buttons { flex-direction: column; align-items: center; }
+  .cta-buttons .btn { width: 100%; justify-content: center; }
 }

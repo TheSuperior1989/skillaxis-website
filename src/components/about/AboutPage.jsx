@@ -1,139 +1,171 @@
-import { motion } from 'framer-motion';
-import { useInView } from 'react-intersection-observer';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faUser, faUserTie } from '@fortawesome/free-solid-svg-icons';
+import { Link } from 'react-router-dom';
+import SEO from '../common/SEO';
+import aboutHero from '../../assets/images/hero/about-hero.jpg';
+import team1 from '../../assets/images/team/team1.jpg';
+import team2 from '../../assets/images/team/team2.jpg';
+import '../cnc-conversions/CNCConversionsPage.css';
 import './AboutPage.css';
 
-const AboutPage = () => {
-  const [ref, inView] = useInView({
-    triggerOnce: true,
-    threshold: 0.1
-  });
+const AboutPage = () => (
+  <div className="service-page">
+    <SEO
+      title="About SkillAxis Dynamics — Pretoria Engineering & Digital Services"
+      description="SkillAxis Dynamics is a Pretoria-based engineering and digital services firm. CNC conversions, automation retrofits, CAD drafting, custom machinery, web development, and graphic design."
+      canonical="/about"
+      schema={{
+        '@context': 'https://schema.org',
+        '@type': 'AboutPage',
+        name: 'About SkillAxis Dynamics',
+        description: 'Engineering and digital services firm based in Pretoria, South Africa.',
+        provider: { '@type': 'LocalBusiness', name: 'SkillAxis Dynamics' },
+      }}
+    />
 
-  const containerVariants = {
-    hidden: { opacity: 0 },
-    visible: {
-      opacity: 1,
-      transition: {
-        staggerChildren: 0.3
-      }
-    }
-  };
-
-  const itemVariants = {
-    hidden: { y: 50, opacity: 0 },
-    visible: {
-      y: 0,
-      opacity: 1,
-      transition: {
-        duration: 0.6
-      }
-    }
-  };
-
-  return (
-    <div className="about-page">
-      <div className="about-hero">
-        <div className="about-hero-overlay"></div>
-        <div className="container">
-          <h1 className="about-hero-title">About SkillAxis Dynamics</h1>
-          <p className="about-hero-subtitle">
-            Blending engineering precision with creative digital solutions
-          </p>
+    <section className="sp-hero about-hero-bg" style={{ backgroundImage: `linear-gradient(rgba(8,8,8,0.70), rgba(8,8,8,0.82)), url(${aboutHero})` }}>
+      <div className="container">
+        <span className="page-hero-tag">About · Pretoria, South Africa</span>
+        <h1>About SkillAxis Dynamics</h1>
+        <p>We're a technical services firm based in Pretoria, South Africa. Engineering precision meets digital execution — one team, fixed prices, measurable outcomes.</p>
+        <div className="sp-hero-meta">
+          <span>Pretoria, Gauteng</span><span className="sp-meta-div">·</span>
+          <span>Engineering + Digital</span><span className="sp-meta-div">·</span>
+          <span>Fixed-price projects</span>
         </div>
       </div>
+    </section>
 
-      <section className="about-story">
-        <div className="container">
-          <motion.div
-            ref={ref}
-            variants={containerVariants}
-            initial="hidden"
-            animate={inView ? 'visible' : 'hidden'}
-            className="about-content"
-          >
-            <motion.div className="about-text" variants={itemVariants}>
-              <h2 className="section-title">Our Story</h2>
-              <p>
-                SkillAxis Dynamics began as a broad engineering and design service provider, leveraging our founder's expertise in mechanical engineering and digital technology. Over the years, we've evolved to focus on high-value offerings that combine technical precision with creative innovation.
-              </p>
-              <p>
-                Our journey has been defined by a commitment to excellence, continuous learning, and adapting to the ever-changing technological landscape. Today, we pride ourselves on delivering solutions that not only meet but exceed our clients' expectations.
-              </p>
-              <p>
-                What sets us apart is our unique ability to bridge the gap between traditional engineering and modern digital solutions. Whether we're converting a mill to CNC or developing a cutting-edge website, we bring the same level of precision, creativity, and attention to detail to every project.
-              </p>
-            </motion.div>
-            <motion.div className="about-image" variants={itemVariants}>
-              <img src="https://images.unsplash.com/photo-1497366216548-37526070297c?w=800&h=600&fit=crop" alt="Modern Technology Workspace" />
-            </motion.div>
-          </motion.div>
-        </div>
-      </section>
-
-      <section className="about-mission">
-        <div className="container">
-          <div className="mission-content">
-            <div className="mission-box">
-              <h3>Our Mission</h3>
-              <p>
-                To deliver innovative, high-quality solutions that empower our clients to succeed in an increasingly digital world, by combining technical expertise with creative thinking.
-              </p>
+    <section className="sp-section">
+      <div className="container">
+        <div className="sp-two-col">
+          <div>
+            <div className="section-header">
+              <span className="section-tag">Our Story</span>
+              <h2 className="section-title">What We Are</h2>
             </div>
-            <div className="mission-box">
-              <h3>Our Vision</h3>
-              <p>
-                To be the premier provider of integrated engineering and digital services, known for excellence, innovation, and client satisfaction.
-              </p>
-            </div>
-            <div className="mission-box">
-              <h3>Our Values</h3>
-              <ul>
-                <li>Excellence in everything we do</li>
-                <li>Innovation that drives results</li>
-                <li>Integrity in all our interactions</li>
-                <li>Collaboration with clients and partners</li>
-                <li>Continuous learning and improvement</li>
-              </ul>
+            <p className="sp-lead">SkillAxis Dynamics started as a CNC conversion and mechanical engineering operation and expanded into digital services as clients asked for more.</p>
+            <p style={{ color: 'var(--text-secondary)', lineHeight: 1.7, fontSize: '0.95rem', marginBottom: '16px' }}>
+              The thread connecting everything we do is technical rigour. Whether we're commissioning a CNC lathe conversion or deploying a React-based web application, we apply the same discipline: understand the requirement properly, scope it clearly, execute to a fixed price, and deliver documentation.
+            </p>
+            <p style={{ color: 'var(--text-secondary)', lineHeight: 1.7, fontSize: '0.95rem' }}>
+              We work with manufacturers, workshops, engineering firms, and businesses that want quality work done by people who know what they're doing — not agencies that subcontract to the cheapest available resource.
+            </p>
+          </div>
+          <div className="sp-highlight-box">
+            <h3>Technical Stack</h3>
+            <div className="sp-tech-list">
+              <span>LinuxCNC</span><span>GRBL</span><span>Mach3</span>
+              <span>Fusion 360</span><span>AutoCAD</span><span>SolidWorks</span>
+              <span>Siemens S7</span><span>Delta PLC</span><span>React</span>
+              <span>Node.js</span><span>Python</span><span>WordPress</span>
             </div>
           </div>
         </div>
-      </section>
+      </div>
+    </section>
 
-      <section className="about-team">
-        <div className="container">
+    <section className="sp-section sp-alt">
+      <div className="container">
+        <div className="section-header">
+          <span className="section-tag">Capabilities</span>
+          <h2 className="section-title">What We Deliver</h2>
+        </div>
+        <div className="about-capabilities-grid">
+          <div className="about-cap-item">
+            <span className="about-cap-label">Industries Served</span>
+            <ul className="sp-list">
+              <li>Manufacturing and machining</li>
+              <li>Fabrication and welding shops</li>
+              <li>Engineering consulting firms</li>
+              <li>Industrial equipment suppliers</li>
+              <li>Retail and e-commerce</li>
+              <li>Professional services</li>
+            </ul>
+          </div>
+          <div className="about-cap-item">
+            <span className="about-cap-label">Engineering Services</span>
+            <ul className="sp-list">
+              <li>CNC mill and lathe conversions</li>
+              <li>Industrial automation retrofits</li>
+              <li>Mechanical CAD drafting (ISO)</li>
+              <li>Custom machinery design and build</li>
+              <li>Reverse engineering</li>
+              <li>Machine guarding and compliance</li>
+            </ul>
+          </div>
+          <div className="about-cap-item">
+            <span className="about-cap-label">Digital Services</span>
+            <ul className="sp-list">
+              <li>Business websites (from R1,500)</li>
+              <li>E-commerce stores</li>
+              <li>Custom web applications</li>
+              <li>REST API development</li>
+              <li>Logo and brand identity</li>
+              <li>Social media management</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section className="sp-section">
+      <div className="container">
+        <div className="section-header">
+          <span className="section-tag">The Team</span>
           <h2 className="section-title">Our Founders</h2>
-          <p className="section-subtitle">
-            Meet the visionary founders behind SkillAxis Dynamics
-          </p>
-
-          <div className="team-grid">
-            <div className="team-member">
-              <div className="member-icon">
-                <FontAwesomeIcon icon={faUserTie} />
-              </div>
-              <h3 className="member-name">Christiaan Von Stade</h3>
-              <p className="member-position">Founder & CEO</p>
-              <p className="member-bio">
-                With over 15 years of experience in engineering and digital technology, Christiaan leads our team with vision and expertise.
-              </p>
+        </div>
+        <div className="about-team-grid">
+          <div className="about-team-member">
+            <div className="about-team-photo-wrap">
+              <img src={team1} alt="Christiaan Von Stade" className="about-team-photo" loading="lazy" />
             </div>
-
-            <div className="team-member">
-              <div className="member-icon">
-                <FontAwesomeIcon icon={faUser} />
-              </div>
-              <h3 className="member-name">Sure Von Stade</h3>
-              <p className="member-position">Co-Founder & Creative Director</p>
-              <p className="member-bio">
-                Sure brings creative flair and design expertise to every project, ensuring our solutions are both functional and beautiful.
-              </p>
+            <h3>Christiaan Von Stade</h3>
+            <p className="about-team-role">Founder &amp; Lead Engineer</p>
+            <p className="about-team-bio">Mechanical engineer with hands-on experience in CNC conversions, PLC automation, and CAD design. Manages all engineering projects and technical scoping.</p>
+            <div className="about-team-skills">
+              <span>CNC systems</span><span>PLC programming</span><span>CAD/CAM</span><span>Web dev</span>
+            </div>
+          </div>
+          <div className="about-team-member">
+            <div className="about-team-photo-wrap">
+              <img src={team2} alt="Sure Von Stade" className="about-team-photo" loading="lazy" />
+            </div>
+            <h3>Sure Von Stade</h3>
+            <p className="about-team-role">Co-Founder &amp; Creative Director</p>
+            <p className="about-team-bio">Graphic designer and brand strategist specialising in visual identity for engineering and industrial clients. Manages all design and marketing projects.</p>
+            <div className="about-team-skills">
+              <span>Brand identity</span><span>Graphic design</span><span>Social media</span><span>Content</span>
             </div>
           </div>
         </div>
-      </section>
-    </div>
-  );
-};
+      </div>
+    </section>
+
+    <section className="sp-section sp-alt">
+      <div className="container">
+        <div className="section-header">
+          <span className="section-tag">How We Work</span>
+          <h2 className="section-title">Our Approach</h2>
+        </div>
+        <div className="process-grid">
+          <div className="process-step"><div className="process-number">01</div><h3>Scope before quoting</h3><p>We don't give you a number before we understand what you need. Every project starts with a proper brief — we ask the right questions before we price anything.</p></div>
+          <div className="process-step"><div className="process-number">02</div><h3>Fixed-price contracts</h3><p>Your quote is your cost. We don't add change orders for work that was always part of the scope. Overruns are our problem, not yours.</p></div>
+          <div className="process-step"><div className="process-number">03</div><h3>Documented delivery</h3><p>Every project is delivered with documentation: drawings, source code, credentials, or brand files. You own everything we produce.</p></div>
+          <div className="process-step"><div className="process-number">04</div><h3>Post-delivery support</h3><p>30 days of support after handover, included on all projects. We don't disappear after we invoice.</p></div>
+        </div>
+      </div>
+    </section>
+
+    <section className="cta-section">
+      <div className="container">
+        <h2>Ready to Work With Us?</h2>
+        <p>Engineering or digital — tell us what you need and we'll respond within 4 business hours.</p>
+        <div className="cta-buttons">
+          <Link to="/quote" className="btn btn-cta">Get a Quote</Link>
+          <Link to="/case-studies" className="btn btn-ghost">View Case Studies</Link>
+        </div>
+      </div>
+    </section>
+  </div>
+);
 
 export default AboutPage;

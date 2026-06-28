@@ -1,0 +1,60 @@
+.sticky-whatsapp {
+  position: fixed;
+  bottom: 28px;
+  right: 24px;
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  background: #25d366;
+  color: #fff;
+  text-decoration: none;
+  padding: 14px 20px;
+  border-radius: 50px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  font-family: 'Inter', sans-serif;
+  box-shadow: 0 4px 20px rgba(37, 211, 102, 0.4);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  animation: wa-pulse 2.5s ease-in-out infinite;
+}
+
+.sticky-whatsapp:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 30px rgba(37, 211, 102, 0.55);
+  color: #fff;
+}
+
+.wa-icon {
+  font-size: 1.3rem;
+}
+
+@keyframes wa-pulse {
+  0%, 100% { box-shadow: 0 4px 20px rgba(37, 211, 102, 0.4); }
+  50% { box-shadow: 0 4px 30px rgba(37, 211, 102, 0.7); }
+}
+
+@media (max-width: 768px) {
+  .sticky-whatsapp {
+    bottom: 20px;
+    right: 16px;
+    padding: 12px 16px;
+    font-size: 0.85rem;
+  }
+
+  .wa-label {
+    display: none;
+  }
+
+  .sticky-whatsapp {
+    width: 56px;
+    height: 56px;
+    border-radius: 50%;
+    justify-content: center;
+    padding: 0;
+  }
+
+  .wa-icon {
+    font-size: 1.6rem;
+  }
+}

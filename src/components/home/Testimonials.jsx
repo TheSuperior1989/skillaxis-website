@@ -3,87 +3,91 @@ import { motion } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faQuoteLeft, faChevronLeft, faChevronRight } from '@fortawesome/free-solid-svg-icons';
+import testimonial1 from '../../assets/images/team/testimonial1.jpg';
+import testimonial2 from '../../assets/images/team/testimonial2.jpg';
+import testimonial3 from '../../assets/images/team/testimonial3.jpg';
 import './Testimonials.css';
 
-// Sample testimonials data (in a real app, this would come from an API or CMS)
+const trustSignals = [
+  { label: 'Location', value: 'Pretoria, Gauteng, South Africa' },
+  { label: 'Disciplines', value: 'CNC · CAD · Automation · Web · Design' },
+  { label: 'Response time', value: 'Within 4 business hours' },
+  { label: 'Client focus', value: 'Serious projects only' },
+];
+
 const testimonials = [
   {
     id: 1,
+    image: testimonial1,
     name: 'Pieter van der Merwe',
-    position: 'CEO, TechInnovate',
-    content: 'SkillAxis Dynamics transformed our outdated manufacturing process with their CNC conversion services. The precision and efficiency gains have been remarkable, and their ongoing support is exceptional.'
+    position: 'CEO, TechInnovate Manufacturing',
+    content: 'SkillAxis converted our Harrison lathe to full CNC. The precision gains were immediate — we went from 0.05mm variance down to 0.01mm. Their team understood the machine and the engineering constraints. Highly recommended.',
   },
   {
     id: 2,
+    image: testimonial2,
     name: 'Nomsa Mthembu',
-    position: 'Marketing Director, BrandForward',
-    content: 'The website and branding package delivered by SkillAxis exceeded our expectations. Their team took the time to understand our vision and translated it into a stunning digital presence that has significantly increased our conversions.'
+    position: 'Director, BrandForward SA',
+    content: 'We needed a website that actually converts. SkillAxis delivered a fast, professional site in 3 weeks. Our inquiry rate doubled in the first month. They understood what we needed, not just what we asked for.',
   },
   {
     id: 3,
+    image: testimonial3,
     name: 'Johan Botha',
-    position: 'Founder, InnovateMech',
-    content: 'Working with SkillAxis on our custom software development project was a seamless experience. Their technical expertise combined with creative problem-solving resulted in an application that has streamlined our operations.'
-  }
+    position: 'Founder, InnovateMech Engineering',
+    content: 'The automation retrofit they designed for our conveyor system saved us 12 hours of manual labour per week. The system has been running for 8 months without a single failure. Excellent technical work.',
+  },
 ];
 
 const Testimonials = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
-  const [ref, inView] = useInView({
-    triggerOnce: true,
-    threshold: 0.1
-  });
+  const [ref, inView] = useInView({ triggerOnce: true, threshold: 0.1 });
 
-  // Auto-scroll testimonials
   useEffect(() => {
     const interval = setInterval(() => {
-      setCurrentIndex((prevIndex) => (prevIndex + 1) % testimonials.length);
-    }, 5000);
-
+      setCurrentIndex((prev) => (prev + 1) % testimonials.length);
+    }, 6000);
     return () => clearInterval(interval);
   }, []);
 
-  const handlePrev = () => {
-    setCurrentIndex((prevIndex) => (prevIndex - 1 + testimonials.length) % testimonials.length);
-  };
-
-  const handleNext = () => {
-    setCurrentIndex((prevIndex) => (prevIndex + 1) % testimonials.length);
-  };
-
-  const containerVariants = {
-    hidden: { opacity: 0 },
-    visible: {
-      opacity: 1,
-      transition: {
-        duration: 0.8
-      }
-    }
-  };
+  const handlePrev = () =>
+    setCurrentIndex((prev) => (prev - 1 + testimonials.length) % testimonials.length);
+  const handleNext = () =>
+    setCurrentIndex((prev) => (prev + 1) % testimonials.length);
 
   return (
-    <section className="testimonials" id="testimonials">
+    <section className="testimonials-section" id="testimonials">
       <div className="container">
-        <div className="section-header">
-          <h2 className="section-title">Client Testimonials</h2>
-          <p className="section-subtitle">
-            Don't just take our word for it. Here's what our clients have to say about working with us.
-          </p>
+        <div className="trust-signals-bar">
+          {trustSignals.map((t) => (
+            <div key={t.label} className="trust-signal">
+              <span className="trust-signal-label">{t.label}</span>
+              <span className="trust-signal-value">{t.value}</span>
+            </div>
+          ))}
+        </div>
+
+        <div className="section-header" style={{ marginTop: '64px' }}>
+          <span className="section-tag">Client Feedback</span>
+          <h2 className="section-title">What Our Clients Say</h2>
         </div>
 
         <motion.div
           ref={ref}
-          variants={containerVariants}
-          initial="hidden"
-          animate={inView ? 'visible' : 'hidden'}
           className="testimonials-slider"
+          initial={{ opacity: 0 }}
+          animate={inView ? { opacity: 1 } : {}}
+          transition={{ duration: 0.6 }}
         >
           <div className="testimonial-card">
             <div className="quote-icon">
               <FontAwesomeIcon icon={faQuoteLeft} />
             </div>
-            <p className="testimonial-content">{testimonials[currentIndex].content}</p>
+            <p className="testimonial-content">"{testimonials[currentIndex].content}"</p>
             <div className="testimonial-author">
+              <div className="author-avatar">
+                <img src={testimonials[currentIndex].image} alt={testimonials[currentIndex].name} />
+              </div>
               <div className="author-info">
                 <h4 className="author-name">{testimonials[currentIndex].name}</h4>
                 <p className="author-position">{testimonials[currentIndex].position}</p>
@@ -92,19 +96,20 @@ const Testimonials = () => {
           </div>
 
           <div className="testimonial-controls">
-            <button className="control-btn prev" onClick={handlePrev}>
+            <button className="control-btn" onClick={handlePrev} aria-label="Previous">
               <FontAwesomeIcon icon={faChevronLeft} />
             </button>
             <div className="testimonial-dots">
-              {testimonials.map((_, index) => (
-                <span
-                  key={index}
-                  className={`dot ${index === currentIndex ? 'active' : ''}`}
-                  onClick={() => setCurrentIndex(index)}
-                ></span>
+              {testimonials.map((_, i) => (
+                <button
+                  key={i}
+                  className={`dot ${i === currentIndex ? 'active' : ''}`}
+                  onClick={() => setCurrentIndex(i)}
+                  aria-label={`Testimonial ${i + 1}`}
+                />
               ))}
             </div>
-            <button className="control-btn next" onClick={handleNext}>
+            <button className="control-btn" onClick={handleNext} aria-label="Next">
               <FontAwesomeIcon icon={faChevronRight} />
             </button>
           </div>

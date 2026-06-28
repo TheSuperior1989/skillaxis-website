@@ -1,102 +1,95 @@
 import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faArrowRight } from '@fortawesome/free-solid-svg-icons';
+import proj1 from '../../assets/images/projects/project1.jpg';
+import proj2 from '../../assets/images/projects/project2.jpg';
+import proj3 from '../../assets/images/projects/project3.jpg';
 import './FeaturedProjects.css';
 
-// Sample projects data (in a real app, this would come from an API or CMS)
 const projects = [
   {
     id: 1,
-    title: 'CNC Mill Conversion',
-    category: 'Engineering',
-    image: 'https://www.zintilon.com/wp-content/webp-express/webp-images/uploads/2023/11/Large-finely-toothed-metal-gear-positioned-on-a-CNC-machine-bed-with-blue-coolant-tubes-nearby.jpg.webp',
-    description: 'Conversion of a traditional mill to a fully automated CNC system with custom software integration.',
-    link: '/portfolio/cnc-mill-conversion'
+    tag: 'Engineering',
+    title: 'Harrison Lathe CNC Conversion',
+    problem: 'Manual lathe with no repeatability — operator-dependent accuracy.',
+    result: 'Full CNC retrofit with LinuxCNC, servo drives, and custom control panel. Accuracy improved to ±0.01mm.',
+    image: proj1,
+    link: '/case-studies',
   },
   {
     id: 2,
-    title: 'E-Commerce Website',
-    category: 'Web Development',
-    image: 'https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=600&h=400&fit=crop',
-    description: 'Custom e-commerce platform with integrated payment processing and inventory management.',
-    link: '/portfolio/ecommerce-website'
+    tag: 'Web & Software',
+    title: 'E-Commerce Platform Build',
+    problem: 'Cape Town retailer running sales through WhatsApp with no scalable online presence.',
+    result: 'Custom React storefront with payment gateway, inventory sync, and mobile-first design. 3× order volume in 60 days.',
+    image: proj2,
+    link: '/case-studies',
   },
   {
     id: 3,
-    title: 'Brand Identity Design',
-    category: 'Graphic Design',
-    image: 'https://images.unsplash.com/photo-1561070791-2526d30994b5?w=600&h=400&fit=crop',
-    description: 'Complete brand identity package including logo, color palette, typography, and brand guidelines.',
-    link: '/portfolio/brand-identity'
-  }
+    tag: 'Automation',
+    title: 'Conveyor Line Automation Retrofit',
+    problem: 'Manually-operated conveyor causing bottlenecks and inconsistent throughput.',
+    result: 'PLC-based automation with sensor array and HMI dashboard. Throughput up 40%, one less operator required.',
+    image: proj3,
+    link: '/case-studies',
+  },
 ];
 
 const FeaturedProjects = () => {
-  const [ref, inView] = useInView({
-    triggerOnce: true,
-    threshold: 0.1
-  });
-
-  const containerVariants = {
-    hidden: { opacity: 0 },
-    visible: {
-      opacity: 1,
-      transition: {
-        staggerChildren: 0.3
-      }
-    }
-  };
-
-  const itemVariants = {
-    hidden: { y: 50, opacity: 0 },
-    visible: {
-      y: 0,
-      opacity: 1,
-      transition: {
-        duration: 0.6
-      }
-    }
-  };
+  const [ref, inView] = useInView({ triggerOnce: true, threshold: 0.08 });
 
   return (
     <section className="featured-projects" id="projects">
       <div className="container">
         <div className="section-header">
+          <span className="section-tag">Case Studies</span>
           <h2 className="section-title">Featured Projects</h2>
           <p className="section-subtitle">
-            Take a look at some of our recent work that showcases our expertise and creativity.
+            Real projects, real results — from the workshop floor to the browser.
           </p>
         </div>
 
         <motion.div
           ref={ref}
-          variants={containerVariants}
           initial="hidden"
           animate={inView ? 'visible' : 'hidden'}
-          className="projects-grid"
+          variants={{ hidden: {}, visible: { transition: { staggerChildren: 0.2 } } }}
+          className="fp-list"
         >
-          {projects.map((project) => (
-            <motion.div key={project.id} className="project-card" variants={itemVariants}>
-              <div className="project-image">
-                <img src={project.image} alt={project.title} />
-                <div className="project-overlay">
-                  <Link to={project.link} className="project-link">
-                    View Project
-                  </Link>
-                </div>
+          {projects.map((project, idx) => (
+            <motion.div
+              key={project.id}
+              className={`fp-item${idx % 2 === 1 ? ' fp-item--reversed' : ''}`}
+              variants={{ hidden: { opacity: 0, y: 40 }, visible: { opacity: 1, y: 0, transition: { duration: 0.6 } } }}
+            >
+              <div className="fp-img-wrap">
+                <img src={project.image} alt={project.title} className="fp-img" />
               </div>
-              <div className="project-content">
-                <span className="project-category">{project.category}</span>
-                <h3 className="project-title">{project.title}</h3>
-                <p className="project-description">{project.description}</p>
+              <div className="fp-content">
+                <span className="fp-tag">{project.tag}</span>
+                <h3 className="fp-title">{project.title}</h3>
+                <div className="fp-row">
+                  <span className="fp-label">Challenge</span>
+                  <p>{project.problem}</p>
+                </div>
+                <div className="fp-row fp-row--result">
+                  <span className="fp-label">Result</span>
+                  <p>{project.result}</p>
+                </div>
+                <Link to={project.link} className="fp-link">
+                  View Case Study <FontAwesomeIcon icon={faArrowRight} />
+                </Link>
               </div>
             </motion.div>
           ))}
         </motion.div>
 
-        <div className="projects-cta">
-          <Link to="/portfolio" className="btn btn-primary">
-            View All Projects
+        <div className="fp-cta">
+          <Link to="/case-studies" className="btn btn-primary">
+            View All Case Studies
           </Link>
         </div>
       </div>

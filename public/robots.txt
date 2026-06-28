@@ -1,0 +1,6 @@
+User-agent: *
+Allow: /
+
+Disallow: /thank-you
+
+Sitemap: https://www.skillaxisdynamics.co.za/sitemap.xml

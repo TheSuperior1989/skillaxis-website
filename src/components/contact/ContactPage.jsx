@@ -1,170 +1,93 @@
 import { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faMapMarkerAlt, faPhone, faEnvelope, faClock } from '@fortawesome/free-solid-svg-icons';
-import { motion } from 'framer-motion';
-import { useInView } from 'react-intersection-observer';
+import { faWhatsapp } from '@fortawesome/free-brands-svg-icons';
+import SEO from '../common/SEO';
 import { sendContactForm } from '../../services/emailService';
+import '../cnc-conversions/CNCConversionsPage.css';
 import './ContactPage.css';
 
+const WA_URL = 'https://wa.me/27782964786?text=' + encodeURIComponent('Hi, I\'d like to discuss a project with SkillAxis Dynamics.');
+
 const ContactPage = () => {
+  const navigate = useNavigate();
+
   const [formData, setFormData] = useState({
     name: '',
     email: '',
     phone: '',
-    subject: '',
+    service: '',
     message: '',
-    service: ''
   });
 
-  const [formSubmitted, setFormSubmitted] = useState(false);
   const [isSubmitting, setIsSubmitting] = useState(false);
-  const [submitMessage, setSubmitMessage] = useState('');
+  const [error, setError] = useState('');
 
   const handleChange = (e) => {
-    const { name, value } = e.target;
-    setFormData({
-      ...formData,
-      [name]: value
-    });
+    setFormData({ ...formData, [e.target.name]: e.target.value });
   };
 
   const handleSubmit = async (e) => {
     e.preventDefault();
     setIsSubmitting(true);
-    setSubmitMessage('');
+    setError('');
 
     try {
-      const result = await sendContactForm(formData);
+      const result = await sendContactForm({
+        ...formData,
+        subject: formData.service || 'General Inquiry',
+      });
 
       if (result.success) {
-        setFormSubmitted(true);
-        setSubmitMessage(result.message);
-        // Reset form after successful submission
-        setFormData({
-          name: '',
-          email: '',
-          phone: '',
-          subject: '',
-          message: '',
-          service: ''
-        });
+        navigate('/thank-you');
       } else {
-        setSubmitMessage(result.message);
+        setError(result.message);
+        setIsSubmitting(false);
       }
-    } catch (error) {
-      console.error('Error submitting form:', error);
-      setSubmitMessage('Failed to send message. Please try again or contact us directly.');
-    } finally {
+    } catch {
+      setError('Failed to send your inquiry. Please try WhatsApp or email us directly.');
       setIsSubmitting(false);
     }
   };
 
-  const [ref, inView] = useInView({
-    triggerOnce: true,
-    threshold: 0.1
-  });
-
-  const containerVariants = {
-    hidden: { opacity: 0 },
-    visible: {
-      opacity: 1,
-      transition: {
-        staggerChildren: 0.3
-      }
-    }
-  };
-
-  const itemVariants = {
-    hidden: { y: 50, opacity: 0 },
-    visible: {
-      y: 0,
-      opacity: 1,
-      transition: {
-        duration: 0.6
-      }
-    }
-  };
-
   return (
-    <div className="contact-page">
-      <div className="contact-hero">
-        <div className="contact-hero-overlay"></div>
+    <div className="service-page">
+      <SEO
+        title="Contact SkillAxis Dynamics — Pretoria, South Africa"
+        description="Get in touch with SkillAxis Dynamics. Engineering and digital project inquiries. Based in Pretoria, South Africa. Response within 4 business hours."
+        canonical="/contact"
+        schema={{
+          '@context': 'https://schema.org',
+          '@type': 'ContactPage',
+          name: 'Contact SkillAxis Dynamics',
+          description: 'Contact page for SkillAxis Dynamics engineering and digital services, Pretoria.',
+        }}
+      />
+
+      <section className="sp-hero">
         <div className="container">
-          <h1 className="contact-hero-title">Contact Us</h1>
-          <p className="contact-hero-subtitle">
-            Get in touch with our team to discuss your project
-          </p>
-        </div>
-      </div>
-
-      <section className="contact-info">
-        <div className="container">
-          <motion.div
-            ref={ref}
-            variants={containerVariants}
-            initial="hidden"
-            animate={inView ? 'visible' : 'hidden'}
-            className="info-grid"
-          >
-            <motion.div className="info-card" variants={itemVariants}>
-              <div className="info-icon">
-                <FontAwesomeIcon icon={faMapMarkerAlt} />
-              </div>
-              <h3>Our Location</h3>
-              <p>South Africa</p>
-              <p>Pretoria</p>
-            </motion.div>
-
-            <motion.div className="info-card" variants={itemVariants}>
-              <div className="info-icon">
-                <FontAwesomeIcon icon={faPhone} />
-              </div>
-              <h3>Phone Number</h3>
-              <p><a href="tel:+27782964786">+27 78 296 4786</a></p>
-              <p><a href="tel:+27824651089">+27 82 465 1089</a></p>
-            </motion.div>
-
-            <motion.div className="info-card" variants={itemVariants}>
-              <div className="info-icon">
-                <FontAwesomeIcon icon={faEnvelope} />
-              </div>
-              <h3>Email Address</h3>
-              <p><a href="mailto:info@skillaxisdynamics.co.za">info@skillaxisdynamics.co.za</a></p>
-              <p><a href="mailto:support@skillaxisdynamics.co.za">support@skillaxisdynamics.co.za</a></p>
-            </motion.div>
-
-            <motion.div className="info-card" variants={itemVariants}>
-              <div className="info-icon">
-                <FontAwesomeIcon icon={faClock} />
-              </div>
-              <h3>Working Hours</h3>
-              <p>Monday - Friday: 9am - 6pm</p>
-              <p>Saturday: 10am - 2pm</p>
-            </motion.div>
-          </motion.div>
+          <span className="page-hero-tag">Contact · Pretoria, South Africa</span>
+          <h1>Get in Touch</h1>
+          <p>Tell us what you need — engineering or digital. We respond to every serious inquiry within 4 business hours.</p>
+          <div className="sp-hero-meta">
+            <span>Response within 4 hours</span><span className="sp-meta-div">·</span>
+            <span>Fixed-price quote within 3 days</span><span className="sp-meta-div">·</span>
+            <span>No-obligation</span>
+          </div>
         </div>
       </section>
 
-      <section className="contact-form-section">
+      <section className="sp-section">
         <div className="container">
-          <div className="form-container">
-            <div className="form-header">
-              <h2>Send Us a Message</h2>
-              <p>
-                Fill out the form below and we'll get back to you as soon as possible.
-              </p>
-            </div>
-
-            {formSubmitted ? (
-              <div className="form-success">
-                <h3>Thank You!</h3>
-                <p>Your message has been sent successfully. We'll get back to you shortly.</p>
-                <button className="btn btn-primary" onClick={() => setFormSubmitted(false)}>
-                  Send Another Message
-                </button>
+          <div className="contact-layout">
+            <div className="contact-form-side">
+              <div className="section-header">
+                <span className="section-tag">Inquiry Form</span>
+                <h2 className="section-title">Start a Conversation</h2>
               </div>
-            ) : (
-              <form className="contact-form" onSubmit={handleSubmit}>
+
+              <form className="contact-form" onSubmit={handleSubmit} noValidate>
                 <div className="form-group">
                   <label htmlFor="name">Full Name *</label>
                   <input
@@ -173,11 +96,12 @@ const ContactPage = () => {
                     name="name"
                     value={formData.name}
                     onChange={handleChange}
+                    placeholder="Your name"
                     required
                   />
                 </div>
 
-                <div className="form-row">
+                <div className="form-row-2">
                   <div className="form-group">
                     <label htmlFor="email">Email Address *</label>
                     <input
@@ -186,80 +110,140 @@ const ContactPage = () => {
                       name="email"
                       value={formData.email}
                       onChange={handleChange}
+                      placeholder="you@company.com"
                       required
                     />
                   </div>
-
                   <div className="form-group">
-                    <label htmlFor="phone">Phone Number</label>
+                    <label htmlFor="phone">Phone / WhatsApp *</label>
                     <input
                       type="tel"
                       id="phone"
                       name="phone"
                       value={formData.phone}
                       onChange={handleChange}
+                      placeholder="+27 ..."
+                      required
                     />
                   </div>
                 </div>
 
                 <div className="form-group">
-                  <label htmlFor="service">Service of Interest</label>
+                  <label htmlFor="service">Service Needed *</label>
                   <select
                     id="service"
                     name="service"
                     value={formData.service}
                     onChange={handleChange}
+                    required
                   >
-                    <option value="">Select a Service</option>
-                    <option value="cnc">Mill & Lathe CNC Conversions</option>
-                    <option value="design">Creative Design & Visualization</option>
-                    <option value="web">Website Development</option>
-                    <option value="graphic">Graphic Design & Branding</option>
-                    <option value="social">Social Media Marketing</option>
-                    <option value="software">Software Development</option>
+                    <option value="">Select a service</option>
+                    <option value="CNC Conversions">CNC Conversions</option>
+                    <option value="Automation Retrofits">Industrial Automation Retrofits</option>
+                    <option value="CAD Drafting">Mechanical CAD Drafting</option>
+                    <option value="Custom Machinery">Custom Machinery Design &amp; Build</option>
+                    <option value="Web / Software Development">Web / Software Development</option>
+                    <option value="Graphic Design / Branding">Graphic Design / Branding</option>
+                    <option value="Not Sure">Not Sure — I Need Advice</option>
                   </select>
                 </div>
 
                 <div className="form-group">
-                  <label htmlFor="subject">Subject *</label>
-                  <input
-                    type="text"
-                    id="subject"
-                    name="subject"
-                    value={formData.subject}
-                    onChange={handleChange}
-                    required
-                  />
-                </div>
-
-                <div className="form-group">
-                  <label htmlFor="message">Message *</label>
+                  <label htmlFor="message">Project Description *</label>
                   <textarea
                     id="message"
                     name="message"
                     rows="5"
                     value={formData.message}
                     onChange={handleChange}
+                    placeholder="Tell us about your project — what you need built, your timeline, and any budget constraints."
                     required
-                  ></textarea>
+                  />
                 </div>
 
-                {submitMessage && !formSubmitted && (
-                  <div className={`form-message ${submitMessage.includes('Failed') ? 'error' : 'success'}`}>
-                    {submitMessage}
-                  </div>
+                {error && (
+                  <div className="form-error">{error}</div>
                 )}
 
-                <button type="submit" className="btn btn-primary" disabled={isSubmitting}>
-                  {isSubmitting ? 'Sending...' : 'Send Message'}
+                <button type="submit" className="btn btn-cta" disabled={isSubmitting}>
+                  {isSubmitting ? 'Sending…' : 'Send Inquiry'}
                 </button>
+                <p className="form-note">We'll respond within 4 business hours with a scoping response or preliminary quote.</p>
               </form>
-            )}
+            </div>
+
+            <div className="contact-info-side">
+              <div className="contact-info-cards">
+                <div className="contact-info-card">
+                  <div className="contact-info-icon">
+                    <FontAwesomeIcon icon={faMapMarkerAlt} />
+                  </div>
+                  <div>
+                    <strong>Location</strong>
+                    <p>Pretoria, Gauteng<br />South Africa</p>
+                  </div>
+                </div>
+
+                <div className="contact-info-card">
+                  <div className="contact-info-icon">
+                    <FontAwesomeIcon icon={faPhone} />
+                  </div>
+                  <div>
+                    <strong>Phone</strong>
+                    <p><a href="tel:+27782964786">+27 78 296 4786</a><br /><a href="tel:+27824651089">+27 82 465 1089</a></p>
+                  </div>
+                </div>
+
+                <div className="contact-info-card">
+                  <div className="contact-info-icon wa">
+                    <FontAwesomeIcon icon={faWhatsapp} />
+                  </div>
+                  <div>
+                    <strong>WhatsApp</strong>
+                    <p><a href={WA_URL} target="_blank" rel="noopener noreferrer">Chat on WhatsApp</a><br /><span className="contact-info-sub">Fastest response</span></p>
+                  </div>
+                </div>
+
+                <div className="contact-info-card">
+                  <div className="contact-info-icon">
+                    <FontAwesomeIcon icon={faEnvelope} />
+                  </div>
+                  <div>
+                    <strong>Email</strong>
+                    <p><a href="mailto:info@skillaxisdynamics.co.za">info@skillaxisdynamics.co.za</a></p>
+                  </div>
+                </div>
+
+                <div className="contact-info-card">
+                  <div className="contact-info-icon">
+                    <FontAwesomeIcon icon={faClock} />
+                  </div>
+                  <div>
+                    <strong>Hours</strong>
+                    <p>Mon–Fri: 8am–6pm<br />Sat: 9am–1pm</p>
+                  </div>
+                </div>
+              </div>
+
+              <div className="contact-next-steps">
+                <h3>What Happens Next</h3>
+                <div className="next-step">
+                  <span className="next-step-num">1</span>
+                  <p>We review your inquiry within <strong>4 business hours</strong></p>
+                </div>
+                <div className="next-step">
+                  <span className="next-step-num">2</span>
+                  <p>We send a scoping questionnaire or schedule a call</p>
+                </div>
+                <div className="next-step">
+                  <span className="next-step-num">3</span>
+                  <p>You receive a <strong>fixed-price proposal</strong> within 3 business days</p>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </section>
-
-
     </div>
   );
 };

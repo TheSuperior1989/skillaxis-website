@@ -1,114 +1,155 @@
 .featured-projects {
-  padding: 100px 0;
-  background-color: #fff;
+  padding: 96px 0;
+  background: var(--bg-secondary);
+  border-top: 1px solid var(--border);
+  border-bottom: 1px solid var(--border);
 }
 
-.projects-grid {
+/* ── Zigzag list ─────────────────────────────────────────────── */
+.fp-list {
+  display: flex;
+  flex-direction: column;
+  gap: 48px;
+  margin-bottom: 56px;
+}
+
+.fp-item {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
-  gap: 30px;
-  margin-bottom: 50px;
+  grid-template-columns: 1fr 1fr;
+  gap: 56px;
+  align-items: center;
 }
 
-.project-card {
-  background-color: #fff;
+/* Reversed: image right, content left */
+.fp-item--reversed {
+  direction: rtl;
+}
+.fp-item--reversed > * {
+  direction: ltr;
+}
+
+/* ── Image ───────────────────────────────────────────────────── */
+.fp-img-wrap {
   border-radius: 10px;
   overflow: hidden;
-  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
-  transition: all 0.3s ease;
+  border: 1px solid var(--border);
+  aspect-ratio: 4 / 3;
 }
 
-.project-card:hover {
-  transform: translateY(-10px);
-  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
-}
-
-.project-image {
-  position: relative;
-  height: 250px;
-  overflow: hidden;
-}
-
-.project-image img {
+.fp-img {
   width: 100%;
   height: 100%;
   object-fit: cover;
+  display: block;
   transition: transform 0.5s ease;
 }
 
-.project-card:hover .project-image img {
-  transform: scale(1.1);
+.fp-item:hover .fp-img {
+  transform: scale(1.04);
 }
 
-.project-overlay {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: rgba(26, 26, 46, 0.8);
+/* ── Content ─────────────────────────────────────────────────── */
+.fp-content {
   display: flex;
-  align-items: center;
-  justify-content: center;
-  opacity: 0;
-  transition: opacity 0.3s ease;
+  flex-direction: column;
+  gap: 16px;
 }
 
-.project-card:hover .project-overlay {
-  opacity: 1;
-}
-
-.project-link {
+.fp-tag {
   display: inline-block;
-  padding: 12px 30px;
-  background: linear-gradient(90deg, #4361ee, #3a86ff);
-  color: #fff;
-  text-decoration: none;
-  border-radius: 50px;
-  font-weight: 600;
-  transform: translateY(20px);
-  transition: all 0.3s ease;
-}
-
-.project-card:hover .project-link {
-  transform: translateY(0);
-}
-
-.project-content {
-  padding: 25px;
-}
-
-.project-category {
-  display: inline-block;
-  font-size: 0.9rem;
-  color: #4361ee;
-  font-weight: 600;
-  margin-bottom: 10px;
-}
-
-.project-title {
-  font-size: 1.5rem;
+  font-size: 0.7rem;
   font-weight: 700;
-  margin-bottom: 15px;
-  color: #1a1a2e;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--accent);
+  background: var(--accent-dim);
+  border: 1px solid var(--accent-dim);
+  padding: 4px 10px;
+  border-radius: 4px;
+  width: fit-content;
 }
 
-.project-description {
-  color: #666;
-  line-height: 1.6;
+.fp-title {
+  font-size: clamp(1.25rem, 2.5vw, 1.6rem);
+  font-weight: 800;
+  color: #ffffff;
+  line-height: 1.25;
+  margin: 0;
+  letter-spacing: -0.02em;
 }
 
-.projects-cta {
+.fp-row {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.fp-label {
+  font-size: 0.65rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+}
+
+.fp-row p {
+  font-size: 0.9rem;
+  color: var(--text-secondary);
+  line-height: 1.65;
+  margin: 0;
+}
+
+.fp-row--result .fp-label {
+  color: var(--success);
+}
+
+.fp-row--result p {
+  color: var(--text-primary);
+}
+
+.fp-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--accent);
+  text-decoration: none;
+  transition: gap 0.2s ease;
+  margin-top: 4px;
+}
+
+.fp-link:hover {
+  gap: 12px;
+  color: var(--accent);
+}
+
+/* ── CTA ─────────────────────────────────────────────────────── */
+.fp-cta {
   text-align: center;
-  margin-top: 30px;
 }
 
-@media screen and (max-width: 768px) {
-  .featured-projects {
-    padding: 70px 0;
+/* ── Divider between items ───────────────────────────────────── */
+.fp-list .fp-item + .fp-item {
+  padding-top: 48px;
+  border-top: 1px solid var(--border);
+}
+
+/* ── Responsive ──────────────────────────────────────────────── */
+@media (max-width: 860px) {
+  .fp-item,
+  .fp-item--reversed {
+    grid-template-columns: 1fr;
+    direction: ltr;
+    gap: 28px;
   }
 
-  .projects-grid {
-    grid-template-columns: 1fr;
+  .fp-img-wrap {
+    aspect-ratio: 16 / 9;
   }
+}
+
+@media (max-width: 560px) {
+  .fp-list { gap: 36px; }
+  .fp-list .fp-item + .fp-item { padding-top: 36px; }
 }
