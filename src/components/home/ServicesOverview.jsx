@@ -39,8 +39,8 @@ const services = [
     id: 'cad',
     icon: faDraftingCompass,
     tag: 'Engineering',
-    title: 'CAD Drafting',
-    description: 'Mechanical 2D and 3D drawings to manufacturing standard. Fusion 360, AutoCAD, and SolidWorks workflows.',
+    title: 'CAD Drafting & Patent Drawings',
+    description: 'Autodesk Inventor design and drawings to manufacturing standard — plant layouts, machine parts, and patent drawing sets. Photoreal renders in Twinmotion.',
     link: '/cad-design-drafting',
     image: imgCad,
   },
@@ -58,7 +58,7 @@ const services = [
     icon: faCode,
     tag: 'Digital',
     title: 'Web & Software',
-    description: 'From a R1,500 single-page site to a full custom web app. Fast, SEO-ready, and built to convert visitors into clients.',
+    description: 'From a R1,500 single-page site to the full management system a workshop runs on daily — job cards, inventory, bookings. Built and proven in production.',
     link: '/web-software-engineering',
     image: imgWeb,
   },
@@ -80,7 +80,7 @@ const ServicesOverview = () => (
         <span className="section-tag">What We Do</span>
         <h2 className="section-title">Engineering &amp; Digital Services</h2>
         <p className="section-subtitle">
-          From CNC retrofits to custom web apps — one team, six disciplines, zero outsourcing.
+          Design it, draw it, machine it, and build the software that runs it — the whole chain from one engineer, no outsourcing.
         </p>
       </div>
 

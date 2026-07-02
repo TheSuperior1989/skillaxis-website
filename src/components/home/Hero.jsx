@@ -34,20 +34,20 @@ const Hero = () => (
         >
           <span className="hero-tag">Pretoria, South Africa</span>
           <h1 className="hero-title">
-            Precision Engineering.<br />
-            <span className="hero-accent">Digital Solutions.</span><br />
-            Built to Perform.
+            From CAD file<br />
+            <span className="hero-accent">to cut metal</span><br />
+            to running code.
           </h1>
           <p className="hero-subtitle">
-            CNC conversions, automation retrofits, CAD drafting, custom machinery design, and web development — from one technical team in Pretoria.
+            Design, drawings, G-code, machining, and the software that runs the business — one engineer who does the whole chain, not an agency that quotes it. The systems we build run a working turbocharger workshop every day.
           </p>
           <div className="hero-buttons">
-            <Link to="/services" className="btn btn-primary">
-              View Services
-            </Link>
-            <a href={WA_URL} target="_blank" rel="noopener noreferrer" className="btn btn-ghost">
+            <a href={WA_URL} target="_blank" rel="noopener noreferrer" className="btn btn-primary">
               WhatsApp Us
             </a>
+            <Link to="/portfolio" className="btn btn-ghost">
+              See Real Work
+            </Link>
           </div>
         </motion.div>
       </div>
