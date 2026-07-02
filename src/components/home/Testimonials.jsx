@@ -10,10 +10,10 @@ const trustSignals = [
 ];
 
 const proofStats = [
-  { value: '9,400+', label: 'CAD files designed and drawn in Autodesk Inventor' },
+  { value: '9,400+', label: 'parts and assemblies designed and drawn' },
   { value: '1 workshop', label: 'runs its daily job cards, inventory and wash bay on our software' },
   { value: '~R28', label: 'per lead on a live Google Ads campaign we manage' },
-  { value: '1 CNC', label: 'built from scratch — we machine on what we engineer' },
+  { value: 'CNCs', label: 'built from scratch — we machine on what we engineer' },
 ];
 
 const Testimonials = () => {

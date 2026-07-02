@@ -40,7 +40,7 @@ const services = [
     icon: faDraftingCompass,
     tag: 'Engineering',
     title: 'CAD Drafting & Patent Drawings',
-    description: 'Autodesk Inventor design and drawings to manufacturing standard — plant layouts, machine parts, and patent drawing sets. Photoreal renders in Twinmotion.',
+    description: '3D design and drawings to manufacturing standard — plant layouts, machine parts, and patent drawing sets. Photoreal renders when the design needs to sell itself.',
     link: '/cad-design-drafting',
     image: imgCad,
   },
