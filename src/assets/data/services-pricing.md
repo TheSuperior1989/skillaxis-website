@@ -32,7 +32,7 @@ Optional add-ons to support your overall brand image.
 | **Brochure (Z-Fold)** | Custom brochure design | Starting from R2,590 |
 | **Poster Design** | A4 to A0 sizes available | Starting from R1,560 |
 | **Company Profile** | Professional company profile design | R780 per page |
-| **Flyer Design** | A6–A4 sizes available | Starting from R780 |
+| **Flyer Design** | A6-A4 sizes available | Starting from R780 |
 | **PowerPoint Presentation** | Custom template design | R3,230 |
 
 ## Web Design & Development Services
@@ -44,7 +44,7 @@ Our web design packages are designed to be fully custom, responsive, and include
 | Package | Description | Price |
 |---------|-------------|-------|
 | **Basic Website Package** | Up to 5 custom-designed pages (Home, About, Services/Products, Contact, etc.), responsive design, basic SEO integration and contact form | R4,500 |
-| **Standard Business Website** | 6–10 pages, custom design with a CMS (e.g. WordPress) for easy updates, integration of social media links, basic blog setup, and enhanced SEO | R7,500 |
+| **Standard Business Website** | 6-10 pages, custom design with a CMS (e.g. WordPress) for easy updates, integration of social media links, basic blog setup, and enhanced SEO | R7,500 |
 | **Corporate/Custom Website** | Up to 20 pages with advanced features (custom functionality, higher-level SEO, multimedia integration) | R12,000 |
 | **E-commerce Website** | Up to 30 pages, integrated payment gateway, product catalog, and shopping cart | R15,000 |
 

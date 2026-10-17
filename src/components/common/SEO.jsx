@@ -6,7 +6,7 @@ const DEFAULT_IMAGE = `${BASE_URL}/skillaxis-social-preview.svg`;
 const SEO = ({ title, description, canonical, ogImage, schema }) => {
   const fullTitle = title
     ? `${title} | SkillAxis Dynamics`
-    : 'SkillAxis Dynamics — CNC Conversions, Automation & Engineering Solutions, Pretoria';
+    : 'SkillAxis Dynamics | Engineering, CNC, Drawings and Workshop Software, Pretoria';
 
   const canonicalUrl = canonical ? `${BASE_URL}${canonical}` : BASE_URL;
   const image = ogImage || DEFAULT_IMAGE;

@@ -23,7 +23,7 @@ export const sendContactForm = async (formData) => {
     console.error('EmailJS is not configured. Please check EMAIL_SETUP_GUIDE.md');
     return {
       success: false,
-      message: 'Email service not configured. Please contact us directly at info@skillaxisdynamics.co.za or call +27 12 345 6789.'
+      message: 'Email service not configured. Please contact us directly at info@skillaxisdynamics.co.za or WhatsApp 078 296 4786.'
     };
   }
 
@@ -50,7 +50,7 @@ export const sendContactForm = async (formData) => {
     console.error('Error sending contact form:', error);
     return {
       success: false,
-      message: 'Failed to send message. Please contact us directly at info@skillaxisdynamics.co.za or call +27 12 345 6789.'
+      message: 'Failed to send message. Please contact us directly at info@skillaxisdynamics.co.za or WhatsApp 078 296 4786.'
     };
   }
 };
@@ -61,7 +61,7 @@ export const sendQuoteRequest = async (selectedServices, contactInfo) => {
     console.error('EmailJS is not configured. Please check EMAIL_SETUP_GUIDE.md');
     return {
       success: false,
-      message: 'Email service not configured. Please contact us directly at info@skillaxisdynamics.co.za or call +27 12 345 6789.'
+      message: 'Email service not configured. Please contact us directly at info@skillaxisdynamics.co.za or WhatsApp 078 296 4786.'
     };
   }
 
@@ -97,7 +97,7 @@ export const sendQuoteRequest = async (selectedServices, contactInfo) => {
     console.error('Error sending quote request:', error);
     return {
       success: false,
-      message: 'Failed to send quote request. Please contact us directly at info@skillaxisdynamics.co.za or call +27 12 345 6789.'
+      message: 'Failed to send quote request. Please contact us directly at info@skillaxisdynamics.co.za or WhatsApp 078 296 4786.'
     };
   }
 };

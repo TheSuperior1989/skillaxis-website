@@ -1,188 +1,147 @@
 import { Link } from 'react-router-dom';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faWhatsapp } from '@fortawesome/free-brands-svg-icons';
 import SEO from '../common/SEO';
-import '../cnc-conversions/CNCConversionsPage.css';
+import ProjectVisual from '../common/ProjectVisual';
+import {
+  PageHero, PainGrid, Deliverables, Steps, PriceBlock, FaqSection, CtaSection, SectionHeader,
+} from '../common/ServiceBlocks';
+import { faqSchemaFrom, serviceSchema } from '../../data/schema';
+import { getProject } from '../../data/projects';
+import './WebSoftwarePage.css';
 
-const WA_URL = 'https://wa.me/27782964786?text=' + encodeURIComponent('Hi, I need a quote for a web or software development project.');
+const SERVICE = 'Website or Business Software';
+const WA = 'Hi, I need a website or business system. Here is what I have in mind:';
 
-const faqData = [
-  { q: 'How much does a website cost in South Africa?', a: 'A single-page business website starts from R1,500. A standard multi-page business website with contact forms and CMS ranges from R6,000 to R18,000. E-commerce stores start from R12,000. Custom web applications (booking systems, portals, dashboards) start from R25,000. We provide a fixed-price quote for every project.' },
-  { q: 'How long does it take to build a website?', a: 'A single-page site typically takes 3–5 working days. A standard multi-page business website takes 2–4 weeks. E-commerce and custom applications take 4–12 weeks depending on complexity. We provide a timeline in your quote and stick to it.' },
-  { q: 'Do you build websites that work on mobile?', a: 'Yes. Every website we build is fully responsive — it adapts to mobile phones, tablets, and desktops automatically. We test on multiple devices and screen sizes before delivery.' },
-  { q: 'Will my website show up on Google?', a: 'We build every site with basic on-page SEO — meta titles, descriptions, structured data, sitemap, robots.txt, and fast loading performance. For ongoing SEO campaigns, we can recommend additional services.' },
-  { q: 'What do I get after the project is complete?', a: 'You receive full ownership of the website, source code, hosting credentials, and domain (if we registered it). We provide a handover document and 30 days of post-launch support for bug fixes.' },
+const SHOWCASE = ['workshop-app', 'inventory', 'programme-system', 'booking'];
+
+const faqs = [
+  {
+    q: 'How much does a website cost?',
+    a: 'A single-page business website starts from R1,500. Multi-page business sites start from R6,000, online stores from R12,000 and custom business systems from R25,000. You get a fixed price before we start.',
+  },
+  {
+    q: 'How long does it take?',
+    a: 'A single-page site usually takes about a week once we have your content. Multi-page sites take a few weeks. Custom systems are planned in stages, with a timeline in your quote.',
+  },
+  {
+    q: 'Will it work on phones and show up on Google?',
+    a: 'Yes. Every site is built mobile-first, loads fast and is set up with page titles, descriptions, structured data and a sitemap so Google can find it. Pair it with Google Ads if you need calls quickly.',
+  },
+  {
+    q: 'Can you build a system like the workshop or inventory apps for my business?',
+    a: 'Yes. Those systems handle job cards, stock, quotes, invoices and bookings for real businesses every day. If you run a job-card workshop, see our ready-made Workshop Management System first, it is faster and cheaper than a custom build.',
+  },
+  {
+    q: 'Do I own it?',
+    a: 'Yes. Your domain, your content and your site are yours. We can host and maintain it for a monthly fee, or hand it over.',
+  },
 ];
 
 const WebSoftwarePage = () => (
   <div className="service-page">
     <SEO
-      title="Web & Software Engineering Services — South Africa | From R1,500"
-      description="Custom websites, web applications, and software development in South Africa. Single-page sites from R1,500. E-commerce, custom apps, and enterprise software. SkillAxis Dynamics, Pretoria."
+      title="Websites and Business Software | From R1,500 | Pretoria, South Africa"
+      description="Business websites from R1,500, and custom software for inventory, job cards, bookings, quotes and invoices. Systems we built run real South African businesses every day. SkillAxis Dynamics, Pretoria."
       canonical="/web-software-engineering"
-      schema={{
-        '@context': 'https://schema.org',
-        '@type': 'Service',
-        name: 'Web and Software Engineering',
-        provider: { '@type': 'LocalBusiness', name: 'SkillAxis Dynamics' },
-        areaServed: 'South Africa',
-        description: 'Custom web development, web applications, and software engineering in South Africa.',
-      }}
+      schema={[
+        faqSchemaFrom(faqs),
+        serviceSchema('Web and software development', 'Business websites and custom business software for South African companies.', '1500'),
+      ]}
     />
 
-    <section className="sp-hero">
-      <div className="container">
-        <span className="page-hero-tag">Web & Software Engineering · South Africa</span>
-        <h1>Web &amp; Software Engineering Services — South Africa</h1>
-        <p>Fast, professional websites and custom software solutions. From a single-page business site to a complex web application — we build what you need, priced fairly, delivered on time.</p>
-        <div className="sp-hero-actions">
-          <Link to="/quote" className="btn btn-cta">Get a Quote</Link>
-          <a href={WA_URL} target="_blank" rel="noopener noreferrer" className="btn btn-ghost">
-            <FontAwesomeIcon icon={faWhatsapp} /> WhatsApp Us
-          </a>
-        </div>
-        <div className="sp-hero-meta">
-          <span>From R1,500</span><span className="sp-meta-div">·</span>
-          <span>React · Node.js · Python</span><span className="sp-meta-div">·</span>
-          <span>Mobile-first, SEO-ready</span>
-        </div>
-      </div>
-    </section>
+    <PageHero
+      tag="Websites · Business software · Pretoria"
+      title="Websites that bring in work, and software your staff actually use."
+      intro="From a R1,500 single-page site to the system a business runs on every day. Our software handles job cards, inventory, quotes, invoices and bookings for real South African businesses right now."
+      meta={['Sites from R1,500', 'Systems in daily production use', 'Mobile-first and fast', 'Hosting and support available']}
+      service={SERVICE}
+      waMessage={WA}
+    />
 
-    <section className="sp-section">
-      <div className="container">
-        <div className="section-header">
-          <span className="section-tag">The Problem</span>
-          <h2 className="section-title">Why Clients Need Better Digital Solutions</h2>
-        </div>
-        <div className="sp-pain-grid">
-          <div className="sp-pain-card"><span className="sp-pain-num">01</span><h3>Your current website doesn't generate leads</h3><p>A website that doesn't convert visitors into inquiries is just a cost centre. We build sites architected around conversion — clear messaging, strong CTAs, and fast performance.</p></div>
-          <div className="sp-pain-card"><span className="sp-pain-num">02</span><h3>You're managing business processes manually or in spreadsheets</h3><p>Quoting, job tracking, invoicing, inventory — if you're doing it in spreadsheets or on paper, a custom web application can automate and streamline it significantly.</p></div>
-          <div className="sp-pain-card"><span className="sp-pain-num">03</span><h3>Your website is slow, broken, or doesn't show on Google</h3><p>Slow load times, broken mobile layouts, and poor SEO directly cost you business. We fix these — or build from scratch if the existing site isn't worth saving.</p></div>
-        </div>
-      </div>
-    </section>
+    <PainGrid
+      title="Sound familiar?"
+      items={[
+        { title: 'Your website does not bring in calls', text: 'It looks fine but nobody phones. We build pages around what your customers search for, with a clear way to contact you on every screen.' },
+        { title: 'The business runs on spreadsheets', text: 'Stock, quotes, invoices and jobs live in five spreadsheets and someone\'s head. A proper system puts them in one place.' },
+        { title: 'Software that nobody uses', text: 'Off-the-shelf systems built for someone else\'s business get abandoned. We build around how your people already work.' },
+      ]}
+    />
 
     <section className="sp-section sp-alt">
       <div className="container">
-        <div className="section-header">
-          <span className="section-tag">Services</span>
-          <h2 className="section-title">Web &amp; Software Offerings</h2>
-        </div>
-        <div className="sp-two-col">
-          <div>
-            <p className="sp-lead">We build websites that rank, load fast, and convert — and custom software that solves real business problems.</p>
-            <ul className="sp-list">
-              <li>Single-page business websites (from R1,500)</li>
-              <li>Multi-page business websites with CMS</li>
-              <li>E-commerce stores (WooCommerce, custom)</li>
-              <li>Custom web applications and portals</li>
-              <li>Business automation and workflow tools</li>
-              <li>REST API development and integration</li>
-              <li>Mobile-responsive redesigns</li>
-              <li>SEO technical optimisation</li>
-              <li>Website speed and performance audits</li>
-            </ul>
-            <div style={{ marginTop: '20px' }}>
-              <p style={{ color: 'var(--text-muted)', fontSize: '0.85rem', marginBottom: '4px' }}>Also available as part of our full digital service:</p>
-              <ul className="sp-list">
-                <li>Graphic design and brand identity</li>
-                <li>Social media marketing and management</li>
-                <li>Content creation and copywriting</li>
-              </ul>
-            </div>
-          </div>
-          <div className="sp-highlight-box">
-            <h3>Technologies We Use</h3>
-            <div className="sp-tech-list">
-              <span>React</span><span>Next.js</span><span>Node.js</span>
-              <span>Python</span><span>WordPress</span><span>WooCommerce</span>
-              <span>PostgreSQL</span><span>MongoDB</span><span>Vite</span>
-              <span>Tailwind CSS</span><span>EmailJS</span><span>Vercel</span>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section className="sp-section">
-      <div className="container">
-        <div className="section-header">
-          <span className="section-tag">Process</span>
-          <h2 className="section-title">How We Build</h2>
-        </div>
-        <div className="process-grid">
-          <div className="process-step"><div className="process-number">01</div><h3>Discovery &amp; Brief</h3><p>We understand your business, target audience, goals, and technical requirements. We ask the questions that ensure we build the right thing — not just what you described.</p></div>
-          <div className="process-step"><div className="process-number">02</div><h3>Design &amp; Prototype</h3><p>We produce wireframes or design mockups for your approval before writing code. You know exactly what you're getting before we build it.</p></div>
-          <div className="process-step"><div className="process-number">03</div><h3>Build &amp; Test</h3><p>Development in sprints with regular progress updates. Full testing across devices, browsers, and screen sizes before delivery.</p></div>
-          <div className="process-step"><div className="process-number">04</div><h3>Launch &amp; Support</h3><p>We deploy to production, configure hosting and DNS, submit to Google Search Console, and provide 30 days post-launch support.</p></div>
-        </div>
-      </div>
-    </section>
-
-    <section className="sp-section sp-alt">
-      <div className="container sp-case-container">
-        <div className="section-header">
-          <span className="section-tag">Real Project</span>
-          <h2 className="section-title">Engineering Firm Website — Cape Town</h2>
-        </div>
-        <div className="sp-case-grid">
-          <div className="sp-case-block"><span className="sp-case-label">The Problem</span><p>A Cape Town structural engineering firm had a 2015 WordPress site that was loading in 8+ seconds, not ranking on Google, and generating zero online inquiries. Their competitors were winning work through their online presence.</p></div>
-          <div className="sp-case-block"><span className="sp-case-label">The Solution</span><p>Complete rebuild in React with Vite. New content architecture focused on their key services. On-page SEO, schema markup, sitemap, and Google Search Console setup. Static site generation for optimal performance.</p></div>
-          <div className="sp-case-block sp-result"><span className="sp-case-label">The Result</span><p>Load time reduced from 8.2s to under 1.5s. Ranked on page 1 of Google for 3 target keywords within 90 days. 4 qualified project inquiries generated in the first month after launch.</p></div>
-        </div>
-      </div>
-    </section>
-
-    <section className="sp-section">
-      <div className="container">
-        <div className="section-header">
-          <span className="section-tag">Pricing</span>
-          <h2 className="section-title">Website &amp; Software Pricing</h2>
-        </div>
-        <div className="pricing-highlight">
-          <p className="price-from">Single-page website from</p>
-          <div className="price-amount">R1,500</div>
-          <p>Multi-page business sites from R6,000. E-commerce from R12,000. Custom web applications from R25,000. Fixed-price quotes — no hidden costs.</p>
-          <Link to="/quote" className="btn btn-cta">Get Your Quote</Link>
-        </div>
-        <div className="sp-pricing-factors" style={{ textAlign: 'center', maxWidth: '640px' }}>
-          <Link to="/pricing" style={{ color: 'var(--accent)', fontSize: '0.9rem' }}>
-            View full pricing breakdown →
-          </Link>
-        </div>
-      </div>
-    </section>
-
-    <section className="sp-section sp-alt">
-      <div className="container">
-        <div className="section-header">
-          <span className="section-tag">FAQ</span>
-          <h2 className="section-title">Common Questions</h2>
-        </div>
-        <div className="faq-list">
-          {faqData.map((faq, i) => (
-            <div key={i} className="faq-item">
-              <h3>{faq.q}</h3>
-              <p>{faq.a}</p>
+        <SectionHeader tag="Running in production" title="Systems we built, in daily use" />
+        <div className="web-showcase">
+          {SHOWCASE.map(getProject).map((p) => (
+            <div key={p.id} className="web-card">
+              <div className="web-card-visual"><ProjectVisual variant={p.visual} /></div>
+              <div className="web-card-body">
+                <span className="web-card-metric">{p.metric}</span>
+                <h3>{p.title}</h3>
+                <p className="web-card-client">{p.client}</p>
+                <p>{p.result}</p>
+              </div>
             </div>
           ))}
         </div>
-      </div>
-    </section>
-
-    <section className="cta-section">
-      <div className="container">
-        <h2>Ready to Build Something?</h2>
-        <p>Tell us what you need — website, app, or software tool. We'll quote it within 24 hours.</p>
-        <div className="cta-buttons">
-          <Link to="/quote" className="btn btn-cta">Get a Quote</Link>
-          <a href={WA_URL} target="_blank" rel="noopener noreferrer" className="btn btn-ghost">
-            <FontAwesomeIcon icon={faWhatsapp} /> WhatsApp Us
-          </a>
+        <div className="sb-center">
+          <Link to="/workshop-software" className="btn btn-primary">Run a workshop? See the Workshop Management System</Link>
         </div>
       </div>
     </section>
+
+    <Deliverables
+      alt={false}
+      title="What we build"
+      items={[
+        'Single-page and multi-page business websites',
+        'Online stores and product catalogues',
+        'Inventory, quoting and invoicing systems',
+        'Job card and workshop systems',
+        'Booking and reservation systems',
+        'Customer portals and dashboards',
+        'Landing pages for Google Ads campaigns',
+        'Project and programme control systems',
+        'Job tracking and certificate systems',
+        'Interactive proposal sites with a live quote builder',
+      ]}
+      sideTitle="Every website includes"
+      sideItems={[
+        'Mobile-first design',
+        'Contact form, click-to-call and WhatsApp buttons',
+        'Page titles, descriptions and structured data for Google',
+        'Fast loading',
+        'Help getting your domain and email set up',
+      ]}
+    />
+
+    <Steps
+      title="How we build"
+      alt
+      steps={[
+        { title: 'Brief', text: 'What the business does, who the customers are and what the site or system must achieve.' },
+        { title: 'Fixed price', text: 'Scope, pages or features, timeline and price in writing.' },
+        { title: 'Build and review', text: 'You see it working early and give feedback before launch.' },
+        { title: 'Launch and support', text: 'Live on your domain, with hosting and support available monthly.' },
+      ]}
+    />
+
+    <PriceBlock
+      service={SERVICE}
+      tiers={[
+        { label: 'Single-page website', price: 'From R1,500', text: 'One page: services, about, contact form and WhatsApp button.', featured: true },
+        { label: 'Multi-page website', price: 'From R6,000', text: 'Five to eight pages, contact forms and search setup.' },
+        { label: 'Online store', price: 'From R12,000', text: 'Product catalogue, cart and payment gateway.' },
+        { label: 'Business system', price: 'From R25,000', text: 'Inventory, bookings, quotes, invoices or portals, quoted per scope.' },
+      ]}
+    />
+
+    <FaqSection faqs={faqs} />
+
+    <CtaSection
+      title="Tell us what you need built"
+      text="A website, an online store or a system to replace the spreadsheets. Two lines on WhatsApp is enough to start."
+      service={SERVICE}
+      waMessage={WA}
+    />
   </div>
 );
 

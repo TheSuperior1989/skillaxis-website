@@ -1,323 +1,124 @@
-import { Link } from 'react-router-dom';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faWhatsapp } from '@fortawesome/free-brands-svg-icons';
 import SEO from '../common/SEO';
+import {
+  PageHero, PainGrid, Deliverables, Steps, ProofBlock, PriceBlock, FaqSection, CtaSection,
+} from '../common/ServiceBlocks';
+import { faqSchemaFrom, serviceSchema } from '../../data/schema';
 import './CNCConversionsPage.css';
 
-const WA_URL = 'https://wa.me/27782964786?text=' + encodeURIComponent('Hi, I need a quote for a CNC conversion project.');
+const SERVICE = 'CNC Conversion';
+const WA = 'Hi, I would like a quote for a CNC conversion or CNC programming. Here are photos of the machine:';
 
-const faqSchema = {
-  '@context': 'https://schema.org',
-  '@type': 'FAQPage',
-  mainEntity: [
-    {
-      '@type': 'Question',
-      name: 'How much does a CNC conversion cost in South Africa?',
-      acceptedAnswer: {
-        '@type': 'Answer',
-        text: 'CNC conversions in South Africa typically start from R25,000 for a basic mill or lathe retrofit. Complex conversions with servo drives, closed-loop feedback, and custom control panels range from R45,000 to R80,000+. The final cost depends on machine size, age, required precision, and scope of work.',
-      },
-    },
-    {
-      '@type': 'Question',
-      name: 'How long does a CNC conversion take?',
-      acceptedAnswer: {
-        '@type': 'Answer',
-        text: 'A standard mill or lathe CNC conversion takes 3–6 weeks from project kick-off to commissioning. Complex builds with custom control panels or servo tuning may take 8–12 weeks. We provide a detailed timeline during the scoping phase.',
-      },
-    },
-    {
-      '@type': 'Question',
-      name: 'Which machines can be CNC converted?',
-      acceptedAnswer: {
-        '@type': 'Answer',
-        text: 'We convert Bridgeport-style mills, Harrison and Colchester lathes, South Bend lathes, toolroom lathes, knee mills, and most manual machine tools. We assess each machine individually to confirm suitability and identify any structural limitations.',
-      },
-    },
-    {
-      '@type': 'Question',
-      name: 'What control system do you use for CNC conversions?',
-      acceptedAnswer: {
-        '@type': 'Answer',
-        text: 'We primarily use LinuxCNC (open-source, industry-proven) and GRBL for smaller machines. For clients requiring commercial controllers, we can integrate Mach4 or similar. All systems are fully commissioned and tested before handover.',
-      },
-    },
-    {
-      '@type': 'Question',
-      name: 'Do you offer a warranty on CNC conversions?',
-      acceptedAnswer: {
-        '@type': 'Answer',
-        text: 'Yes. We offer a 6-month warranty on all components we supply and install. This covers servo drives, motors, control systems, and wiring. The host machine\'s mechanical components fall under their existing condition at time of conversion.',
-      },
-    },
-  ],
-};
-
-const serviceSchema = {
-  '@context': 'https://schema.org',
-  '@type': 'Service',
-  name: 'CNC Mill and Lathe Conversions',
-  provider: {
-    '@type': 'LocalBusiness',
-    name: 'SkillAxis Dynamics',
-    address: { '@type': 'PostalAddress', addressLocality: 'Pretoria', addressCountry: 'ZA' },
+const faqs = [
+  {
+    q: 'How much does a CNC conversion cost in South Africa?',
+    a: 'A conversion starts from about R25,000 for a smaller machine. The final price depends on the number of axes, the size and condition of the machine, the drives you choose and whether you need a tool changer or a new control panel. You get a fixed price in writing after we have seen the machine.',
   },
-  areaServed: 'South Africa',
-  description: 'Professional CNC conversion of manual mills and lathes. Servo drives, LinuxCNC control systems, and full commissioning in Pretoria, South Africa.',
-  offers: { '@type': 'Offer', price: '25000', priceCurrency: 'ZAR', priceSpecification: { '@type': 'UnitPriceSpecification', price: '25000', priceCurrency: 'ZAR', description: 'Starting price for basic CNC conversion' } },
-};
+  {
+    q: 'Which machines can be converted?',
+    a: 'Most manual mills and lathes in reasonable mechanical condition. We assess each machine from photos and a visit, and tell you honestly if it is not worth converting.',
+  },
+  {
+    q: 'Do you only do conversions, or also programming?',
+    a: 'Both. We write CAM and G-code for production parts and can program parts remotely for machine shops that already have CNC machines but no programmer.',
+  },
+  {
+    q: 'How long does a conversion take?',
+    a: 'Most conversions take a few weeks from approval, depending on parts lead times and the condition of the machine. You get a realistic timeline with the quote.',
+  },
+  {
+    q: 'Do you train our operator?',
+    a: 'Yes. Commissioning includes running test programs with your operator and handing over the setup notes for the machine.',
+  },
+];
 
 const CNCConversionsPage = () => (
   <div className="service-page">
     <SEO
-      title="CNC Mill & Lathe Conversions in South Africa — From R25,000"
-      description="Professional CNC conversion of manual mills and lathes. Servo drives, LinuxCNC, full commissioning. Serving Pretoria, Johannesburg, and across South Africa. Get a quote today."
+      title="CNC Mill and Lathe Conversions and G-code Programming | Pretoria, South Africa"
+      description="Convert a manual mill or lathe to CNC, add a tool changer, or get production parts programmed. 1,000+ CNC programs written on machines we built ourselves. From R25,000. Pretoria, nationwide."
       canonical="/cnc-conversions"
-      schema={[faqSchema, serviceSchema]}
+      schema={[
+        faqSchemaFrom(faqs),
+        serviceSchema('CNC mill and lathe conversions', 'Conversion of manual mills and lathes to CNC, tool changers and production G-code programming.', '25000'),
+      ]}
     />
 
-    {/* Hero */}
-    <section className="sp-hero">
-      <div className="container">
-        <span className="page-hero-tag">CNC Engineering · Pretoria, South Africa</span>
-        <h1>CNC Mill &amp; Lathe Conversions in South Africa</h1>
-        <p>
-          Transform your manual mill or lathe into a precision CNC machine. We handle everything — servo drives, ballscrew upgrades, control systems, wiring, and full commissioning — so you can run repeatable, accurate parts from day one.
-        </p>
-        <div className="sp-hero-actions">
-          <Link to="/quote" className="btn btn-cta">Get a Quote</Link>
-          <a href={WA_URL} target="_blank" rel="noopener noreferrer" className="btn btn-ghost">
-            <FontAwesomeIcon icon={faWhatsapp} /> WhatsApp Us
-          </a>
-        </div>
-        <div className="sp-hero-meta">
-          <span>From R25,000</span>
-          <span className="sp-meta-div">·</span>
-          <span>Pretoria-based</span>
-          <span className="sp-meta-div">·</span>
-          <span>LinuxCNC &amp; GRBL</span>
-          <span className="sp-meta-div">·</span>
-          <span>6-month warranty</span>
-        </div>
-      </div>
-    </section>
+    <PageHero
+      tag="CNC conversions · CAM and G-code · Pretoria"
+      title="Turn your manual mill or lathe into a CNC production machine."
+      intro="We design the mounting parts, lay out the control panel, fit the drives, commission the machine and write the programs for your parts. The CNC work we quote on runs on machines we converted and built ourselves."
+      meta={['From R25,000', '1,000+ CNC programs written', '56 machining jobs in five months', 'Remote G-code programming']}
+      service={SERVICE}
+      waMessage={WA}
+    />
 
-    {/* Problem */}
-    <section className="sp-section">
-      <div className="container">
-        <div className="section-header">
-          <span className="section-tag">Sound Familiar?</span>
-          <h2 className="section-title">Why Clients Come to Us</h2>
-        </div>
-        <div className="sp-pain-grid">
-          <div className="sp-pain-card">
-            <span className="sp-pain-num">01</span>
-            <h3>Manual tolerances aren't good enough</h3>
-            <p>Your manual machine can't hold the consistency needed for repeat production. Each part requires rework or inspection. CNC eliminates operator variability.</p>
-          </div>
-          <div className="sp-pain-card">
-            <span className="sp-pain-num">02</span>
-            <h3>New CNC machines are cost-prohibitive</h3>
-            <p>A new CNC machining centre costs R500,000+. Your existing manual machine has good bones — converting it costs a fraction and delivers comparable performance for most applications.</p>
-          </div>
-          <div className="sp-pain-card">
-            <span className="sp-pain-num">03</span>
-            <h3>Skilled operators are hard to find and keep</h3>
-            <p>Manual machining requires years of skill development. CNC conversion reduces operator skill dependence and allows you to run with fewer, less specialized staff.</p>
-          </div>
-        </div>
-      </div>
-    </section>
+    <PainGrid
+      title="Why workshops call us"
+      items={[
+        { title: 'A new CNC machine is out of budget', text: 'A good manual machine with solid ways and spindle can often be converted for a fraction of a new CNC machine, and it keeps the iron you already trust.' },
+        { title: 'Repeat parts take forever by hand', text: 'Batches of the same part depend on one skilled machinist and still vary. CNC makes the hundredth part the same as the first.' },
+        { title: 'You have CNC but nobody to program it', text: 'The machine sits idle while you wait for programs. We write production G-code remotely and send it ready to run.' },
+      ]}
+    />
 
-    {/* Solution */}
-    <section className="sp-section sp-alt">
-      <div className="container">
-        <div className="section-header">
-          <span className="section-tag">Our Approach</span>
-          <h2 className="section-title">What We Convert &amp; How</h2>
-        </div>
-        <div className="sp-two-col">
-          <div>
-            <p className="sp-lead">We convert Bridgeport-style mills, Harrison lathes, Colchester lathes, South Bend lathes, toolroom mills, and most manual machine tools — replacing manual axes with servo-driven CNC axes under computer control.</p>
-            <ul className="sp-list">
-              <li>Ballscrew replacement (eliminates backlash)</li>
-              <li>AC or DC servo motor installation per axis</li>
-              <li>LinuxCNC or GRBL control system</li>
-              <li>Custom control panel fabrication</li>
-              <li>VFD spindle speed control</li>
-              <li>Closed-loop encoder feedback</li>
-              <li>Full electrical wiring and earthing</li>
-              <li>CAM software integration (Fusion 360, etc.)</li>
-              <li>Operator training and documentation</li>
-            </ul>
-          </div>
-          <div className="sp-highlight-box">
-            <h3>Technologies We Use</h3>
-            <div className="sp-tech-list">
-              <span>LinuxCNC</span>
-              <span>GRBL</span>
-              <span>Mach4</span>
-              <span>Mesa FPGA cards</span>
-              <span>Yaskawa servos</span>
-              <span>Leadshine servo drives</span>
-              <span>Fusion 360 CAM</span>
-              <span>Ballscrews (precision grade)</span>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
+    <Deliverables
+      title="What a conversion includes"
+      lead="One engineer handles the mechanical design, the electrical layout and the programming, so the machine works as one system."
+      items={[
+        'Machine assessment from photos and a site visit',
+        '3D design of motor, encoder, gearbox and drive mounting parts',
+        'Ballscrew and drive selection matched to your work',
+        'Control panel layout and wiring',
+        'Spindle speed control',
+        'Optional automatic tool changer and electronic lead screw for threading',
+        'Commissioning, test programs and operator training',
+        'Production G-code for your first parts',
+      ]}
+      sideTitle="Also available on its own"
+      sideItems={[
+        'CAM and G-code programming for production parts',
+        'Program fixes and cycle-time improvements',
+        'Fixtures and jigs designed for your CNC',
+        'Drawings for parts you want machined elsewhere',
+        'Fast roughing programs from our own lathe G-code generator',
+      ]}
+    />
 
-    {/* Process */}
-    <section className="sp-section">
-      <div className="container">
-        <div className="section-header">
-          <span className="section-tag">How It Works</span>
-          <h2 className="section-title">Our Conversion Process</h2>
-        </div>
-        <div className="process-grid">
-          <div className="process-step">
-            <div className="process-number">01</div>
-            <h3>Machine Assessment</h3>
-            <p>We inspect your machine in person or via detailed photos/video. We identify structural condition, axis travel, and any remedial work needed before conversion.</p>
-          </div>
-          <div className="process-step">
-            <div className="process-number">02</div>
-            <h3>Scoped Proposal</h3>
-            <p>You receive a detailed quote covering every component, labour, and timeline. No surprises — what we quote is what you pay.</p>
-          </div>
-          <div className="process-step">
-            <div className="process-number">03</div>
-            <h3>Build &amp; Install</h3>
-            <p>We complete mechanical work, electrical installation, and control system configuration. Every axis is tested for accuracy and repeatability.</p>
-          </div>
-          <div className="process-step">
-            <div className="process-number">04</div>
-            <h3>Commission &amp; Train</h3>
-            <p>We commission the machine at your premises, run test programs, and train your operator. Full documentation is provided.</p>
-          </div>
-        </div>
-      </div>
-    </section>
+    <ProofBlock
+      title="A manual lathe, converted and making parts"
+      situation="A client needed a manual lathe turned into a CNC production machine, and the parts it had to make programmed and running."
+      work="Designed every mounting part for the conversion (servo, encoder, gearbox and drive brackets), laid out the control panel, then wrote the G-code for bushes with copper inserts, feed pistons, threaded glands and pulleys."
+      result="A working CNC lathe producing the client's own parts. Design, drawings, programming and commissioning from one engineer."
+      link={{ to: '/case-studies', label: 'More CNC and machining projects' }}
+    />
 
-    {/* Case study */}
-    <section className="sp-section sp-alt">
-      <div className="container sp-case-container">
-        <div className="section-header">
-          <span className="section-tag">Real Project</span>
-          <h2 className="section-title">Harrison L5 Lathe Conversion — Johannesburg</h2>
-        </div>
-        <div className="sp-case-grid">
-          <div className="sp-case-block">
-            <span className="sp-case-label">The Problem</span>
-            <p>A Johannesburg precision engineering workshop had a Harrison L5 lathe in excellent mechanical condition but could no longer hold tolerances for medical component production. Manual operation was causing ±0.05mm variance on repeat runs.</p>
-          </div>
-          <div className="sp-case-block">
-            <span className="sp-case-label">The Solution</span>
-            <p>Full 2-axis CNC conversion with Leadshine AC servo drives, 5mm pitch ballscrews on both axes, LinuxCNC control system, and a custom 15" touchscreen control panel. VFD-controlled spindle with RPM readout.</p>
-          </div>
-          <div className="sp-case-block sp-result">
-            <span className="sp-case-label">The Result</span>
-            <p>Repeatability improved to ±0.008mm. Production throughput increased by 40%. The operator now runs parts from G-code programs, eliminating the need for a senior machinist on every run.</p>
-          </div>
-        </div>
-      </div>
-    </section>
+    <Steps
+      title="How a conversion runs"
+      steps={[
+        { title: 'Photos and assessment', text: 'Send photos of the machine and the parts you want to make. We check suitability, then visit if it is worth converting.' },
+        { title: 'Fixed-price proposal', text: 'Parts, design, installation and travel as separate fixed lines, with a realistic timeline.' },
+        { title: 'Design and build', text: 'Mounting parts designed and machined, drives and panel fitted, every axis tested.' },
+        { title: 'Commission and train', text: 'Test programs on your machine, operator training and the first production programs handed over.' },
+      ]}
+    />
 
-    {/* Pricing */}
-    <section className="sp-section">
-      <div className="container">
-        <div className="section-header">
-          <span className="section-tag">Investment</span>
-          <h2 className="section-title">What a CNC Conversion Costs</h2>
-        </div>
-        <div className="pricing-highlight">
-          <p className="price-from">Starting from</p>
-          <div className="price-amount">R25,000</div>
-          <p>Full CNC conversion including servo drives, ballscrews, LinuxCNC control system, control panel fabrication, wiring, commissioning, and operator training.</p>
-          <Link to="/quote" className="btn btn-cta">Get Your Specific Quote</Link>
-        </div>
-        <div className="sp-pricing-factors">
-          <h3>What affects the final cost?</h3>
-          <ul className="sp-list">
-            <li>Number of axes (2-axis lathe vs 3-axis mill)</li>
-            <li>Machine size and existing mechanical condition</li>
-            <li>Servo system specification (stepper vs closed-loop servo)</li>
-            <li>Control panel complexity</li>
-            <li>Travel distance for on-site work</li>
-            <li>Remedial mechanical work required</li>
-          </ul>
-        </div>
-      </div>
-    </section>
+    <PriceBlock
+      service={SERVICE}
+      tiers={[
+        { label: 'Single-axis retrofit', price: 'From R15,000', text: 'One axis driven, for example a power feed or lead screw upgrade.' },
+        { label: 'Full mill or lathe conversion', price: 'From R25,000', text: 'All axes, control panel, spindle control, commissioning and training.', featured: true },
+        { label: 'Conversion with tool changer', price: 'From R45,000', text: 'Larger or more complex machines, automatic tool changer and custom programming.' },
+      ]}
+    />
 
-    {/* Trust */}
-    <section className="sp-section sp-alt">
-      <div className="container">
-        <div className="section-header">
-          <span className="section-tag">Why SkillAxis</span>
-          <h2 className="section-title">Technical Credibility</h2>
-        </div>
-        <div className="trust-grid">
-          <div className="trust-item">
-            <div className="trust-label">Location</div>
-            <p>Pretoria, Gauteng — serving Johannesburg, Cape Town, and nationwide</p>
-          </div>
-          <div className="trust-item">
-            <div className="trust-label">Control Systems</div>
-            <p>LinuxCNC, GRBL, Mach4 — open and proprietary platforms</p>
-          </div>
-          <div className="trust-item">
-            <div className="trust-label">Machines Converted</div>
-            <p>Harrison, Colchester, South Bend, Bridgeport, Aciera, and more</p>
-          </div>
-          <div className="trust-item">
-            <div className="trust-label">Precision</div>
-            <p>Achieving 0.008–0.02mm repeatability on converted machines</p>
-          </div>
-          <div className="trust-item">
-            <div className="trust-label">Warranty</div>
-            <p>6-month warranty on all supplied components and installation</p>
-          </div>
-          <div className="trust-item">
-            <div className="trust-label">Support</div>
-            <p>Post-commissioning support and remote diagnostics available</p>
-          </div>
-        </div>
-      </div>
-    </section>
+    <FaqSection faqs={faqs} />
 
-    {/* FAQ */}
-    <section className="sp-section">
-      <div className="container">
-        <div className="section-header">
-          <span className="section-tag">Common Questions</span>
-          <h2 className="section-title">FAQ — CNC Conversions</h2>
-        </div>
-        <div className="faq-list">
-          {faqSchema.mainEntity.map((faq, i) => (
-            <div key={i} className="faq-item">
-              <h3>{faq.name}</h3>
-              <p>{faq.acceptedAnswer.text}</p>
-            </div>
-          ))}
-        </div>
-      </div>
-    </section>
-
-    {/* CTA */}
-    <section className="cta-section">
-      <div className="container">
-        <h2>Ready to Convert Your Machine?</h2>
-        <p>Send us your machine details and we'll provide a scoped quote within 3 business days.</p>
-        <div className="cta-buttons">
-          <Link to="/quote" className="btn btn-cta">Get a Quote</Link>
-          <a href={WA_URL} target="_blank" rel="noopener noreferrer" className="btn btn-ghost">
-            <FontAwesomeIcon icon={faWhatsapp} /> WhatsApp Us
-          </a>
-        </div>
-      </div>
-    </section>
+    <CtaSection
+      title="Send us photos of the machine"
+      text="A few photos of the machine and the part you want to make is enough for a first answer on whether it is worth converting."
+      service={SERVICE}
+      waMessage={WA}
+    />
   </div>
 );
 

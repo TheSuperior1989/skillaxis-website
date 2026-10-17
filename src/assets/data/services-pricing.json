@@ -102,7 +102,7 @@
           {
             "id": "flyer",
             "name": "Flyer Design",
-            "description": "A6–A4 sizes available",
+            "description": "A6-A4 sizes available",
             "price": 780,
             "priceType": "starting"
           },
@@ -140,7 +140,7 @@
           {
             "id": "standard-website",
             "name": "Standard Business Website",
-            "description": "6–10 pages, custom design with a CMS (e.g. WordPress) for easy updates, integration of social media links, basic blog setup, and enhanced SEO",
+            "description": "6-10 pages, custom design with easy content updates, integration of social media links, basic blog setup, and enhanced SEO",
             "price": 7500
           },
           {

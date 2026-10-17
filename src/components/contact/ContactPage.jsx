@@ -1,17 +1,32 @@
-import { useState } from 'react';
-import { useNavigate } from 'react-router-dom';
+import { useState, useEffect } from 'react';
+import { useNavigate, useSearchParams } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faMapMarkerAlt, faPhone, faEnvelope, faClock } from '@fortawesome/free-solid-svg-icons';
 import { faWhatsapp } from '@fortawesome/free-brands-svg-icons';
 import SEO from '../common/SEO';
 import { sendContactForm } from '../../services/emailService';
+import { waLink, trackLead, PHONE_PRIMARY, PHONE_SECONDARY, EMAIL } from '../../data/contact';
 import '../cnc-conversions/CNCConversionsPage.css';
 import './ContactPage.css';
 
-const WA_URL = 'https://wa.me/27782964786?text=' + encodeURIComponent('Hi, I\'d like to discuss a project with SkillAxis Dynamics.');
+const WA_URL = waLink();
+
+const SERVICE_OPTIONS = [
+  'Workshop Management System',
+  'MotorArmour Motor Protection',
+  'CAD Drawings',
+  'CNC Conversion',
+  'Custom Machinery',
+  'Machine Controls and Retrofits',
+  'Website or Business Software',
+  'Google Ads',
+  'Graphic Design',
+  'Not sure yet',
+];
 
 const ContactPage = () => {
   const navigate = useNavigate();
+  const [searchParams] = useSearchParams();
 
   const [formData, setFormData] = useState({
     name: '',
@@ -23,6 +38,15 @@ const ContactPage = () => {
 
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [error, setError] = useState('');
+
+  const presetService = searchParams.get('service') || '';
+  const serviceOptions = presetService && !SERVICE_OPTIONS.includes(presetService)
+    ? [presetService, ...SERVICE_OPTIONS]
+    : SERVICE_OPTIONS;
+
+  useEffect(() => {
+    if (presetService) setFormData((prev) => ({ ...prev, service: presetService }));
+  }, [presetService]);
 
   const handleChange = (e) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
@@ -40,6 +64,7 @@ const ContactPage = () => {
       });
 
       if (result.success) {
+        trackLead(`contact_form_${formData.service || 'general'}`);
         navigate('/thank-you');
       } else {
         setError(result.message);
@@ -54,8 +79,8 @@ const ContactPage = () => {
   return (
     <div className="service-page">
       <SEO
-        title="Contact SkillAxis Dynamics — Pretoria, South Africa"
-        description="Get in touch with SkillAxis Dynamics. Engineering and digital project inquiries. Based in Pretoria, South Africa. Response within 4 business hours."
+        title="Contact SkillAxis Dynamics | Get a Fixed-Price Quote | Pretoria"
+        description="Send SkillAxis Dynamics your drawing, CNC, machinery, workshop software, MotorArmour or Google Ads enquiry. WhatsApp 078 296 4786 or use the form. Fixed prices. Pretoria, South Africa."
         canonical="/contact"
         schema={{
           '@context': 'https://schema.org',
@@ -68,12 +93,12 @@ const ContactPage = () => {
       <section className="sp-hero">
         <div className="container">
           <span className="page-hero-tag">Contact · Pretoria, South Africa</span>
-          <h1>Get in Touch</h1>
-          <p>Tell us what you need — engineering or digital. We respond to every serious inquiry within 4 business hours.</p>
+          <h1>Tell us about the job</h1>
+          <p>Photos, a sketch, a part number or two lines is enough to start. WhatsApp is fastest, and you can send pictures straight from your phone.</p>
           <div className="sp-hero-meta">
-            <span>Response within 4 hours</span><span className="sp-meta-div">·</span>
-            <span>Fixed-price quote within 3 days</span><span className="sp-meta-div">·</span>
-            <span>No-obligation</span>
+            <span>Fixed-price quotes</span><span className="sp-meta-div">·</span>
+            <span>No hourly rates</span><span className="sp-meta-div">·</span>
+            <span>No obligation</span>
           </div>
         </div>
       </section>
@@ -83,8 +108,8 @@ const ContactPage = () => {
           <div className="contact-layout">
             <div className="contact-form-side">
               <div className="section-header">
-                <span className="section-tag">Inquiry Form</span>
-                <h2 className="section-title">Start a Conversation</h2>
+                <span className="section-tag">Enquiry form</span>
+                <h2 className="section-title">Send us the details</h2>
               </div>
 
               <form className="contact-form" onSubmit={handleSubmit} noValidate>
@@ -138,13 +163,9 @@ const ContactPage = () => {
                     required
                   >
                     <option value="">Select a service</option>
-                    <option value="CNC Conversions">CNC Conversions</option>
-                    <option value="Automation Retrofits">Industrial Automation Retrofits</option>
-                    <option value="CAD Drafting">Mechanical CAD Drafting</option>
-                    <option value="Custom Machinery">Custom Machinery Design &amp; Build</option>
-                    <option value="Web / Software Development">Web / Software Development</option>
-                    <option value="Graphic Design / Branding">Graphic Design / Branding</option>
-                    <option value="Not Sure">Not Sure — I Need Advice</option>
+                    {serviceOptions.map((option) => (
+                      <option key={option} value={option}>{option}</option>
+                    ))}
                   </select>
                 </div>
 
@@ -156,7 +177,7 @@ const ContactPage = () => {
                     rows="5"
                     value={formData.message}
                     onChange={handleChange}
-                    placeholder="Tell us about your project — what you need built, your timeline, and any budget constraints."
+                    placeholder="What needs to be built, drawn, fixed or programmed? Quantities, deadline and where it is all help."
                     required
                   />
                 </div>
@@ -165,10 +186,10 @@ const ContactPage = () => {
                   <div className="form-error">{error}</div>
                 )}
 
-                <button type="submit" className="btn btn-cta" disabled={isSubmitting}>
-                  {isSubmitting ? 'Sending…' : 'Send Inquiry'}
+                <button type="submit" className="btn btn-primary" disabled={isSubmitting}>
+                  {isSubmitting ? 'Sending...' : 'Send enquiry'}
                 </button>
-                <p className="form-note">We'll respond within 4 business hours with a scoping response or preliminary quote.</p>
+                <p className="form-note">Prefer to send photos? <a href={WA_URL} target="_blank" rel="noopener noreferrer">WhatsApp us instead</a>.</p>
               </form>
             </div>
 
@@ -190,7 +211,7 @@ const ContactPage = () => {
                   </div>
                   <div>
                     <strong>Phone</strong>
-                    <p><a href="tel:+27782964786">+27 78 296 4786</a><br /><a href="tel:+27824651089">+27 82 465 1089</a></p>
+                    <p><a href={PHONE_PRIMARY.href}>{PHONE_PRIMARY.label}</a><br /><a href={PHONE_SECONDARY.href}>{PHONE_SECONDARY.label}</a></p>
                   </div>
                 </div>
 
@@ -200,7 +221,7 @@ const ContactPage = () => {
                   </div>
                   <div>
                     <strong>WhatsApp</strong>
-                    <p><a href={WA_URL} target="_blank" rel="noopener noreferrer">Chat on WhatsApp</a><br /><span className="contact-info-sub">Fastest response</span></p>
+                    <p><a href={WA_URL} target="_blank" rel="noopener noreferrer">Chat on WhatsApp</a><br /><span className="contact-info-sub">Fastest, and you can send photos</span></p>
                   </div>
                 </div>
 
@@ -210,7 +231,7 @@ const ContactPage = () => {
                   </div>
                   <div>
                     <strong>Email</strong>
-                    <p><a href="mailto:info@skillaxisdynamics.co.za">info@skillaxisdynamics.co.za</a></p>
+                    <p><a href={`mailto:${EMAIL}`}>{EMAIL}</a></p>
                   </div>
                 </div>
 
@@ -220,7 +241,7 @@ const ContactPage = () => {
                   </div>
                   <div>
                     <strong>Hours</strong>
-                    <p>Mon–Fri: 8am–6pm<br />Sat: 9am–1pm</p>
+                    <p>Mon-Fri: 8am-6pm<br />Sat: 9am-1pm</p>
                   </div>
                 </div>
               </div>
@@ -229,15 +250,15 @@ const ContactPage = () => {
                 <h3>What Happens Next</h3>
                 <div className="next-step">
                   <span className="next-step-num">1</span>
-                  <p>We review your inquiry within <strong>4 business hours</strong></p>
+                  <p>We read your enquiry and come back with <strong>questions or a ballpark</strong></p>
                 </div>
                 <div className="next-step">
                   <span className="next-step-num">2</span>
-                  <p>We send a scoping questionnaire or schedule a call</p>
+                  <p>A short scoping call or site visit if the job needs one</p>
                 </div>
                 <div className="next-step">
                   <span className="next-step-num">3</span>
-                  <p>You receive a <strong>fixed-price proposal</strong> within 3 business days</p>
+                  <p>You receive a <strong>fixed-price quote in writing</strong>. A deposit starts the job</p>
                 </div>
               </div>
             </div>

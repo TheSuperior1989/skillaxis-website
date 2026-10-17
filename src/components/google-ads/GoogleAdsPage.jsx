@@ -8,17 +8,17 @@ const WA_URL = 'https://wa.me/27782964786?text=' + encodeURIComponent('Hi, I nee
 
 const faqData = [
   { q: 'How much does Google Ads cost in South Africa?', a: 'Your monthly investment has two parts: ad spend (paid directly to Google, minimum R3,000/month) and our management fee (from R1,400/month). The ad spend is what Google charges per click. We do not mark up or take commission on your ad spend.' },
-  { q: 'How long before I see results?', a: 'Most clients see their first leads within the first week. However, Google Ads improves over time as the algorithm collects data on who converts. Month 1 is the learning phase, month 2 is optimisation, and by month 3 you have a mature campaign with predictable cost-per-lead numbers.' },
+  { q: 'How long before I see results?', a: 'Leads usually start coming in within the first week. Google Ads improves over time as the algorithm collects data on who converts. Month 1 is the learning phase, month 2 is optimisation, and by month 3 you have a mature campaign with predictable cost-per-lead numbers.' },
   { q: 'Do I need a website?', a: 'Yes, but we handle that. We build dedicated landing pages for every ad campaign as part of the setup. These pages are conversion-optimised with forms, click-to-call, and tracking. If you already have a website, we build the landing pages alongside it.' },
   { q: 'What if I already have a Google Ads account?', a: 'We start with a full audit of your existing account. We analyse your search terms, ad copy, targeting, and spend to identify what is working and what is wasting money. Then we rebuild or upgrade your campaigns based on real data.' },
-  { q: 'Can I see my campaign performance?', a: 'Yes. We build a live performance dashboard on your website showing clicks, conversions, cost per lead, and return on ad spend in real time. You also receive monthly reports with insights and recommendations.' },
+  { q: 'Can I see my campaign performance?', a: 'Yes. We set up a performance dashboard showing clicks, conversions, cost per lead, and return on ad spend in real time. You also receive monthly reports with insights and recommendations.' },
   { q: 'What happens if I want to stop?', a: 'There is no lock-in contract. We recommend a minimum of 3 months to give the campaign a fair evaluation, but you can pause or cancel at any time. Your Google Ads account and all campaign data remain yours.' },
 ];
 
 const GoogleAdsPage = () => (
   <div className="service-page">
     <SEO
-      title="Google Ads Management South Africa | From R4,400/month | SkillAxis Dynamics"
+      title="Google Ads Management South Africa | From R4,400/month"
       description="Google Ads management for South African businesses. Dedicated landing pages, conversion tracking, and live dashboards included. No lock-in contracts. SkillAxis Dynamics, Pretoria."
       canonical="/google-ads"
       schema={{
@@ -37,7 +37,7 @@ const GoogleAdsPage = () => (
         <h1>Google Ads That Actually Generate Leads</h1>
         <p>We build, manage, and optimise Google Ads campaigns for service businesses in South Africa. Dedicated landing pages, conversion tracking, and a live dashboard included in every package. You get leads. We handle the rest.</p>
         <div className="sp-hero-actions">
-          <Link to="/quote" className="btn btn-cta">Get Started</Link>
+          <Link to="/contact?service=Google%20Ads" className="btn btn-primary">Get Started</Link>
           <a href={WA_URL} target="_blank" rel="noopener noreferrer" className="btn btn-ghost">
             <FontAwesomeIcon icon={faWhatsapp} /> WhatsApp Us
           </a>
@@ -117,12 +117,12 @@ const GoogleAdsPage = () => (
       <div className="container sp-case-container">
         <div className="section-header">
           <span className="section-tag">Real Results</span>
-          <h2 className="section-title">Turbocharger Specialist - Pretoria</h2>
+          <h2 className="section-title">Two clients, real monthly reports</h2>
         </div>
         <div className="sp-case-grid">
-          <div className="sp-case-block"><span className="sp-case-label">The Situation</span><p>A Pretoria-based turbocharger specialist had been running a Google Smart Campaign for several months. The campaign was generating leads, but with no control over search terms, no negative keywords, and no dedicated landing pages, a significant portion of the budget was being wasted on irrelevant clicks and brand searches.</p></div>
-          <div className="sp-case-block"><span className="sp-case-label">What We Did</span><p>We audited the Smart Campaign data, identified the top-performing search terms, and built a full SKAG campaign with 5 keyword groups, 15 ad variations, 3 dedicated landing pages, conversion tracking, remarketing audiences, and 181 negative keywords. We blocked 27 competitor names and eliminated paid brand clicks entirely.</p></div>
-          <div className="sp-case-block sp-result"><span className="sp-case-label">The Result</span><p>102 conversions per month at R28 per lead on the Smart Campaign. Projected 120-150 conversions at R20-25 per lead on the new SKAG campaign - more leads at a lower cost, with zero budget wasted on junk traffic.</p></div>
+          <div className="sp-case-block"><span className="sp-case-label">The Situation</span><p>A turbocharger repair workshop and a turbo parts distributor were paying for clicks with little control over search terms, no dedicated landing pages, and no way to tell a real enquiry from a junk conversion.</p></div>
+          <div className="sp-case-block"><span className="sp-case-label">What We Did</span><p>Rebuilt both accounts with one keyword per ad group, three ads per group, landing pages per keyword, around 150 negative keywords, tracking on calls, phone clicks, WhatsApp and quote forms, and a daily pacer that keeps spend under each monthly ceiling. Search terms are checked weekly.</p></div>
+          <div className="sp-case-block sp-result"><span className="sp-case-label">The Result</span><p>Parts distributor, September 2026: 82 leads from R2,598.76 of spend, R31.69 per lead. Workshop, August 2026: 54 genuine leads at R31.97 each, down from R61.37 the month before, on 44% less spend.</p></div>
         </div>
       </div>
     </section>
@@ -172,7 +172,7 @@ const GoogleAdsPage = () => (
         <div className="pricing-highlight" style={{ marginTop: '40px' }}>
           <p className="price-from">All tiers include</p>
           <p>Campaign setup, keyword research, ad copywriting, dedicated landing pages, conversion tracking, remarketing audiences, live dashboard, weekly optimisation, and monthly reporting. Setup fee is a once-off charge.</p>
-          <Link to="/quote" className="btn btn-cta">Get Started</Link>
+          <Link to="/contact?service=Google%20Ads" className="btn btn-primary">Get Started</Link>
         </div>
         <div className="sp-pricing-factors" style={{ textAlign: 'center', maxWidth: '640px' }}>
           <p style={{ color: 'var(--text-muted)', fontSize: '0.85rem' }}>
@@ -204,7 +204,7 @@ const GoogleAdsPage = () => (
         <h2>Ready to Get More Leads?</h2>
         <p>Tell us about your business and we will show you exactly how Google Ads can work for you. Free audit on existing accounts.</p>
         <div className="cta-buttons">
-          <Link to="/quote" className="btn btn-cta">Get Started</Link>
+          <Link to="/contact?service=Google%20Ads" className="btn btn-primary">Get Started</Link>
           <a href={WA_URL} target="_blank" rel="noopener noreferrer" className="btn btn-ghost">
             <FontAwesomeIcon icon={faWhatsapp} /> WhatsApp Us
           </a>

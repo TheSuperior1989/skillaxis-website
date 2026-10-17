@@ -1,57 +1,46 @@
 .contact-cta-section {
-  padding: 96px 0;
-  background-color: var(--bg-primary);
-  background-size: cover;
-  background-position: center;
+  position: relative;
+  overflow: hidden;
+  padding: 104px 0;
+  background:
+    radial-gradient(ellipse 55% 70% at 50% 0%, rgba(0, 212, 255, 0.14), transparent 70%),
+    var(--bg-secondary);
   border-top: 1px solid var(--border);
 }
 
+.contact-cta-grid {
+  position: absolute;
+  inset: 0;
+  background-image:
+    linear-gradient(var(--border) 1px, transparent 1px),
+    linear-gradient(90deg, var(--border) 1px, transparent 1px);
+  background-size: 48px 48px;
+  opacity: 0.35;
+  mask-image: radial-gradient(ellipse 60% 70% at 50% 40%, black, transparent);
+  -webkit-mask-image: radial-gradient(ellipse 60% 70% at 50% 40%, black, transparent);
+}
+
 .contact-cta-inner {
+  position: relative;
   text-align: center;
-  max-width: 640px;
+  max-width: 720px;
   margin: 0 auto;
 }
 
-.cta-urgency {
-  display: flex;
-  align-items: center;
-  gap: 16px;
-  justify-content: center;
-  margin-bottom: 24px;
-  flex-wrap: wrap;
-}
-
-.cta-badge {
-  display: inline-block;
-  font-size: 0.72rem;
-  font-weight: 700;
-  letter-spacing: 0.1em;
-  text-transform: uppercase;
-  color: #93c5fd;
-  border: 1px solid rgba(30, 58, 138, 0.5);
-  background: rgba(30, 58, 138, 0.2);
-  padding: 4px 12px;
-  border-radius: 4px;
-}
-
-.cta-lead-time {
-  font-size: 0.82rem;
-  color: var(--text-muted);
-}
-
 .cta-main-title {
-  font-size: clamp(1.75rem, 3.5vw, 2.5rem);
+  font-size: clamp(1.75rem, 3.5vw, 2.6rem);
   font-weight: 900;
   color: var(--text-primary);
   margin-bottom: 16px;
-  line-height: 1.15;
+  line-height: 1.12;
+  letter-spacing: -0.02em;
 }
 
 .cta-main-sub {
-  font-size: 1rem;
+  font-size: 1.05rem;
   color: var(--text-secondary);
   line-height: 1.7;
-  margin-bottom: 36px;
+  margin-bottom: 34px;
 }
 
 .cta-buttons {
@@ -61,7 +50,20 @@
   flex-wrap: wrap;
 }
 
+.cta-direct {
+  margin-top: 28px;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 12px 28px;
+  font-size: 0.92rem;
+}
+
+.cta-direct a { color: var(--text-secondary); display: inline-flex; align-items: center; gap: 8px; }
+.cta-direct a:hover { color: var(--accent); }
+
 @media (max-width: 560px) {
+  .contact-cta-section { padding: 72px 0; }
   .cta-buttons { flex-direction: column; align-items: center; }
   .cta-buttons .btn { width: 100%; justify-content: center; }
 }

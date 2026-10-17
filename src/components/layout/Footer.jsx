@@ -1,6 +1,7 @@
 import { Link } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faFacebook, faInstagram, faLinkedin } from '@fortawesome/free-brands-svg-icons';
+import { faFacebook, faWhatsapp } from '@fortawesome/free-brands-svg-icons';
+import { waLink } from '../../data/contact';
 import { faMapMarkerAlt, faPhone, faEnvelope } from '@fortawesome/free-solid-svg-icons';
 import './Footer.css';
 
@@ -14,17 +15,14 @@ const Footer = () => {
         <div className="footer-brand">
           <h3 className="footer-name">SkillAxis Dynamics</h3>
           <p className="footer-tagline">
-            Precision engineering and digital solutions from Pretoria, South Africa. CNC conversions, automation, CAD drafting, custom machinery, web and software development.
+            Founder-led engineering and software company in Pretoria. We design, draw, machine and build the software for South African workshops and factories.
           </p>
           <div className="footer-socials">
             <a href="https://www.facebook.com/profile.php?id=100092689467268" target="_blank" rel="noopener noreferrer" aria-label="Facebook">
               <FontAwesomeIcon icon={faFacebook} />
             </a>
-            <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
-              <FontAwesomeIcon icon={faInstagram} />
-            </a>
-            <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
-              <FontAwesomeIcon icon={faLinkedin} />
+            <a href={waLink()} target="_blank" rel="noopener noreferrer" aria-label="WhatsApp">
+              <FontAwesomeIcon icon={faWhatsapp} />
             </a>
           </div>
         </div>
@@ -32,13 +30,14 @@ const Footer = () => {
         <div className="footer-col">
           <h4 className="footer-col-title">Services</h4>
           <ul>
+            <li><Link to="/workshop-software">Workshop Management System</Link></li>
+            <li><Link to="/motorarmour">MotorArmour™</Link></li>
+            <li><Link to="/cad-design-drafting">CAD Drawings & Layouts</Link></li>
             <li><Link to="/cnc-conversions">CNC Conversions</Link></li>
-            <li><Link to="/automation-retrofits">Automation Retrofits</Link></li>
-            <li><Link to="/cad-design-drafting">CAD Drafting</Link></li>
             <li><Link to="/custom-machinery-design">Custom Machinery</Link></li>
-            <li><Link to="/web-software-engineering">Web & Software</Link></li>
+            <li><Link to="/automation-retrofits">Machine Controls</Link></li>
+            <li><Link to="/web-software-engineering">Websites & Software</Link></li>
             <li><Link to="/google-ads">Google Ads</Link></li>
-            <li><Link to="/services">All Services</Link></li>
           </ul>
         </div>
 
@@ -47,10 +46,10 @@ const Footer = () => {
           <ul>
             <li><Link to="/">Home</Link></li>
             <li><Link to="/about">About Us</Link></li>
-            <li><Link to="/case-studies">Case Studies</Link></li>
-            <li><Link to="/portfolio">Portfolio</Link></li>
+            <li><Link to="/case-studies">Projects</Link></li>
+            <li><Link to="/services">All Services</Link></li>
             <li><Link to="/pricing">Pricing</Link></li>
-            <li><Link to="/quote">Get a Quote</Link></li>
+            <li><Link to="/contact">Get a Quote</Link></li>
           </ul>
         </div>
 
@@ -63,11 +62,11 @@ const Footer = () => {
             </li>
             <li>
               <FontAwesomeIcon icon={faPhone} />
-              <a href="tel:+27782964786">+27 78 296 4786</a>
+              <a href="tel:+27782964786">078 296 4786</a>
             </li>
             <li>
               <FontAwesomeIcon icon={faPhone} />
-              <a href="tel:+27824651089">+27 82 465 1089</a>
+              <a href="tel:+27824651089">082 465 1089</a>
             </li>
             <li>
               <FontAwesomeIcon icon={faEnvelope} />
@@ -80,7 +79,7 @@ const Footer = () => {
 
       <div className="footer-bottom">
         <div className="container">
-          <p>&copy; {year} SkillAxis Dynamics. All Rights Reserved.</p>
+          <p>&copy; {year} SkillAxis Dynamics (Pty) Ltd. All rights reserved.</p>
         </div>
       </div>
     </footer>

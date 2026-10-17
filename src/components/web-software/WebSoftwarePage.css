@@ -1,0 +1,31 @@
+.web-showcase {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+}
+
+.web-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+.web-card-visual { height: 260px; display: flex; border-bottom: 1px solid var(--border); }
+.web-card-visual .pv { min-height: 0; padding: 16px; }
+
+.web-card-body { padding: 22px; }
+
+.web-card-metric {
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: var(--success);
+}
+
+.web-card h3 { font-size: 1.02rem; font-weight: 800; margin: 8px 0 4px; line-height: 1.35; }
+.web-card-client { font-size: 0.8rem; color: var(--text-muted); margin-bottom: 10px; }
+.web-card p { font-size: 0.87rem; }
+
+@media (max-width: 1000px) { .web-showcase { grid-template-columns: 1fr; max-width: 560px; margin: 0 auto; } }

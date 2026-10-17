@@ -23,7 +23,7 @@ const QuotingPage = () => {
               At SkillAxis Dynamics, we believe in transparent pricing and delivering exceptional value. Our interactive quoting tool allows you to build a custom quote based on your specific needs. Simply select the services you're interested in, adjust quantities as needed, and request a detailed quote.
             </p>
             <p>
-              Our team of experts is ready to help you bring your vision to life with our comprehensive range of services, from graphic design and web development to CNC conversions and software development.
+              For engineering work (drawings, CNC, custom machinery, MotorArmour or the Workshop Management System) it is quicker to send us the details directly, because every engineering job is priced on its own scope.
             </p>
           </div>
         </div>
@@ -50,7 +50,7 @@ const QuotingPage = () => {
             <div className="faq-item">
               <h3>What is your payment process?</h3>
               <p>
-                For most projects, we require a 50% deposit to begin work, with the remaining balance due upon completion. For larger projects, we can arrange milestone payments. We accept bank transfers, credit cards, and other payment methods.
+                For most projects, we require a 50% deposit to begin work, with the remaining balance due upon completion. For larger projects, we can arrange milestone payments.
               </p>
             </div>
             <div className="faq-item">

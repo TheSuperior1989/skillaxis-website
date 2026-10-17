@@ -4,79 +4,101 @@ import './PricingPage.css';
 
 const pricingData = [
   {
+    service: 'Workshop Management System',
+    link: '/workshop-software',
+    tiers: [
+      { label: 'Once-off setup', price: 'R7,500', desc: 'Configuration, branding, customer and parts import, device setup and training' },
+      { label: 'Monthly', price: 'R2,500/month', desc: 'Hosting, backups, updates and support' },
+      { label: 'Extra modules', price: 'Fixed quote', desc: 'Quotes, test reports, certificates or workshop-specific features' },
+    ],
+    factors: ['Number of job types and statuses to set up', 'Size of customer and parts lists to import', 'Extra modules requested', 'Number of devices to set up on site'],
+  },
+  {
+    service: 'MotorArmour™ Motor Protection',
+    link: '/motorarmour',
+    tiers: [
+      { label: 'Pilot batch', price: 'Quoted per motor', desc: 'A small first batch to prove it on your own line' },
+      { label: 'Ongoing', price: 'Volume pricing', desc: 'Lower per-motor price once the pilot has proven itself' },
+    ],
+    factors: ['Motor frame size and type', 'Condition of the motor when it comes in', 'Batch size', 'Collection and delivery'],
+  },
+  {
+    service: 'CAD Drawings',
+    link: '/cad-design-drafting',
+    tiers: [
+      { label: 'Single detail drawing', price: 'From R3,500', desc: 'One part or assembly drawing, dimensioned and toleranced, PDF plus 3D or DXF files' },
+      { label: 'Drawing package (5 to 10 drawings)', price: 'From R8,000', desc: 'General assembly, parts list and detail drawings for a full assembly' },
+      { label: 'Full project set', price: 'From R18,000', desc: '20+ drawings, BOM, revisions and build documentation' },
+    ],
+    factors: ['Number of drawings', 'Machined parts vs fabrications', 'Whether 3D design or redesign is needed', 'Reverse engineering from physical parts', 'Plant layouts and patent sets are quoted per job'],
+  },
+  {
     service: 'CNC Conversions',
     link: '/cnc-conversions',
-    icon: '⚙️',
     tiers: [
-      { label: 'Basic retrofit (1 axis)', price: 'From R15,000', desc: 'Single-axis servo conversion, GRBL control, limit switches' },
-      { label: 'Standard CNC conversion (3-axis mill)', price: 'From R25,000', desc: 'Full 3-axis, LinuxCNC or Mach3, encoder feedback, commissioning' },
-      { label: 'Advanced lathe/mill with ATC', price: 'From R45,000', desc: 'Complex multi-axis with tool changer, probing, custom programming' },
+      { label: 'Single-axis retrofit', price: 'From R15,000', desc: 'One axis driven, for example a power feed or lead screw upgrade' },
+      { label: 'Full mill or lathe conversion', price: 'From R25,000', desc: 'All axes, control panel, spindle control, commissioning and training' },
+      { label: 'Conversion with tool changer', price: 'From R45,000', desc: 'Larger machines, automatic tool changer and custom programming' },
     ],
-    factors: ['Number of axes converted', 'Servo vs stepper motor choice', 'Control system selected (LinuxCNC, Mach3, GRBL)', 'Machine condition and mechanical work required', 'Custom fixturing or motor mounts needed'],
+    factors: ['Number of axes converted', 'Servo or stepper drives', 'Machine size and mechanical condition', 'Custom mounting parts and control panel', 'Travel for on-site work'],
   },
   {
-    service: 'Automation Retrofits',
+    service: 'Machine Controls & Retrofits',
     link: '/automation-retrofits',
-    icon: '🔌',
     tiers: [
-      { label: 'Basic PLC upgrade', price: 'From R15,000', desc: 'PLC installation, I/O wiring, basic programming, commissioning' },
-      { label: 'Full system automation', price: 'From R35,000', desc: 'PLC + HMI + sensor network + safety interlocks + documentation' },
-      { label: 'SCADA and remote monitoring', price: 'From R65,000', desc: 'Full industrial automation with remote access, data logging, alerts' },
+      { label: 'Single drive or spindle upgrade', price: 'From R15,000', desc: 'One drive or spindle speed control upgrade, installed and tested' },
+      { label: 'Multi-axis or tool changer retrofit', price: 'Fixed quote', desc: 'Quoted per machine after assessment' },
     ],
-    factors: ['Number of I/O points and sensors', 'PLC brand and model selected', 'HMI complexity and custom screen design', 'Safety circuit requirements (OHS Act)', 'Whether electrical drawings are required'],
-  },
-  {
-    service: 'CAD Drafting',
-    link: '/cad-design-drafting',
-    icon: '📐',
-    tiers: [
-      { label: 'Single detail drawing', price: 'From R3,500', desc: 'One part or assembly drawing, ISO standard, PDF + DWG delivery' },
-      { label: 'Drawing package (5–10 drawings)', price: 'From R8,000', desc: 'GA + parts list + detail drawings for a full assembly' },
-      { label: 'Full project documentation set', price: 'From R18,000', desc: '20+ drawings, BOM, revision tracking, manufacturing-ready package' },
-    ],
-    factors: ['Number of drawings required', 'Complexity (machined parts vs fabrications)', 'Standard required (ISO, ASME, SANS)', '3D modelling required vs 2D only', 'Whether reverse engineering from physical parts is needed'],
+    factors: ['Number of drives and axes', 'Control panel changes', 'Whether a registered electrician is required', 'Documentation of undocumented machines'],
   },
   {
     service: 'Custom Machinery',
     link: '/custom-machinery-design',
-    icon: '🔧',
     tiers: [
-      { label: 'Jig or fixture design + build', price: 'From R45,000', desc: 'Welding or assembly jig, designed, fabricated, and delivered' },
-      { label: 'Semi-automated machine', price: 'From R80,000', desc: 'Custom machine with pneumatics or basic automation' },
-      { label: 'Turnkey automated system', price: 'From R150,000', desc: 'Complex multi-subsystem machine with PLC, HMI, safety, and commissioning' },
+      { label: 'Design and engineering', price: 'Fixed line', desc: '3D design, drawings and BOM. Paid as the deposit and the design is yours' },
+      { label: 'Manufacturing', price: 'Fixed per unit', desc: 'Priced per item so you can change quantities' },
+      { label: 'Delivery and installation', price: 'Fixed line', desc: 'Transport, installation and commissioning nationwide' },
     ],
-    factors: ['Complexity of mechanism and motion', 'Material and load requirements', 'Whether automation and electrical is included', 'Fabrication material costs (steel, aluminium, etc.)', 'Site commissioning and travel'],
+    factors: ['Complexity of the mechanism', 'Materials and loads', 'Quantities', 'Drives, controls and bought-out parts', 'Site distance'],
   },
   {
-    service: 'Web & Software',
+    service: 'Websites & Business Software',
     link: '/web-software-engineering',
-    icon: '💻',
     tiers: [
-      { label: 'Single-page business website', price: 'From R1,500', desc: '1-page site: hero, services, about, contact form. Mobile-responsive, SEO-ready' },
-      { label: 'Multi-page business website', price: 'From R6,000', desc: '5–8 pages with CMS, blog, contact forms, SEO setup' },
-      { label: 'E-commerce store', price: 'From R12,000', desc: 'WooCommerce or custom storefront, payment gateway, product catalogue' },
-      { label: 'Custom web application', price: 'From R25,000', desc: 'Booking systems, portals, dashboards, REST APIs. Quoted per scope' },
+      { label: 'Single-page website', price: 'From R1,500', desc: 'Services, about, contact form and WhatsApp button. Mobile-first' },
+      { label: 'Multi-page website', price: 'From R6,000', desc: 'Five to eight pages, contact forms and search setup' },
+      { label: 'Online store', price: 'From R12,000', desc: 'Product catalogue, cart and payment gateway' },
+      { label: 'Business system', price: 'From R25,000', desc: 'Inventory, bookings, quotes, invoices or portals, quoted per scope' },
     ],
-    factors: ['Number of pages or features', 'CMS requirement (WordPress, custom)', 'E-commerce and payment integration', 'Custom database or API development', 'Ongoing hosting and maintenance requirements'],
+    factors: ['Number of pages or features', 'Online payments', 'Custom database or integrations', 'Hosting and maintenance'],
+  },
+  {
+    service: 'Google Ads Management',
+    link: '/google-ads',
+    tiers: [
+      { label: 'Small', price: 'R4,400/month', desc: 'R3,000 ad spend + R1,400 management. R1,500 once-off setup' },
+      { label: 'Medium', price: 'R7,000/month', desc: 'R5,000 ad spend + R2,000 management. R1,500 once-off setup' },
+      { label: 'Large', price: 'R13,000/month', desc: 'R10,000 ad spend + R3,000 management. R1,500 once-off setup' },
+    ],
+    factors: ['Ad spend goes straight to Google with no mark-up', 'Number of services and areas targeted', 'Landing pages needed'],
   },
   {
     service: 'Graphic Design & Branding',
     link: '/services',
-    icon: '🎨',
     tiers: [
-      { label: 'Logo design', price: 'From R2,500', desc: '3 logo concepts, 2 rounds of revisions, SVG + PNG + PDF delivery' },
-      { label: 'Brand identity package', price: 'From R8,500', desc: 'Logo + colour palette + typography + brand guidelines document' },
-      { label: 'Full brand + website', price: 'From R15,000', desc: 'Complete identity: logo, brand guidelines, stationery + business website' },
+      { label: 'Logo design', price: 'From R2,500', desc: 'Logo concepts, revisions and files for print and web' },
+      { label: 'Brand identity package', price: 'From R8,500', desc: 'Logo, colours, typography and brand guide' },
+      { label: 'Brand + website', price: 'From R15,000', desc: 'Identity, stationery and a business website' },
     ],
-    factors: ['Scope of brand deliverables', 'Number of design concepts requested', 'Stationery and print collateral required', 'Whether web design is included', 'Social media profile design'],
+    factors: ['Number of concepts', 'Stationery and print items', 'Whether a website is included'],
   },
 ];
 
 const PricingPage = () => (
   <div className="service-page">
     <SEO
-      title="Transparent Pricing — Engineering & Digital Services"
-      description="Straightforward pricing for CNC conversions, automation retrofits, CAD drafting, custom machinery, web development, and graphic design. Starting from R1,500. SkillAxis Dynamics, Pretoria."
+      title="Pricing | Engineering, CNC, Drawings, Software and Google Ads"
+      description="Published starting prices for workshop software, CAD drawings, CNC conversions, custom machinery, websites and Google Ads. Fixed prices, never hourly. SkillAxis Dynamics, Pretoria."
       canonical="/pricing"
       schema={{
         '@context': 'https://schema.org',
@@ -90,12 +112,12 @@ const PricingPage = () => (
     <section className="sp-hero">
       <div className="container">
         <span className="page-hero-tag">Pricing · No Hidden Costs · Fixed-Price Quotes</span>
-        <h1>Transparent Pricing — Engineering &amp; Digital Services</h1>
-        <p>We don't hide our prices. Every project gets a detailed fixed-price quote — no hourly ambiguity, no scope creep surprises. Below are starting prices and the factors that determine final cost.</p>
+        <h1>Transparent Pricing - Engineering &amp; Digital Services</h1>
+        <p>We don't hide our prices. Every project gets a detailed fixed-price quote - no hourly ambiguity, no scope creep surprises. Below are starting prices and the factors that determine final cost.</p>
         <div className="sp-hero-meta">
           <span>Fixed-price quotes</span><span className="sp-meta-div">·</span>
           <span>No hidden costs</span><span className="sp-meta-div">·</span>
-          <span>Quote within 24 hours</span>
+          <span>Never hourly</span>
         </div>
       </div>
     </section>
@@ -103,7 +125,7 @@ const PricingPage = () => (
     <section className="sp-section">
       <div className="container">
         <div className="pricing-intro-box">
-          <p><strong>Why we publish starting prices:</strong> Hiding prices wastes your time and ours. If our prices don't fit your budget, you'll know immediately. If they do, we can move straight to scoping your specific project. All figures below are starting points — your actual quote depends on the scope details we discuss.</p>
+          <p><strong>Why we publish starting prices:</strong> Hiding prices wastes your time and ours. If our prices don't fit your budget, you'll know immediately. If they do, we can move straight to scoping your specific project. All figures below are starting points - your actual quote depends on the scope details we discuss.</p>
         </div>
       </div>
     </section>
@@ -113,7 +135,7 @@ const PricingPage = () => (
         <div className="container">
           <div className="pricing-service-header">
             <div>
-              <span className="section-tag">{svc.icon} {svc.service}</span>
+              <span className="section-tag">{svc.service}</span>
               <h2 className="section-title">{svc.service} Pricing</h2>
             </div>
             <Link to={svc.link} className="pricing-service-link">Full service details →</Link>
@@ -142,35 +164,35 @@ const PricingPage = () => (
     <section className="sp-section">
       <div className="container">
         <div className="pricing-value-section">
-          <h2>Why We Price at Premium</h2>
-          <p>We don't compete on being cheapest. Our clients pay for certainty: a fixed price, a real deadline, and work that performs as scoped. Every project is delivered by an engineer or developer with hands-on experience in that discipline — not a generalist agency subcontracting to the lowest bidder.</p>
+          <h2>How our pricing works</h2>
+          <p>We do not compete on being cheapest. You pay for certainty: a fixed price, a realistic deadline and work done by the engineer who scoped it.</p>
           <div className="pricing-value-grid">
             <div className="pricing-value-item">
               <div className="pricing-value-icon">✓</div>
               <div>
                 <strong>Fixed-price contracts</strong>
-                <p>Your quote is your cost. We absorb overruns, not you.</p>
+                <p>Your written quote is your price. Design, manufacturing and installation are separate lines.</p>
               </div>
             </div>
             <div className="pricing-value-item">
               <div className="pricing-value-icon">✓</div>
               <div>
-                <strong>Specialist execution</strong>
-                <p>CNC work done by engineers who operate CNC machines. Web work done by developers who build production systems.</p>
+                <strong>The engineer does the work</strong>
+                <p>No juniors and no account managers. The person who quotes your job does it.</p>
               </div>
             </div>
             <div className="pricing-value-item">
               <div className="pricing-value-icon">✓</div>
               <div>
                 <strong>Documented deliverables</strong>
-                <p>Every project delivers documentation, drawings, or source code — you own everything we produce.</p>
+                <p>Every project delivers documentation, drawings, or source code - you own everything we produce.</p>
               </div>
             </div>
             <div className="pricing-value-item">
               <div className="pricing-value-icon">✓</div>
               <div>
-                <strong>Post-delivery support</strong>
-                <p>30 days of post-delivery support included on all projects. No disappearing after handover.</p>
+                <strong>A deposit starts the job</strong>
+                <p>Usually the design line plus a share of manufacturing. The balance on delivery.</p>
               </div>
             </div>
           </div>
@@ -181,9 +203,9 @@ const PricingPage = () => (
     <section className="cta-section">
       <div className="container">
         <h2>Get an Accurate Quote for Your Project</h2>
-        <p>Starting prices are guides. Tell us what you need and we'll send a detailed, fixed-price quote within 24 hours.</p>
+        <p>Starting prices are guides. Tell us what you need and we will come back with questions and a fixed-price quote.</p>
         <div className="cta-buttons">
-          <Link to="/quote" className="btn btn-cta">Request a Quote</Link>
+          <Link to="/contact" className="btn btn-primary">Request a quote</Link>
           <a href="https://wa.me/27782964786?text=Hi%2C%20I%27d%20like%20to%20get%20a%20quote%20from%20SkillAxis%20Dynamics." target="_blank" rel="noopener noreferrer" className="btn btn-ghost">WhatsApp Us</a>
         </div>
       </div>

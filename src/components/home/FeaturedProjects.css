@@ -153,3 +153,25 @@
   .fp-list { gap: 36px; }
   .fp-list .fp-item + .fp-item { padding-top: 36px; }
 }
+
+/* ── Meta row + visual ───────────────────────────────────────── */
+.fp-img-wrap .pv { min-height: 0; }
+
+.fp-meta {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 10px;
+}
+
+.fp-metric {
+  font-size: 0.78rem;
+  font-weight: 700;
+  color: var(--success);
+}
+
+.fp-client {
+  font-size: 0.85rem;
+  color: var(--text-muted);
+  margin-top: -8px;
+}

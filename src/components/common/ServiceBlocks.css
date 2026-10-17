@@ -1,0 +1,165 @@
+/* Shared blocks for service and offer pages */
+.sb-hero {
+  position: relative;
+  overflow: hidden;
+  padding-top: 128px;
+}
+
+.sb-hero-glow {
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(ellipse 60% 70% at 85% 10%, rgba(0, 212, 255, 0.12), transparent 60%),
+    linear-gradient(var(--border) 1px, transparent 1px),
+    linear-gradient(90deg, var(--border) 1px, transparent 1px);
+  background-size: auto, 48px 48px, 48px 48px;
+  mask-image: linear-gradient(to bottom, black 40%, transparent);
+  -webkit-mask-image: linear-gradient(to bottom, black 40%, transparent);
+  opacity: 0.55;
+  pointer-events: none;
+}
+
+.sb-hero-inner { position: relative; z-index: 1; }
+
+.sb-meta {
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px 22px;
+  font-size: 0.85rem;
+  color: var(--text-secondary);
+}
+
+.sb-meta li { display: inline-flex; align-items: center; gap: 8px; }
+.sb-meta svg { color: var(--success); font-size: 0.75rem; }
+
+.sb-check-list {
+  list-style: none;
+  display: grid;
+  gap: 12px;
+}
+
+.sb-check-list li {
+  display: flex;
+  gap: 12px;
+  align-items: flex-start;
+  font-size: 0.95rem;
+  color: var(--text-secondary);
+  line-height: 1.55;
+}
+
+.sb-check-list svg {
+  color: var(--accent);
+  background: var(--accent-dim);
+  border-radius: 50%;
+  padding: 5px;
+  width: 0.7rem;
+  height: 0.7rem;
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+
+.sb-center { text-align: center; margin-top: 36px; }
+
+.sb-text-link { font-weight: 600; font-size: 0.95rem; }
+
+.sb-unit { font-size: 1rem; font-weight: 600; color: var(--text-secondary); margin-left: 6px; }
+
+.sb-price-note {
+  max-width: 620px;
+  margin: 28px auto 0;
+  text-align: center;
+  font-size: 0.88rem;
+  color: var(--text-muted);
+}
+
+.sb-tier-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 20px;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.sb-tier {
+  position: relative;
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 28px 24px;
+}
+
+.sb-tier--featured {
+  border-color: var(--accent);
+  box-shadow: 0 0 0 1px var(--accent-dim), 0 12px 40px rgba(0, 212, 255, 0.08);
+}
+
+.sb-tier-badge {
+  position: absolute;
+  top: -11px;
+  left: 24px;
+  background: var(--accent);
+  color: #000;
+  font-size: 0.68rem;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  padding: 3px 10px;
+  border-radius: 4px;
+}
+
+.sb-tier-label {
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  margin-bottom: 8px;
+}
+
+.sb-tier-price {
+  font-size: 1.7rem;
+  font-weight: 900;
+  color: var(--text-primary);
+  margin-bottom: 12px;
+  letter-spacing: -0.02em;
+}
+
+.sb-tier p { font-size: 0.88rem; margin: 0; }
+
+/* Collapsible FAQ */
+.sb-faq summary {
+  list-style: none;
+  cursor: pointer;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 16px;
+}
+
+.sb-faq summary::-webkit-details-marker { display: none; }
+
+.sb-faq summary::after {
+  content: '+';
+  font-size: 1.4rem;
+  font-weight: 400;
+  color: var(--accent);
+  line-height: 1;
+  transition: transform 0.2s ease;
+}
+
+.sb-faq[open] summary::after { transform: rotate(45deg); }
+.sb-faq summary h3 { margin: 0; }
+.sb-faq h3::after { display: none; }
+.sb-faq p { margin-top: 12px !important; }
+
+.sb-cta {
+  background:
+    radial-gradient(ellipse 50% 80% at 50% 0%, rgba(0, 212, 255, 0.1), transparent 70%),
+    var(--bg-secondary);
+}
+
+@media (max-width: 768px) {
+  .sb-hero { padding-top: 104px; }
+  .sb-tier-price { font-size: 1.45rem; }
+}

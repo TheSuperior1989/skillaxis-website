@@ -6,13 +6,15 @@ import skillAxisLogo from '../../assets/skillaxis-logo.svg';
 import './Navbar.css';
 
 const services = [
-  { label: 'CNC Conversions', path: '/cnc-conversions' },
-  { label: 'Automation Retrofits', path: '/automation-retrofits' },
-  { label: 'CAD Drafting', path: '/cad-design-drafting' },
+  { label: 'Workshop Management System', path: '/workshop-software' },
+  { label: 'MotorArmour™ Motor Protection', path: '/motorarmour' },
+  { label: 'CAD Drawings & Plant Layouts', path: '/cad-design-drafting', divider: true },
+  { label: 'CNC Conversions & Programming', path: '/cnc-conversions' },
   { label: 'Custom Machinery', path: '/custom-machinery-design' },
-  { label: 'Web & Software', path: '/web-software-engineering' },
+  { label: 'Machine Controls & Retrofits', path: '/automation-retrofits' },
+  { label: 'Websites & Software', path: '/web-software-engineering', divider: true },
   { label: 'Google Ads', path: '/google-ads' },
-  { label: 'All Services', path: '/services', divider: true },
+  { label: 'All services and prices', path: '/services', divider: true },
 ];
 
 const Navbar = () => {
@@ -64,9 +66,9 @@ const Navbar = () => {
           <img src={skillAxisLogo} alt="SkillAxis Dynamics" className="logo-image" />
         </Link>
 
-        <div className="menu-icon" onClick={toggleMenu} aria-label="Toggle menu">
+        <button type="button" className="menu-icon" onClick={toggleMenu} aria-label="Toggle menu" aria-expanded={isOpen}>
           <FontAwesomeIcon icon={isOpen ? faTimes : faBars} />
-        </div>
+        </button>
 
         <ul className={isOpen ? 'nav-menu active' : 'nav-menu'}>
           <li className="nav-item">
@@ -99,7 +101,7 @@ const Navbar = () => {
 
           <li className="nav-item">
             <Link to="/case-studies" className={location.pathname === '/case-studies' ? 'nav-link active' : 'nav-link'}>
-              Case Studies
+              Projects
             </Link>
           </li>
 
@@ -122,7 +124,7 @@ const Navbar = () => {
           </li>
 
           <li className="nav-item nav-cta">
-            <Link to="/quote" className="btn btn-cta nav-quote-btn">
+            <Link to="/contact" className="btn btn-primary nav-quote-btn">
               Get a Quote
             </Link>
           </li>
