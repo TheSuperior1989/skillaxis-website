@@ -13,7 +13,7 @@ const outcomes = [
   { value: '>2,000 MΩ', label: 'insulation resistance measured on our pilot motors at 500 V DC' },
   { value: 'Drop-in', label: 'same motor, same dimensions and mounting, no changes to your machine' },
   { value: '1 certificate', label: 'per motor, numbered, locked once issued and linked to the serial number' },
-  { value: '3 to 5 days', label: 'typical turnaround per batch once motors are with us' },
+  { value: '5 orders', label: 'placed by the same distributor since the pilot, 29 motors in total' },
 ];
 
 const faqs = [
@@ -101,7 +101,7 @@ const MotorArmourPage = () => (
       alt={false}
       situation="A national bearings and power transmission distributor had a customer whose food processing line was replacing motors every one to two weeks because of daily high-pressure wash-down."
       work="We treated two motors as a paid pilot. Both tested at more than 2,000 MΩ at 500 V DC and were certified and documented before going back onto the line."
-      result="The client came back with repeat orders: 14 motors received so far, 8 already certified and 6 in treatment, each with its own numbered certificate and treatment record."
+      result="The client came back with repeat orders: 29 motors ordered across five orders so far, 8 certified and the rest in treatment, each with its own numbered certificate and treatment record."
     />
 
     <Steps

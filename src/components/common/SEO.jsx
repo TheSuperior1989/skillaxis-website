@@ -1,7 +1,8 @@
 import { Head } from 'vite-react-ssg';
 
 const BASE_URL = 'https://www.skillaxisdynamics.co.za';
-const DEFAULT_IMAGE = `${BASE_URL}/skillaxis-social-preview.svg`;
+// JPG, not SVG: WhatsApp, Facebook and LinkedIn do not render SVG link previews.
+const DEFAULT_IMAGE = `${BASE_URL}/og/skillaxis-og.jpg`;
 
 const SEO = ({ title, description, canonical, ogImage, schema }) => {
   const fullTitle = title
@@ -22,6 +23,8 @@ const SEO = ({ title, description, canonical, ogImage, schema }) => {
       <meta property="og:description" content={description} />
       <meta property="og:url" content={canonicalUrl} />
       <meta property="og:image" content={image} />
+      <meta property="og:image:width" content="1200" />
+      <meta property="og:image:height" content="630" />
       <meta property="og:type" content="website" />
 
       {/* Twitter */}

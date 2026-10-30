@@ -90,7 +90,7 @@ const GoogleAdsPage = () => (
             <div className="sp-tech-list">
               <span>SKAG Campaigns</span><span>Landing Pages</span><span>Conversion Tracking</span>
               <span>Live Dashboard</span><span>Call Extensions</span><span>Negative Keywords</span>
-              <span>Remarketing</span><span>Monthly Reports</span><span>Weekly Optimisation</span>
+              <span>Remarketing</span><span>Monthly Reports</span><span>Monthly Optimisation</span>
               <span>Ad Copy Testing</span><span>Competitor Blocking</span><span>WhatsApp Integration</span>
             </div>
           </div>
@@ -121,7 +121,7 @@ const GoogleAdsPage = () => (
         </div>
         <div className="sp-case-grid">
           <div className="sp-case-block"><span className="sp-case-label">The Situation</span><p>A turbocharger repair workshop and a turbo parts distributor were paying for clicks with little control over search terms, no dedicated landing pages, and no way to tell a real enquiry from a junk conversion.</p></div>
-          <div className="sp-case-block"><span className="sp-case-label">What We Did</span><p>Rebuilt both accounts with one keyword per ad group, three ads per group, landing pages per keyword, around 150 negative keywords, tracking on calls, phone clicks, WhatsApp and quote forms, and a daily pacer that keeps spend under each monthly ceiling. Search terms are checked weekly.</p></div>
+          <div className="sp-case-block"><span className="sp-case-label">What We Did</span><p>Rebuilt both accounts with one keyword per ad group, three ads per group, landing pages per keyword, around 150 negative keywords, tracking on calls, phone clicks, WhatsApp and quote forms, and a daily pacer that keeps spend under each monthly ceiling. Search terms are cleaned up every month.</p></div>
           <div className="sp-case-block sp-result"><span className="sp-case-label">The Result</span><p>Parts distributor, September 2026: 82 leads from R2,598.76 of spend, R31.69 per lead. Workshop, August 2026: 54 genuine leads at R31.97 each, down from R61.37 the month before, on 44% less spend.</p></div>
         </div>
       </div>
@@ -171,7 +171,7 @@ const GoogleAdsPage = () => (
         </div>
         <div className="pricing-highlight" style={{ marginTop: '40px' }}>
           <p className="price-from">All tiers include</p>
-          <p>Campaign setup, keyword research, ad copywriting, dedicated landing pages, conversion tracking, remarketing audiences, live dashboard, weekly optimisation, and monthly reporting. Setup fee is a once-off charge.</p>
+          <p>Campaign setup, keyword research, ad copywriting, dedicated landing pages, conversion tracking, remarketing audiences, live dashboard, monthly optimisation and reporting. Setup fee is a once-off charge.</p>
           <Link to="/contact?service=Google%20Ads" className="btn btn-primary">Get Started</Link>
         </div>
         <div className="sp-pricing-factors" style={{ textAlign: 'center', maxWidth: '640px' }}>

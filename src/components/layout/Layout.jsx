@@ -18,7 +18,7 @@ const orgSchema = {
   name: 'SkillAxis Dynamics',
   url: 'https://www.skillaxisdynamics.co.za',
   logo: 'https://www.skillaxisdynamics.co.za/skillaxis-favicon.svg',
-  image: 'https://www.skillaxisdynamics.co.za/skillaxis-social-preview.svg',
+  image: 'https://www.skillaxisdynamics.co.za/og/skillaxis-og.jpg',
   legalName: 'SkillAxis Dynamics (Pty) Ltd',
   description:
     'Founder-led engineering and software company in Pretoria: CAD and plant drawings, CNC conversions and programming, custom machinery, workshop management software, MotorArmour motor protection and Google Ads.',
@@ -30,7 +30,7 @@ const orgSchema = {
   },
   telephone: '+27782964786',
   email: 'info@skillaxisdynamics.co.za',
-  openingHours: ['Mo-Fr 09:00-18:00', 'Sa 10:00-14:00'],
+  openingHours: ['Mo-Fr 08:00-18:00', 'Sa 09:00-13:00'],
   areaServed: 'South Africa',
   priceRange: 'R1,500 - R150,000',
   knowsAbout: ['CNC conversion', 'G-code programming', 'Mechanical drafting', 'Plant layout', 'Patent drawings', 'Custom machinery', 'Workshop management software', 'Electric motor protection', 'Google Ads'],

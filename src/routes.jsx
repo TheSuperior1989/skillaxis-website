@@ -4,7 +4,6 @@ import HomePage from './components/home/HomePage';
 import AboutPage from './components/about/AboutPage';
 import ServicesPage from './components/services/ServicesPage';
 import ContactPage from './components/contact/ContactPage';
-import QuotingPage from './components/quoting/QuotingPage';
 import CNCConversionsPage from './components/cnc-conversions/CNCConversionsPage';
 import AutomationRetrofitsPage from './components/automation-retrofits/AutomationRetrofitsPage';
 import CADDraftingPage from './components/cad-drafting/CADDraftingPage';
@@ -16,6 +15,8 @@ import PricingPage from './components/pricing/PricingPage';
 import ThankYouPage from './components/thank-you/ThankYouPage';
 import WorkshopSoftwarePage from './components/workshop-software/WorkshopSoftwarePage';
 import MotorArmourPage from './components/motorarmour/MotorArmourPage';
+import ProjectPage from './components/projects/ProjectPage';
+import { projects } from './data/projects';
 
 export const routes = [
   {
@@ -27,7 +28,8 @@ export const routes = [
       { path: 'services', element: <ServicesPage /> },
       { path: 'portfolio', element: <Navigate to="/case-studies" replace /> },
       { path: 'contact', element: <ContactPage /> },
-      { path: 'quote', element: <QuotingPage /> },
+      { path: 'quote', element: <Navigate to="/pricing" replace /> },
+      { path: 'projects/:id', element: <ProjectPage />, getStaticPaths: () => projects.map((p) => `/projects/${p.id}`) },
       { path: 'cnc-conversions', element: <CNCConversionsPage /> },
       { path: 'automation-retrofits', element: <AutomationRetrofitsPage /> },
       { path: 'cad-design-drafting', element: <CADDraftingPage /> },

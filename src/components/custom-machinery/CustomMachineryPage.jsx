@@ -80,9 +80,8 @@ const CustomMachineryPage = () => (
       ]}
       sideTitle="Designed by SkillAxis"
       sideItems={[
-        '100+ turbocharger tools, fixtures and jigs designed',
+        'Turbocharger tooling, fixtures and jigs designed and machined weekly',
         'A two-plane dynamic balancer for turbochargers',
-        'A flow bench for testing turbo components',
         'Factory equipment package: trays, blast-room racking, trolleys and a mixer',
         'An automatic tool changer and CNC conversion hardware',
       ]}

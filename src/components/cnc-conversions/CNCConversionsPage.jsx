@@ -35,7 +35,7 @@ const CNCConversionsPage = () => (
   <div className="service-page">
     <SEO
       title="CNC Mill and Lathe Conversions and G-code Programming | Pretoria, South Africa"
-      description="Convert a manual mill or lathe to CNC, add a tool changer, or get production parts programmed. 1,000+ CNC programs written on machines we built ourselves. From R25,000. Pretoria, nationwide."
+      description="Convert a manual mill or lathe to CNC, add a tool changer, or get production parts programmed. A R132,500 lathe conversion delivered under a written agreement, and production programs written remotely at a fixed price. Pretoria, nationwide."
       canonical="/cnc-conversions"
       schema={[
         faqSchemaFrom(faqs),
@@ -47,7 +47,7 @@ const CNCConversionsPage = () => (
       tag="CNC conversions · CAM and G-code · Pretoria"
       title="Turn your manual mill or lathe into a CNC production machine."
       intro="We design the mounting parts, lay out the control panel, fit the drives, commission the machine and write the programs for your parts. The CNC work we quote on runs on machines we converted and built ourselves."
-      meta={['From R25,000', '1,000+ CNC programs written', '56 machining jobs in five months', 'Remote G-code programming']}
+      meta={['Written agreement, 50% deposit', 'Positioning to 0.01 mm on the last conversion', 'Remote G-code programming at a fixed price per program', 'Training and warranty included']}
       service={SERVICE}
       waMessage={WA}
     />

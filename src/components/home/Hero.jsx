@@ -10,8 +10,8 @@ import './Hero.css';
 
 const proof = [
   { value: '3,300+', label: 'job cards run through workshop software we built' },
-  { value: '1,000+', label: 'CNC programs written for production parts' },
-  { value: '14', label: 'motors sent for MotorArmour by one client, starting from a 2-motor pilot' },
+  { value: '3 days', label: 'from engineering review to a redesigned, audited mechanism with client documents' },
+  { value: '29', label: 'motors ordered for MotorArmour by one distributor, starting from a 2-motor pilot' },
   { value: '82', label: 'leads in one month from R2,599 of Google Ads spend' },
 ];
 

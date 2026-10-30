@@ -83,7 +83,7 @@ const services = [
     icon: faChartLine,
     problem: 'The phone isn\'t ringing enough?',
     title: 'Google Ads Management',
-    description: 'Campaigns, landing pages and lead tracking, managed weekly. One client campaign brought in 82 leads last month at R31.69 each.',
+    description: 'Campaigns, landing pages and lead tracking, with a daily budget pacer and monthly reports. One client campaign brought in 82 leads last month at R31.69 each.',
     price: 'From R4,400/month',
     link: '/google-ads',
   },

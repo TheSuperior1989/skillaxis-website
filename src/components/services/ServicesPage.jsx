@@ -55,7 +55,7 @@ const services = [
   {
     tag: 'Digital',
     title: 'Google Ads Management',
-    description: 'Search campaigns, landing pages, lead tracking and weekly clean-ups. 82 leads in a month at R31.69 each for a parts distributor.',
+    description: 'Search campaigns, landing pages, lead tracking and monthly clean-ups. 82 leads in a month at R31.69 each for a parts distributor.',
     from: 'From R4,400/month',
     link: '/google-ads',
   },

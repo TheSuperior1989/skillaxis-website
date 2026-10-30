@@ -5,10 +5,10 @@ import './AboutPage.css';
 const SERVICE = 'General enquiry';
 
 const numbers = [
-  { value: '9,400+', label: 'parts and assemblies modelled in 3D' },
-  { value: '1,000+', label: 'CNC programs written' },
+  { value: '1,200+', label: 'turbocharger parts, jigs and fixtures modelled for one workshop alone' },
+  { value: 'R132,500', label: 'largest single job: a manual lathe converted to CNC under a written agreement' },
   { value: '3,300+', label: 'job cards run through our workshop software' },
-  { value: '14', label: 'MotorArmour motors received from one client so far' },
+  { value: '29', label: 'MotorArmour motors ordered by one distributor so far' },
 ];
 
 const capabilities = [
