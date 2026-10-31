@@ -1,0 +1,72 @@
+/* Shared layout for the offer pages (design pack, plant visualisation, capacity report, products) */
+.offer-split {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 18px;
+  margin-top: 40px;
+}
+
+.offer-split--text {
+  align-items: center;
+  gap: 48px;
+}
+
+.offer-hero-media {
+  margin-top: 40px;
+}
+
+.offer-export .section-subtitle { max-width: 760px; }
+
+.offer-spec {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 32px;
+  font-size: 0.92rem;
+}
+
+.offer-spec th,
+.offer-spec td {
+  text-align: left;
+  padding: 12px 14px;
+  border-bottom: 1px solid var(--border);
+  color: var(--text-secondary);
+  vertical-align: top;
+}
+
+.offer-spec th {
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+}
+
+.offer-spec td:first-child { color: var(--text-primary); font-weight: 600; width: 34%; }
+
+.offer-price-card {
+  background: var(--bg-card);
+  border: 1px solid var(--accent);
+  border-radius: 12px;
+  padding: 28px;
+  box-shadow: 0 0 0 1px var(--accent-dim), 0 12px 40px rgba(0, 212, 255, 0.08);
+}
+
+.offer-price-card .offer-price {
+  font-size: 2rem;
+  font-weight: 900;
+  color: var(--text-primary);
+  letter-spacing: -0.02em;
+}
+
+.offer-price-card .offer-price small {
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: var(--text-secondary);
+  margin-left: 8px;
+}
+
+.offer-price-card ul { margin: 16px 0 20px; }
+
+@media (max-width: 860px) {
+  .offer-split { grid-template-columns: 1fr; }
+}

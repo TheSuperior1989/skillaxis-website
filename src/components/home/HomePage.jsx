@@ -1,33 +1,15 @@
 import { Head } from 'vite-react-ssg';
+import { Link } from 'react-router-dom';
 import Hero from './Hero';
+import Showreel from './Showreel';
+import Timeline from '../common/Timeline';
 import ServicesOverview from './ServicesOverview';
 import FeaturedProjects from './FeaturedProjects';
 import WhyUs from './WhyUs';
 import ContactCTA from './ContactCTA';
-import {
-  Steps, FaqSection,
-} from '../common/ServiceBlocks';
+import { FaqSection, SectionHeader } from '../common/ServiceBlocks';
 import { faqSchemaFrom } from '../../data/schema';
 import './HomePage.css';
-
-const steps = [
-  {
-    title: 'Send us what you have',
-    text: 'WhatsApp or email photos, a sketch, a drawing, the part number or a short voice note. You do not need a formal spec to start.',
-  },
-  {
-    title: 'Short scoping call',
-    text: 'We ask the engineering questions up front: tolerances, quantities, deadlines, where it has to go and what it has to survive.',
-  },
-  {
-    title: 'Fixed price in writing',
-    text: 'A written quote with design, manufacturing and installation as separate fixed lines. A deposit starts the job.',
-  },
-  {
-    title: 'Delivered and handed over',
-    text: 'Drawings, files, machines or software handed over and explained. If something is not right, we fix it.',
-  },
-];
 
 const faqs = [
   {
@@ -58,10 +40,19 @@ const HomePage = () => (
       <script type="application/ld+json">{JSON.stringify(faqSchemaFrom(faqs))}</script>
     </Head>
     <Hero />
+    <Showreel />
     <ServicesOverview />
     <FeaturedProjects />
+    <section className="sp-section sp-alt home-timeline">
+      <div className="container">
+        <SectionHeader tag="How it works" title="From a WhatsApp photo to a finished job" subtitle="Six stages, each with a fixed price, a check and a handover. The full version shows typical timelines and payment points." />
+        <Timeline compact />
+        <div className="sb-center">
+          <Link to="/how-it-works" className="btn btn-ghost">See the full journey, timelines and payment points</Link>
+        </div>
+      </div>
+    </section>
     <WhyUs />
-    <Steps tag="How it works" title="From WhatsApp message to finished job" steps={steps} alt />
     <FaqSection faqs={faqs} alt={false} />
     <ContactCTA />
   </div>

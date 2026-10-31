@@ -11,7 +11,7 @@ const WA = 'Hi, I would like a quote for a CNC conversion or CNC programming. He
 const faqs = [
   {
     q: 'How much does a CNC conversion cost in South Africa?',
-    a: 'A conversion starts from about R25,000 for a smaller machine. The final price depends on the number of axes, the size and condition of the machine, the drives you choose and whether you need a tool changer or a new control panel. You get a fixed price in writing after we have seen the machine.',
+    a: 'A single-axis retrofit starts from about R25,000 and a full lathe or mill conversion from about R95,000; the last lathe we converted was R132,500 under a written agreement. The final price depends on the number of axes, the size and condition of the machine, the drives you choose and whether you need a tool changer or a new control panel. You get a fixed price in writing after we have seen the machine.',
   },
   {
     q: 'Which machines can be converted?',
@@ -105,9 +105,9 @@ const CNCConversionsPage = () => (
     <PriceBlock
       service={SERVICE}
       tiers={[
-        { label: 'Single-axis retrofit', price: 'From R15,000', text: 'One axis driven, for example a power feed or lead screw upgrade.' },
-        { label: 'Full mill or lathe conversion', price: 'From R25,000', text: 'All axes, control panel, spindle control, commissioning and training.', featured: true },
-        { label: 'Conversion with tool changer', price: 'From R45,000', text: 'Larger or more complex machines, automatic tool changer and custom programming.' },
+        { label: 'Single-axis retrofit', price: 'From R25,000', text: 'One axis driven, for example a power feed or lead screw upgrade.' },
+        { label: 'Full lathe or mill conversion', price: 'From R95,000', text: 'All axes, control panel, spindle control, commissioning, training and warranty under a written agreement. The last lathe conversion was R132,500.', featured: true },
+        { label: 'Production programs, remote', price: 'R550 per program', text: 'G-code written and proven for your parts from a drawing or sample, delivered by email.' },
       ]}
     />
 

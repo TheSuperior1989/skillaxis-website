@@ -30,8 +30,12 @@ const Footer = () => {
         <div className="footer-col">
           <h4 className="footer-col-title">Services</h4>
           <ul>
+            <li><Link to="/design-pack">Design Pack</Link></li>
+            <li><Link to="/plant-visualisation">Plant Layouts &amp; Films</Link></li>
+            <li><Link to="/machine-capacity-report">Capacity Reports</Link></li>
             <li><Link to="/workshop-software">Workshop Management System</Link></li>
             <li><Link to="/motorarmour">MotorArmour™</Link></li>
+            <li><Link to="/products/ct12-420">CT12-420 Chain Tensioner</Link></li>
             <li><Link to="/cad-design-drafting">CAD Drawings & Layouts</Link></li>
             <li><Link to="/cnc-conversions">CNC Conversions</Link></li>
             <li><Link to="/custom-machinery-design">Custom Machinery</Link></li>
@@ -47,6 +51,7 @@ const Footer = () => {
             <li><Link to="/">Home</Link></li>
             <li><Link to="/about">About Us</Link></li>
             <li><Link to="/case-studies">Projects</Link></li>
+            <li><Link to="/how-it-works">How it works</Link></li>
             <li><Link to="/services">All Services</Link></li>
             <li><Link to="/pricing">Pricing</Link></li>
             <li><Link to="/contact">Get a Quote</Link></li>

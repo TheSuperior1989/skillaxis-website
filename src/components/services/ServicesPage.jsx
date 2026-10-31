@@ -4,6 +4,34 @@ import './ServicesPage.css';
 
 const services = [
   {
+    tag: 'Engineering',
+    title: 'Design Pack: Model, Drawings, Costing and Film in Days',
+    description: 'A complete build-ready package from one set of dimensions: parametric model, drawings, flat patterns, BOM, costing, datasheet and a how-it-works film. Two to five working days.',
+    from: 'From R18,000',
+    link: '/design-pack',
+  },
+  {
+    tag: 'Engineering',
+    title: 'Plant Layouts and Walkthrough Films',
+    description: 'Your factory modelled machine by machine with flow, clearances and crane reach checked, plus 4K stills, A1 boards and a film for the board or the tender.',
+    from: 'From R45,000',
+    link: '/plant-visualisation',
+  },
+  {
+    tag: 'Engineering',
+    title: 'Machine Capacity and Stress Reports',
+    description: 'Is the press in the corner really 100 t? Model, hand calculations and finite-element checks from photos and a measurement sheet, with the safe load and the setting to apply.',
+    from: 'From R12,000',
+    link: '/machine-capacity-report',
+  },
+  {
+    tag: 'Product',
+    title: 'CT12-420 Chain Tensioner',
+    description: 'A roller-chain tensioner with a wear shoe you change in two screws, so you stop replacing the whole unit. Designed and made in South Africa.',
+    from: 'R1,650',
+    link: '/products/ct12-420',
+  },
+  {
     tag: 'Product',
     title: 'Workshop Management System',
     description: 'Job cards, live workshop board, customer history, parts and queues. The system running a Pretoria turbo workshop daily, set up for yours.',
@@ -28,7 +56,7 @@ const services = [
     tag: 'Engineering',
     title: 'CNC Conversions & G-code Programming',
     description: 'Manual mills and lathes converted to CNC, tool changers fitted, and production parts programmed, on site or remotely.',
-    from: 'From R25,000',
+    from: 'From R25,000, programs R550',
     link: '/cnc-conversions',
   },
   {
@@ -87,11 +115,11 @@ const ServicesPage = () => (
       <div className="container">
         <span className="page-hero-tag">Services · Pretoria, South Africa</span>
         <h1>Everything we do, with starting prices</h1>
-        <p>Two proven products, five engineering services and the digital work that brings customers in. Every service lists a starting price, and every job gets a fixed price in writing.</p>
+        <p>Three engineering offers with published prices, two proven products, a catalogue part and the digital work that brings customers in. Every service lists a starting price, and every job gets a fixed price in writing.</p>
         <div className="sp-hero-meta">
           <span>Fixed-price quotes</span><span className="sp-meta-div">·</span>
           <span>No hourly rates</span><span className="sp-meta-div">·</span>
-          <span>Pretoria-based, nationwide delivery</span>
+          <span>Prices exclude VAT, none added</span>
         </div>
       </div>
     </section>

@@ -6,9 +6,13 @@ import skillAxisLogo from '../../assets/skillaxis-logo.svg';
 import './Navbar.css';
 
 const services = [
-  { label: 'Workshop Management System', path: '/workshop-software' },
+  { label: 'Design Pack: model, drawings, costing, film in days', path: '/design-pack' },
+  { label: 'Plant Layouts & Walkthrough Films', path: '/plant-visualisation' },
+  { label: 'Machine Capacity & Stress Reports', path: '/machine-capacity-report' },
+  { label: 'Workshop Management System', path: '/workshop-software', divider: true },
   { label: 'MotorArmour™ Motor Protection', path: '/motorarmour' },
-  { label: 'CAD Drawings & Plant Layouts', path: '/cad-design-drafting', divider: true },
+  { label: 'CT12-420 Chain Tensioner', path: '/products/ct12-420' },
+  { label: 'CAD Drawings & Reverse Engineering', path: '/cad-design-drafting', divider: true },
   { label: 'CNC Conversions & Programming', path: '/cnc-conversions' },
   { label: 'Custom Machinery', path: '/custom-machinery-design' },
   { label: 'Machine Controls & Retrofits', path: '/automation-retrofits' },
@@ -102,6 +106,12 @@ const Navbar = () => {
           <li className="nav-item">
             <Link to="/case-studies" className={location.pathname === '/case-studies' ? 'nav-link active' : 'nav-link'}>
               Projects
+            </Link>
+          </li>
+
+          <li className="nav-item">
+            <Link to="/how-it-works" className={location.pathname === '/how-it-works' ? 'nav-link active' : 'nav-link'}>
+              How it works
             </Link>
           </li>
 
