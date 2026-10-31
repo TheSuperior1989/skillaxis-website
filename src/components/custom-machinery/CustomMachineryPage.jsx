@@ -124,13 +124,9 @@ const CustomMachineryPage = () => (
 
     <section className="sp-section sp-alt">
       <div className="container">
-        <SectionHeader tag="Everything we do, in one machine" title="Bloomforge: a motorised five-mode hearth, concept to build guide in four days" subtitle="Feasibility against heat, patents and standards; a generated assembly of 113 parts and 1,270 fasteners checked for clashes in every mode; bolted and welded manufacturing guides with flat patterns; a promo film and an exploded assembly film." />
+        <SectionHeader tag="Everything we do, in one machine" title="Bloomforge: a motorised five-mode hearth, concept to build guide in four days" subtitle="Feasibility against heat, patents and standards; a generated assembly of 113 parts and 1,270 fasteners checked for clashes in every mode; bolted and welded manufacturing guides with flat patterns; a promo film and an exploded assembly film. Highlights shown here; the full films and the build guide are shared with clients under agreement." />
         <PlayVideo src={bloomforge.promo.src} poster={bloomforge.promo.poster} label={bloomforge.promo.caption} />
-        <MediaGrid items={[bloomforge.closed, bloomforge.boma, bloomforge.braai, bloomforge.rotisserie, bloomforge.plancha, bloomforge.cutaway]} columns={3} />
-        <div className="offer-split">
-          <VideoLoop src={bloomforge.assemblyPreview.src} poster={bloomforge.assemblyPreview.poster} label={bloomforge.assemblyPreview.caption} />
-          <VideoLoop src={bloomforge.assemblyPetals.src} poster={bloomforge.assemblyPetals.poster} label={bloomforge.assemblyPetals.caption} />
-        </div>
+        <MediaGrid items={[bloomforge.closed, bloomforge.boma, bloomforge.braai, bloomforge.rotisserie, bloomforge.plancha, bloomforge.night]} columns={3} />
       </div>
     </section>
 

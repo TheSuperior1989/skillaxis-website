@@ -181,15 +181,12 @@ export const zd30 = {
 };
 
 export const bloomforge = {
-  promo: v('bloomforge', 'bloomforge-promo', 'Bloomforge smart hearth: Closed, Boma, Braai, Rotisserie and Plancha modes in one film.'),
-  assemblyPreview: v('bloomforge', 'bloomforge-assembly-preview', 'From the exploded assembly film: the base drum and liner come together.'),
-  assemblyPetals: v('bloomforge', 'bloomforge-assembly-petals', 'From the exploded assembly film: petal cranks and knuckles.'),
+  promo: v('bloomforge', 'bloomforge-highlight', 'Bloomforge smart hearth: Braai, Rotisserie, Boma and Plancha modes, from the promo film.'),
   closed: img('bloomforge', 'bloomforge-mode-closed', 'Closed mode.'),
   boma: img('bloomforge', 'bloomforge-mode-boma', 'Boma mode: petals fully open.'),
   braai: img('bloomforge', 'bloomforge-mode-braai', 'Braai mode: hearth raised.'),
   rotisserie: img('bloomforge', 'bloomforge-mode-rotisserie', 'Rotisserie mode: spit masts up.'),
   plancha: img('bloomforge', 'bloomforge-mode-plancha', 'Plancha mode: petals folded flat.'),
-  cutaway: img('bloomforge', 'bloomforge-drive-cutaway', 'Cutaway of the lift drive: lead screws and guides.'),
   dusk: img('bloomforge', 'bloomforge-still-dusk', 'Closed at dusk under the lapa.'),
   night: img('bloomforge', 'bloomforge-still-night', 'Night: petals part-open, lit from the hearth.'),
   planchaStill: img('bloomforge', 'bloomforge-still-plancha', 'Plancha mode close-up.'),

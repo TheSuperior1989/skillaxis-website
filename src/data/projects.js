@@ -142,7 +142,7 @@ export const projects = [
     title: 'Bloomforge: a motorised five-mode smart hearth, from concept to 135-page build guide',
     client: 'SkillAxis product concept',
     metric: '113 parts, 1,270 fasteners, zero clashes in five modes',
-    media: { hero: bloomforge.promo, gallery: [bloomforge.boma, bloomforge.cutaway, bloomforge.guideCover] },
+    media: { hero: bloomforge.promo, gallery: [bloomforge.boma, bloomforge.rotisserie, bloomforge.guideCover] },
     problem: 'An outdoor fire appliance that could be a sealed table, an open boma, a braai at working height, a rotisserie and a plancha, with the motors and electronics kept cool and the whole thing manufacturable in a small batch.',
     solution: 'Wrote the feasibility study against the thermal, patent and standards constraints, then generated the full Inventor assembly by code: a Corten drum, a stainless hearth on three belt-synchronised lead screws, eight petals on a rotating actuation ring, folding inner leaves and telescoping spit masts. Scripts checked every mode for clashes, lift sweeps and floating fasteners, and produced bolted and welded manufacturing guides with flat patterns and bend tables, plus a promo film and a narrated exploded assembly film.',
     result: 'A costed, buildable concept with a realistic bill of materials and a film that shows every mode, produced in four days. Prototype and pricing decisions are the next step.',
