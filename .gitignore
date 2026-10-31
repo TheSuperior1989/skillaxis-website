@@ -22,3 +22,6 @@ dist-ssr
 *.njsproj
 *.sln
 *.sw?
+
+# Internal business documents never go in this public repo
+docs/MONEY_PLAN*
