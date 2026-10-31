@@ -47,7 +47,7 @@ const services = [
     problem: 'Job cards on paper and parts going missing?',
     title: 'Workshop Management System',
     description: 'The job card, inventory and workflow system a working turbo workshop runs on every day, set up for your workshop.',
-    price: 'R7,500 setup + R2,500/month',
+    price: 'R15,000 setup + R2,500/month',
     link: '/workshop-software',
     featured: true,
   },

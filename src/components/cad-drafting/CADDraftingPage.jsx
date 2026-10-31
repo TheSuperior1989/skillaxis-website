@@ -28,7 +28,7 @@ const lanes = [
     title: 'Patent drawing sets',
     who: 'Inventors and patent attorneys',
     text: 'Formal drawing sets for patent applications, plus redesign around catalogue parts so the invention can actually be manufactured.',
-    price: 'Quoted per invention',
+    price: 'From R7,500',
   },
   {
     title: 'Reverse engineering',

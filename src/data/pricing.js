@@ -45,9 +45,9 @@ export const pricing = [
     id: 'workshop-software',
     service: 'Workshop Management System',
     link: '/workshop-software',
-    from: 'R7,500 + R2,500/month',
+    from: 'R15,000 + R2,500/month',
     tiers: [
-      { label: 'Once-off setup', price: 'R7,500', desc: 'Configuration, branding, customer and parts import, device setup and training' },
+      { label: 'Once-off setup', price: 'R15,000', desc: 'Configuration, branding, customer and parts import, device setup on site and training' },
       { label: 'Monthly, up to 5 users', price: 'R2,500/month', desc: 'Hosting, backups, updates and support. Extra users R350 each per month.', featured: true },
       { label: 'Extra modules', price: 'Fixed quote', desc: 'Quotes, test reports, certificates or workshop-specific features' },
     ],
@@ -85,7 +85,7 @@ export const pricing = [
     tiers: [
       { label: 'Single detail drawing', price: 'From R3,500', desc: 'One part or assembly drawing, dimensioned and toleranced, PDF plus 3D or DXF files' },
       { label: 'Drawing package (5 to 10 drawings)', price: 'From R8,000', desc: 'General assembly, parts list and detail drawings for a full assembly' },
-      { label: 'Patent-ready drawing set', price: 'From R6,500', desc: 'Formal figures with reference numerals for your attorney, from your prototype or sketch' },
+      { label: 'Patent-ready drawing set', price: 'From R7,500', desc: 'Formal figures with reference numerals for your attorney, from your prototype or sketch, in 48 hours' },
     ],
     factors: ['Number of drawings', 'Machined parts vs fabrications', 'Whether redesign is needed', 'Reverse engineering from physical parts'],
   },

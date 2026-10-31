@@ -11,7 +11,6 @@ const services = [
   { label: 'Machine Capacity & Stress Reports', path: '/machine-capacity-report' },
   { label: 'Workshop Management System', path: '/workshop-software', divider: true },
   { label: 'MotorArmour™ Motor Protection', path: '/motorarmour' },
-  { label: 'CT12-420 Chain Tensioner', path: '/products/ct12-420' },
   { label: 'CAD Drawings & Reverse Engineering', path: '/cad-design-drafting', divider: true },
   { label: 'CNC Conversions & Programming', path: '/cnc-conversions' },
   { label: 'Custom Machinery', path: '/custom-machinery-design' },

@@ -52,11 +52,11 @@ const WorkshopSoftwarePage = () => (
   <div className="service-page">
     <SEO
       title="Workshop Management System for South African Workshops | Job Cards and Inventory"
-      description="Job cards, live workshop board, customer history, parts inventory and offline support. A proven workshop management system running daily in a Pretoria turbo workshop. R7,500 setup + R2,500/month."
+      description="Job cards, live workshop board, customer history, parts inventory and offline support. A proven workshop management system running daily in a Pretoria turbo workshop. R15,000 setup + R2,500/month."
       canonical="/workshop-software"
       schema={[
         faqSchemaFrom(faqs),
-        serviceSchema(SERVICE, 'Workshop management software with job cards, inventory and offline support for South African workshops.', '7500'),
+        serviceSchema(SERVICE, 'Workshop management software with job cards, inventory and offline support for South African workshops.', '15000'),
       ]}
     />
 
@@ -64,7 +64,7 @@ const WorkshopSoftwarePage = () => (
       tag="Workshop software · Proven in production"
       title="Run your workshop from one screen, not a stack of job cards."
       intro="The workshop management system behind a busy Pretoria turbocharger workshop, set up for yours. Job cards, live job status, customer history and parts in one app that works on the floor, in the office and offline."
-      meta={['3,300+ job cards in production', 'Android + web, works offline', 'R7,500 setup + R2,500/month', 'Prices exclude VAT, none added']}
+      meta={['3,300+ job cards in production', 'Android + web, works offline', 'R15,000 setup + R2,500/month', 'Prices exclude VAT, none added']}
       service={SERVICE}
       waMessage={WA}
       primaryLabel="Book a live demo"
@@ -152,7 +152,7 @@ const WorkshopSoftwarePage = () => (
     <PriceBlock
       service={SERVICE}
       tiers={[
-        { label: 'Once-off setup', price: 'R7,500', text: 'Configuration, branding, data import, device setup and training.', featured: true },
+        { label: 'Once-off setup', price: 'R15,000', text: 'Configuration, branding, data import, device setup on site and training.', featured: true },
         { label: 'Monthly, up to 5 users', price: 'R2,500/month', text: 'Hosting, backups, updates and support. Extra users R350 each per month.' },
         { label: 'Extra modules', price: 'Fixed quote', text: 'Quotes, test reports, certificates or anything specific to your workshop.' },
       ]}

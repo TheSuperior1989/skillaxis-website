@@ -12,7 +12,6 @@ const pages = [
   ['/machine-capacity-report', 0.9, 'monthly'],
   ['/workshop-software', 0.9, 'monthly'],
   ['/motorarmour', 0.9, 'monthly'],
-  ['/products/ct12-420', 0.8, 'monthly'],
   ['/cad-design-drafting', 0.8, 'monthly'],
   ['/cnc-conversions', 0.8, 'monthly'],
   ['/custom-machinery-design', 0.8, 'monthly'],

@@ -35,7 +35,7 @@ const services = [
     tag: 'Product',
     title: 'Workshop Management System',
     description: 'Job cards, live workshop board, customer history, parts and queues. The system running a Pretoria turbo workshop daily, set up for yours.',
-    from: 'R7,500 + R2,500/month',
+    from: 'R15,000 + R2,500/month',
     link: '/workshop-software',
   },
   {
