@@ -14,7 +14,7 @@ const outcomes = [
   { value: '>2,000 MΩ', label: 'insulation resistance measured on our pilot motors at 500 V DC' },
   { value: 'Drop-in', label: 'same motor, same dimensions and mounting, no changes to your machine' },
   { value: '1 certificate', label: 'per motor, numbered, locked once issued and linked to the serial number' },
-  { value: '5 orders', label: 'placed by the same distributor since the pilot, 29 motors in total' },
+  { value: '1,100', label: 'motors in the programme for one national distributor, started with a 2-motor pilot' },
 ];
 
 const faqs = [
@@ -60,7 +60,7 @@ const MotorArmourPage = () => (
       tag="MotorArmour™ · Motor protection"
       title="Stop losing electric motors to water and wash-down."
       intro="MotorArmour is our protection treatment for electric motors that work wet. Every motor is tested, certified and tracked by serial number, so you can see exactly what you are getting and how it performs on your line."
-      meta={['Paid pilot, then five repeat orders', 'Certificate per motor, tracked by serial number', 'From R8,500 per motor, prepaid per batch', 'Prices exclude VAT, none added']}
+      meta={['Paid pilot, then a programme of about 1,100 motors', 'Certificate per motor, tracked by serial number', 'From R8,500 per motor, prepaid per batch', 'Prices exclude VAT, none added']}
       service={SERVICE}
       waMessage={WA}
       primaryLabel="Ask about a pilot batch"
@@ -105,11 +105,11 @@ const MotorArmourPage = () => (
 
     <ProofBlock
       tag="Real client"
-      title="From a 2-motor pilot to repeat orders"
+      title="From a 2-motor pilot to a programme of about 1,100 motors"
       alt={false}
       situation="A national bearings and power transmission distributor had a customer whose food processing line was replacing motors every one to two weeks because of daily high-pressure wash-down."
       work="We treated two motors as a paid pilot. Both tested at more than 2,000 MΩ at 500 V DC and were certified and documented before going back onto the line."
-      result="The client came back with repeat orders: 29 motors ordered across five orders so far, 8 certified and the rest in treatment, each with its own numbered certificate and treatment record."
+      result="The client came back with repeat orders and the treatment is now a programme of about 1,100 motors for its plants, each motor with its own numbered certificate and treatment record."
     />
 
     <Steps

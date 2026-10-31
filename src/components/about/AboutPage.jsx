@@ -8,7 +8,7 @@ const numbers = [
   { value: '11,000+', label: 'part and assembly files in our CAD library, every one checked for fit' },
   { value: 'R132,500', label: 'largest single job: a manual lathe converted to CNC under a written agreement' },
   { value: '3,300+', label: 'job cards run through our workshop software' },
-  { value: '29', label: 'MotorArmour motors ordered by one distributor so far' },
+  { value: '1,100', label: 'motors in the MotorArmour programme for one national distributor' },
 ];
 
 const capabilities = [

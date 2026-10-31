@@ -12,7 +12,7 @@ import './Hero.css';
 const proof = [
   { value: '3,300+', label: 'job cards run through workshop software we built' },
   { value: '3 days', label: 'from engineering review to a redesigned, fully checked mechanism with client documents' },
-  { value: '29', label: 'motors ordered for MotorArmour by one distributor, starting from a 2-motor pilot' },
+  { value: '1,100', label: 'motors in the MotorArmour programme for one national distributor, started with a 2-motor pilot' },
   { value: '82', label: 'leads in one month from R2,599 of Google Ads spend' },
 ];
 
