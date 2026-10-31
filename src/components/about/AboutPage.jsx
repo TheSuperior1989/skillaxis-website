@@ -11,7 +11,7 @@ const numbers = [
   { value: '1,100', label: 'motors in the MotorArmour programme for one national distributor' },
 ];
 
-const aiTeam = [
+const moreTeam = [
   { name: 'Morgan', initial: 'M', role: 'Growth and reporting', bio: 'Runs the Google Ads campaigns and the daily budget pacer, writes the monthly client reports and keeps the lead dashboards honest.', skills: ['Google Ads', 'Reports', 'Dashboards'] },
   { name: 'Vera', initial: 'V', role: 'Drawings and documentation', bio: 'Turns a released model into the drawing set, bill of materials, flat patterns, datasheet and manufacturing pack, and keeps revisions straight.', skills: ['Drawing sets', 'BOMs', 'Manuals'] },
   { name: 'Dax', initial: 'D', role: 'CAM and programs', bio: 'Writes and checks production programs against the machine limits, posts them for the controller and keeps the tool library current.', skills: ['G-code', 'Tool libraries', 'Checks'] },
@@ -113,18 +113,10 @@ const AboutPage = () => (
               <span>Brand identity</span><span>Graphic design</span><span>Content</span>
             </div>
           </div>
-        </div>
-      </div>
-    </section>
-
-    <section className="sp-section">
-      <div className="container">
-        <SectionHeader tag="The AI team" title="Engineers in charge, AI doing the legwork" subtitle="Every job has named AI specialists behind it, each with one responsibility, working under the engineers. Ask for them by name." />
-        <div className="about-team-grid about-ai-grid">
-          {aiTeam.map((m) => (
-            <div key={m.name} className="about-team-member about-ai-member">
-              <div className="about-avatar about-avatar--ai" aria-hidden="true">{m.initial}</div>
-              <h3>{m.name} <span className="about-ai-badge">AI</span></h3>
+          {moreTeam.map((m) => (
+            <div key={m.name} className="about-team-member">
+              <div className="about-avatar" aria-hidden="true">{m.initial}</div>
+              <h3>{m.name}</h3>
               <p className="about-team-role">{m.role}</p>
               <p className="about-team-bio">{m.bio}</p>
               <div className="about-team-skills">
