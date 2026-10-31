@@ -86,7 +86,7 @@ export const projects = [
     metric: '>2,000 MΩ insulation resistance',
     problem: 'Motors on a food processing line were being replaced every one to two weeks because daily high-pressure wash-down destroyed standard motors. Stainless wash-down motors were the alternative, at a far higher price.',
     solution: 'MotorArmour, our multi-stage motor protection treatment. The treated motor is a drop-in replacement with the same dimensions and mounting. Every motor is insulation-resistance tested at 500 V DC and issued a numbered certificate, tracked in our own job and certification system.',
-    result: 'Pilot motors tested at more than 2,000 MΩ. The pilot turned into repeat orders and a programme of about 1,100 motors for the distributor's plants, each motor with its own numbered certificate and treatment record.',
+    result: 'Pilot motors tested at more than 2,000 MΩ. The pilot turned into repeat orders and a programme of about 1,100 motors for its plants, each motor with its own numbered certificate and treatment record.',
     tags: ['Drop-in replacement', 'IR tested at 500 V DC', 'Certificate per motor'],
     link: '/motorarmour',
   },
