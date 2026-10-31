@@ -83,7 +83,7 @@ const CNCConversionsPage = () => (
 
     <section className="sp-section sp-alt">
       <div className="container">
-        <SectionHeader tag="We know what we machine" title="A turbocharger explained from our own model" subtitle="The ZD30 VNT turbocharger we first modelled in 2017, turned into a 60 second explainer by code. Sound off, it speaks for itself." />
+        <SectionHeader tag="We know what we machine" title="A turbocharger explained from our own model" subtitle="The ZD30 VNT turbocharger we first modelled in 2017, turned into a 60 second explainer film. Sound off, it speaks for itself." />
         <PlayVideo src={zd30.full.src} poster={zd30.full.poster} label={zd30.full.caption} />
         <MediaGrid items={[zd30.stillVnt, zd30.stillActuator, zd30.render2017]} columns={3} />
       </div>

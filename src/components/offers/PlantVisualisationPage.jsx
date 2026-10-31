@@ -15,7 +15,7 @@ const faqs = [
   { q: 'What do you need to start?', a: 'The building drawings or a site survey, the machine list with footprints (brochures are enough), the process flow and the throughput you are planning for. Photos of the existing site help with the finish.' },
   { q: 'How accurate is the layout?', a: 'Buildings and machines are modelled to the drawings and nameplates you give us, and every dimension we had to estimate is labelled as an estimate. Clearances, crane reach, walkways and material flow are checked in the model, so you find the clashes on screen instead of on the floor.' },
   { q: 'What is the film for?', a: 'Board approval, investors, tenders and staff. A three-minute walkthrough shows what a 60-page layout drawing cannot: how material moves, where people stand and what the plant will look like.' },
-  { q: 'Can you update it as the plan changes?' , a: 'Yes. The layout is generated from a machine list and positions, so moving a line or adding a machine regenerates the model, and a new film render costs hours, not weeks.' },
+  { q: 'Can you update it as the plan changes?' , a: 'Yes. The layout is built from a machine list and positions, so moving a line or adding a machine is a quick update to the model, and a new film render costs hours, not weeks.' },
   { q: 'Do you also design the machines?', a: 'Yes. Presses, conveyors, feed tables, lifts and tooling can be designed into the same layout with finite-element checks and drawings. See Custom Machinery.' },
 ];
 
@@ -35,7 +35,7 @@ const PlantVisualisationPage = () => (
       tag="Plant layouts · Walkthrough films · Boards"
       title="See your factory working before you pour the floor."
       intro="We model the building and every machine, check flow, clearances and crane reach, and hand you a layout drawing, a bill of machines, 4K stills, A1 boards and a walkthrough film your board, bank or tender panel can understand in three minutes."
-      meta={['Layout generated from the machine list', 'Clashes found on screen, not on site', '4K stills, A1 boards and a film', 'Films re-rendered in hours when the plan changes']}
+      meta={['Layout built from your machine list', 'Clashes found on screen, not on site', '4K stills, A1 boards and a film', 'Films re-rendered in hours when the plan changes']}
       service={SERVICE}
       waMessage={WA}
       primaryLabel="Discuss a layout"
@@ -82,7 +82,7 @@ const PlantVisualisationPage = () => (
         '9 CNC angle punching lines, a heavy-section drill line, a heat-bend and straightening line',
         'Feed tables, lifts, stock stacks, cranes and the full site',
         'Three films (3 to 4.5 minutes each), 30 stills at 4K, two A1 boards',
-        'Layout regenerated from code as the client moved lines',
+        'Layout updated as the client moved lines',
       ]}
     />
 
@@ -97,7 +97,7 @@ const PlantVisualisationPage = () => (
       alt={false}
       title="A 4,000 t/month plant, modelled and filmed for a R16M fit-out"
       situation="A fabricator was fitting out a hall to make transmission-tower angle iron, with nine punching lines, a drill line and a heat-bend line to place around cranes, services and a second phase."
-      work="Modelled the building from the structural drawings and every machine from drawings and brochures, generated the layout from a machine list so lanes could be moved, checked crane reach and walkway widths, then rendered three walkthrough films, 30 stills and two A1 boards."
+      work="Modelled the building from the structural drawings and every machine from drawings and brochures, built the layout from a machine list so lanes could be moved, checked crane reach and walkway widths, then rendered three walkthrough films, 30 stills and two A1 boards."
       result="The client pitched the programme with the renderings and sold the next stage off the back of them. The same model now carries the machine design work for the line."
       link={{ to: '/projects/plant-layout', label: 'See the plant project' }}
     />
@@ -109,7 +109,7 @@ const PlantVisualisationPage = () => (
         { title: 'Inputs', text: 'Building drawings, machine list, process and throughput. We confirm what is measured and what is estimated.' },
         { title: 'Layout', text: 'Building and machines modelled, flow and clearances checked, first layout drawing and stills for review.' },
         { title: 'Film', text: 'Camera path agreed on the stills, film rendered and delivered with boards.' },
-        { title: 'Updates', text: 'Lines move, machines change: the layout regenerates and the film re-renders in hours.' },
+        { title: 'Updates', text: 'Lines move, machines change: the layout is updated and the film re-rendered in hours.' },
       ]}
     />
 

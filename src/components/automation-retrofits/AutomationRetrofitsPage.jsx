@@ -61,9 +61,9 @@ const AutomationRetrofitsPage = () => (
       <div className="container offer-split offer-split--text">
         <div>
           <SectionHeader tag="For client machines" title="A controller designed before the hardware is bought" />
-          <p className="sp-lead">For a client's vehicle-mounted mechanism we designed the enclosure, harness and schematics from one data file and ran the firmware through 160 bench-simulated checks, including a jammed drive, a slow motor, a broken sensor wire and a power loss mid-move, before a single part was ordered.</p>
+          <p className="sp-lead">For a client's vehicle-mounted mechanism we designed the enclosure, harness and schematics together and ran the firmware through 160 bench-simulated checks, including a jammed drive, a slow motor, a broken sensor wire and a power loss mid-move, before a single part was ordered.</p>
           <ul className="sp-list">
-            <li>Enclosure, drivers, terminals and harness generated from the same data</li>
+            <li>Enclosure, drivers, terminals and harness designed as one</li>
             <li>Schematics and a drilling template for the panel builder</li>
             <li>Fault codes shown on the dash and explained on a card</li>
           </ul>

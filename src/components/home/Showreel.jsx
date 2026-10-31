@@ -8,8 +8,8 @@ import './Showreel.css';
 const reel = [
   { media: plant.process, title: 'Plant layouts and walkthrough films', text: 'A two-phase steel fabrication plant modelled machine by machine, then filmed for the board.', to: '/plant-visualisation', span: 2 },
   { media: press.cycle, title: 'Machine design with FEA', text: 'A 60 t angle-flaring press: force sizing, 49 drawings, stress checks and a film in two days.', to: '/custom-machinery-design' },
-  { media: bloomforge.promo, title: 'Products from concept to build guide', text: 'Bloomforge: a motorised five-mode hearth, 113 parts audited in every mode, manufacturing guides and films, in four days.', to: '/projects/bloomforge' },
-  { media: zd30.orbit, title: 'Explainer animations from CAD', text: 'A VNT turbocharger explained, generated from our own model with nothing hand-animated.', to: '/projects/zd30-animation' },
+  { media: bloomforge.promo, title: 'Products from concept to build guide', text: 'Bloomforge: a motorised five-mode hearth, 113 parts checked for fit in every mode, manufacturing guides and films, in four days.', to: '/projects/bloomforge' },
+  { media: zd30.orbit, title: 'Explainer animations from CAD', text: 'A VNT turbocharger explained, animated from our own 3D model.', to: '/projects/zd30-animation' },
   { media: toolchanger.render, title: 'Our own tool changer', text: 'ATC-12: twelve tools on a stepper-indexed turret, from concept to a working prototype.', to: '/projects/atc12-tool-changer' },
   { media: software.promoMuted, title: 'Workshop management software', text: 'Job cards, inventory, warranty claims and reports, live in a workshop every day.', to: '/workshop-software' },
   { media: packs.ct12HowItWorks, title: 'Design packs in days', text: 'A chain tensioner from reference to drawings, costing and films in one day.', to: '/design-pack' },
@@ -24,7 +24,7 @@ const Showreel = () => (
         <span className="section-tag">What the work looks like</span>
         <h2 className="section-title">Real models, real films, real machines</h2>
         <p className="section-subtitle">
-          Everything here was generated from our own models and photographed on real jobs. Clients are never named; the work speaks.
+          Everything here comes from our own 3D models, films and photographs of real jobs. Clients are never named; the work speaks.
         </p>
       </div>
       <div className="reel-grid">

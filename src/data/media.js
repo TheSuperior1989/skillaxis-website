@@ -63,13 +63,13 @@ export const packs = {
   ct12Service: img('packs', 'packs-ct12-pose-service', 'CT12-420 in service against a roller chain.'),
   ct12Sprocket: img('packs', 'packs-ct12-pose-sprocket-head', 'CT12-420 with the optional idler-sprocket head.'),
   ct12Drawing: img('packs', 'packs-ct12-general-arrangement', 'General-arrangement drawing with a section through the spring bores.', 'png'),
-  ct12Datasheet: { type: 'image', src: '/media/packs/packs-ct12-datasheet-960.png', caption: 'Two-page product datasheet, generated from the same model.' },
+  ct12Datasheet: { type: 'image', src: '/media/packs/packs-ct12-datasheet-960.png', caption: 'Two-page product datasheet from the same model.' },
   foodTray: img('packs', 'packs-food-tray-iso', 'Stainless food-processing tray with tab-locked fins.'),
   trayRack: img('packs', 'packs-tray-rack-iso', 'Stainless tray rack for a food-processing line.'),
   trayTrolley: img('packs', 'packs-tray-trolley-iso', 'Stainless tray trolley on castors.'),
   motorFixture: img('packs', 'packs-motor-fixture-iso', 'Welded motor fixture, 25 x 25 SHS six-bay frame, modelled from a hand sketch.'),
-  motorFixtureSheet1: { type: 'image', src: '/media/packs/packs-motor-fixture-sheet1.png', caption: 'Generated overview sheet with key data.' },
-  motorFixtureSheet2: { type: 'image', src: '/media/packs/packs-motor-fixture-sheet2.png', caption: 'Generated fabrication drawing with weld locations.' },
+  motorFixtureSheet1: { type: 'image', src: '/media/packs/packs-motor-fixture-sheet1.png', caption: 'Overview sheet with key data.' },
+  motorFixtureSheet2: { type: 'image', src: '/media/packs/packs-motor-fixture-sheet2.png', caption: 'Fabrication drawing with weld locations.' },
   roofFrame: img('packs', 'packs-roof-frame-iso', '14 m roof structure on timber poles, 16-panel truss frames.'),
   roofFea: { type: 'image', src: '/media/packs/packs-roof-fea-full-tie-16panel.png', caption: 'Frame analysis of the recommended 16-panel arrangement.' },
   roofReport: { type: 'image', src: '/media/packs/packs-roof-report-cover-960.png', caption: 'Twelve-page comparison report, delivered the same afternoon.' },
@@ -94,7 +94,7 @@ export const software = {
 };
 
 export const turbo = {
-  cutaway: v('turbo', 'turbo-cutaway', 'VNT turbocharger explainer generated from CAD: housings ghost away, rotor spins up, actuator cutaway.'),
+  cutaway: v('turbo', 'turbo-cutaway', 'VNT turbocharger explainer from our 3D model: housings ghost away, rotor spins up, actuator cutaway.'),
   vntAction: v('turbo', 'turbo-vnt-action', 'Nozzle vanes opening and closing with the exhaust flow following them.'),
   belowOpen: img('turbo', 'turbo-vnt-below-open', 'Turbine housing from below, vanes open around the wheel.'),
   nozzleRing: img('turbo', 'turbo-vnt-nozzle-ring', 'Ghosted turbine housing with the VNT nozzle ring and exhaust flow.'),
@@ -118,7 +118,7 @@ export const motorarmour = {
 };
 
 export const controls = {
-  boxBuild: v('controls', 'controls-controller-box-build', 'Vehicle actuator controller: enclosure, drivers, terminals and harness generated from one data file.', { ratio: '1920 / 1444' }),
+  boxBuild: v('controls', 'controls-controller-box-build', 'Vehicle actuator controller: enclosure, drivers, terminals and harness designed as one.', { ratio: '1920 / 1444' }),
   boxLidOff: img('controls', 'controls-controller-box-lid-off', 'IP65 enclosure with drivers, DIN terminals and internal wiring.'),
   boxClosed: img('controls', 'controls-controller-box-closed', 'Closed enclosure with mounting straps.'),
   schematic: { type: 'image', src: '/media/controls/controls-power-schematic.png', caption: 'Power schematic: battery feed, motor-bus contactor, fuses, logic supply, star ground.' },
@@ -163,11 +163,11 @@ export const cam = {
   toolpathPiston: plain('cam', 'cam-toolpath-05-feed-piston-lathe', 'Toolpath: lathe program for a 45 mm feed piston with grooves.', 'png'),
   toolpathGland: plain('cam', 'cam-toolpath-06-gland-lathe', 'Toolpath: lathe program for a large threaded gland.', 'png'),
   generator: plain('cam', 'cam-generator-01-full-page', 'Our lathe G-code generator: six numbers in, a proven .nc program out.', 'png'),
-  generatorOutput: plain('cam', 'cam-generator-03-cut-summary-and-gcode', 'Cut summary and the generated program, ready to copy or download.', 'png'),
+  generatorOutput: plain('cam', 'cam-generator-03-cut-summary-and-gcode', 'Cut summary and the finished program, ready to copy or download.', 'png'),
 };
 
 export const zd30 = {
-  full: v('zd30', 'zd30-full', 'ZD30 VNT turbocharger: the full 60 second explainer generated from our own model.'),
+  full: v('zd30', 'zd30-full', 'ZD30 VNT turbocharger: the full 60 second explainer from our own model.'),
   orbit: v('zd30', 'zd30-opening-orbit', 'Opening orbit: the housings fade to glass.'),
   oil: v('zd30', 'zd30-oil-circuit', 'Oil circuit through the bearing housing.'),
   stillOrbit: img('zd30', 'zd30-still-opening-orbit', 'Compressor housing, actuator and turbine housing.'),
@@ -190,7 +190,7 @@ export const bloomforge = {
   dusk: img('bloomforge', 'bloomforge-still-dusk', 'Closed at dusk under the lapa.'),
   night: img('bloomforge', 'bloomforge-still-night', 'Night: petals part-open, lit from the hearth.'),
   planchaStill: img('bloomforge', 'bloomforge-still-plancha', 'Plancha mode close-up.'),
-  guideCover: plain('bloomforge', 'bloomforge-guide-p01', 'The 135-page manufacturing guide, generated from the model.', 'png'),
+  guideCover: plain('bloomforge', 'bloomforge-guide-p01', 'The 135-page manufacturing guide.', 'png'),
   guideBending: plain('bloomforge', 'bloomforge-guide-p10', 'Manufacturing guide: sheet-metal bending section.', 'png'),
 };
 

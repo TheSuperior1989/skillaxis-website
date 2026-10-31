@@ -5,7 +5,7 @@ import './AboutPage.css';
 const SERVICE = 'General enquiry';
 
 const numbers = [
-  { value: '11,000+', label: 'part and assembly files in our CAD library, generated and audited by code' },
+  { value: '11,000+', label: 'part and assembly files in our CAD library, every one checked for fit' },
   { value: 'R132,500', label: 'largest single job: a manual lathe converted to CNC under a written agreement' },
   { value: '3,300+', label: 'job cards run through our workshop software' },
   { value: '29', label: 'MotorArmour motors ordered by one distributor so far' },
