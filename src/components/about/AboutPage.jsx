@@ -84,6 +84,28 @@ const AboutPage = () => (
             </div>
           </div>
           <div className="about-team-member">
+            <div className="about-avatar" aria-hidden="true">RvS</div>
+            <h3>Ruan von Stade</h3>
+            <p className="about-team-role">Turbocharger and Machining Specialist</p>
+            <p className="about-team-bio">
+              Turbocharger builds, billet upgrades and the CNC machining behind them: housings, flanges, jigs and fixtures made to the drawing.
+            </p>
+            <div className="about-team-skills">
+              <span>Turbochargers</span><span>CNC machining</span><span>Balancing</span>
+            </div>
+          </div>
+          <div className="about-team-member">
+            <div className="about-avatar" aria-hidden="true">M</div>
+            <h3>Morgan</h3>
+            <p className="about-team-role">AI Operations</p>
+            <p className="about-team-bio">
+              Our AI engineer. Runs the Google Ads campaigns and budget pacing, writes the monthly reports, keeps the job and certificate systems in order and does the first pass on drawings, costings and documents so the engineers spend their hours on engineering.
+            </p>
+            <div className="about-team-skills">
+              <span>Google Ads</span><span>Reporting</span><span>Automation</span>
+            </div>
+          </div>
+          <div className="about-team-member">
             <div className="about-avatar" aria-hidden="true">SvS</div>
             <h3>Sure von Stade</h3>
             <p className="about-team-role">Co-Founder, Design and Brand</p>
