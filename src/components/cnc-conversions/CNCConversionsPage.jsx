@@ -1,9 +1,13 @@
 import SEO from '../common/SEO';
+import { VideoLoop, MediaGrid, PlayVideo } from '../common/Media';
+import { toolchanger, cam, zd30 } from '../../data/media';
 import {
   PageHero, PainGrid, Deliverables, Steps, ProofBlock, PriceBlock, FaqSection, CtaSection,
+  SectionHeader,
 } from '../common/ServiceBlocks';
 import { faqSchemaFrom, serviceSchema } from '../../data/schema';
 import './CNCConversionsPage.css';
+import '../offers/OfferPages.css';
 
 const SERVICE = 'CNC Conversion';
 const WA = 'Hi, I would like a quote for a CNC conversion or CNC programming. Here are photos of the machine:';
@@ -51,6 +55,39 @@ const CNCConversionsPage = () => (
       service={SERVICE}
       waMessage={WA}
     />
+
+    <section className="sp-section">
+      <div className="container">
+        <SectionHeader tag="Our own tool changer" title="ATC-12: twelve tools, one engineer, concept to prototype" subtitle="Designed, drawn, programmed in CAM, laser-cut, 3D-printed and wired with its own controller. The same skills go into your conversion." />
+        <div className="offer-split" style={{ marginTop: 32 }}>
+          <VideoLoop src={toolchanger.render.src} poster={toolchanger.render.poster} label={toolchanger.render.caption} />
+          <VideoLoop src={toolchanger.exploded.src} poster={toolchanger.exploded.poster} label={toolchanger.exploded.caption} />
+        </div>
+        <MediaGrid items={[toolchanger.print1, toolchanger.explodedDrawing, toolchanger.camTop, toolchanger.laserPlates, toolchanger.housingDrawing, toolchanger.onLathe]} columns={3} />
+      </div>
+    </section>
+
+    <section className="sp-section sp-alt">
+      <div className="container">
+        <SectionHeader tag="CAM and machining" title="Programs written, parts made" subtitle="Toolpaths from real production programs, machining drawings and the parts on the machine: turbo housings, flanges, adapters and jigs." />
+        <MediaGrid items={[cam.housingBore, cam.toolpathBore, cam.flyCut, cam.toolpathGland, cam.adaptive, cam.toolpathAdaptive, cam.compressorFacing, cam.drawingHousing, cam.cabinet]} columns={3} />
+      </div>
+    </section>
+
+    <section className="sp-section">
+      <div className="container">
+        <SectionHeader tag="Remote programming" title="Six numbers in, a proven program out" subtitle="Our own lathe G-code generator writes roughing programs from stock and target sizes, tested byte for byte against a CAM reference. Production programs for your parts are R550 each, delivered by email." />
+        <MediaGrid items={[cam.generator, cam.generatorOutput, cam.toolpathPiston]} columns={3} />
+      </div>
+    </section>
+
+    <section className="sp-section sp-alt">
+      <div className="container">
+        <SectionHeader tag="We know what we machine" title="A turbocharger explained from our own model" subtitle="The ZD30 VNT turbocharger we first modelled in 2017, turned into a 60 second explainer by code. Sound off, it speaks for itself." />
+        <PlayVideo src={zd30.full.src} poster={zd30.full.poster} label={zd30.full.caption} />
+        <MediaGrid items={[zd30.stillVnt, zd30.stillActuator, zd30.render2017]} columns={3} />
+      </div>
+    </section>
 
     <PainGrid
       title="Why workshops call us"

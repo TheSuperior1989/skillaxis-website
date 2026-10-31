@@ -1,6 +1,6 @@
 import SEO from '../common/SEO';
-import { VideoLoop, MediaGrid } from '../common/Media';
-import { press, packs } from '../../data/media';
+import { VideoLoop, MediaGrid, PlayVideo } from '../common/Media';
+import { press, packs, bloomforge } from '../../data/media';
 import {
   PageHero, PainGrid, Deliverables, Steps, ProofBlock, FaqSection, CtaSection, SectionHeader,
 } from '../common/ServiceBlocks';
@@ -123,6 +123,18 @@ const CustomMachineryPage = () => (
     </section>
 
     <section className="sp-section sp-alt">
+      <div className="container">
+        <SectionHeader tag="Everything we do, in one machine" title="Bloomforge: a motorised five-mode hearth, concept to build guide in four days" subtitle="Feasibility against heat, patents and standards; a generated assembly of 113 parts and 1,270 fasteners checked for clashes in every mode; bolted and welded manufacturing guides with flat patterns; a promo film and an exploded assembly film." />
+        <PlayVideo src={bloomforge.promo.src} poster={bloomforge.promo.poster} label={bloomforge.promo.caption} />
+        <MediaGrid items={[bloomforge.closed, bloomforge.boma, bloomforge.braai, bloomforge.rotisserie, bloomforge.plancha, bloomforge.cutaway]} columns={3} />
+        <div className="offer-split">
+          <VideoLoop src={bloomforge.assemblyPreview.src} poster={bloomforge.assemblyPreview.poster} label={bloomforge.assemblyPreview.caption} />
+          <VideoLoop src={bloomforge.assemblyPetals.src} poster={bloomforge.assemblyPetals.poster} label={bloomforge.assemblyPetals.caption} />
+        </div>
+      </div>
+    </section>
+
+    <section className="sp-section">
       <div className="container">
         <SectionHeader tag="Process equipment" title="Stainless trays, racking and trolleys for a food factory" subtitle="Weld-free sheet-metal design with tab-locked fins, 27 drawings, 15 flat patterns and a costing, quoted in three days." />
         <div className="offer-split" style={{ marginTop: 32 }}>

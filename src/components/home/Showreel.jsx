@@ -1,6 +1,6 @@
 import { Link } from 'react-router-dom';
 import { VideoLoop, MediaFigure } from '../common/Media';
-import { plant, press, packs, software, turbo, motorarmour } from '../../data/media';
+import { plant, press, packs, software, motorarmour, bloomforge, toolchanger, zd30 } from '../../data/media';
 import './Showreel.css';
 
 // What the work looks like: short muted loops and stills from real jobs, each linked to
@@ -8,7 +8,9 @@ import './Showreel.css';
 const reel = [
   { media: plant.process, title: 'Plant layouts and walkthrough films', text: 'A two-phase steel fabrication plant modelled machine by machine, then filmed for the board.', to: '/plant-visualisation', span: 2 },
   { media: press.cycle, title: 'Machine design with FEA', text: 'A 60 t angle-flaring press: force sizing, 49 drawings, stress checks and a film in two days.', to: '/custom-machinery-design' },
-  { media: turbo.cutaway, title: 'Explainer animations from CAD', text: 'A VNT turbocharger explained, generated from the model with nothing hand-animated.', to: '/design-pack' },
+  { media: bloomforge.promo, title: 'Products from concept to build guide', text: 'Bloomforge: a motorised five-mode hearth, 113 parts audited in every mode, manufacturing guides and films, in four days.', to: '/projects/bloomforge' },
+  { media: zd30.orbit, title: 'Explainer animations from CAD', text: 'A VNT turbocharger explained, generated from our own model with nothing hand-animated.', to: '/projects/zd30-animation' },
+  { media: toolchanger.render, title: 'Our own tool changer', text: 'ATC-12: twelve tools on a stepper-indexed turret, from concept to a working prototype.', to: '/projects/atc12-tool-changer' },
   { media: software.promoMuted, title: 'Workshop management software', text: 'Job cards, inventory, warranty claims and reports, live in a workshop every day.', to: '/workshop-software' },
   { media: packs.ct12HowItWorks, title: 'Design packs in days', text: 'A chain tensioner from reference to drawings, costing and films in one day.', to: '/design-pack' },
   { media: motorarmour.installed, title: 'MotorArmour motor protection', text: 'Treated motors on a wash-down line, each tested and certified.', to: '/motorarmour' },

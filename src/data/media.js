@@ -123,3 +123,76 @@ export const controls = {
   boxClosed: img('controls', 'controls-controller-box-closed', 'Closed enclosure with mounting straps.'),
   schematic: { type: 'image', src: '/media/controls/controls-power-schematic.png', caption: 'Power schematic: battery feed, motor-bus contactor, fuses, logic supply, star ground.' },
 };
+
+// Own projects Tiaan cleared for display: the ATC-12 tool changer, CAM and machining
+// work, the ZD30 turbocharger animation and the Bloomforge smart hearth concept.
+const plain = (group, name, caption, ext = 'jpg') => ({ type: 'image', src: `/media/${group}/${name}.${ext}`, caption });
+
+export const toolchanger = {
+  render: v('toolchanger', 'toolchanger-render', 'ATC-12 turret indexing through its twelve tool positions (CAD animation).'),
+  exploded: v('toolchanger', 'toolchanger-exploded', 'ATC-12 assembly sequence: the exploded parts come together.'),
+  hero: plain('toolchanger', 'toolchanger-hero', 'ATC-12 automatic tool changer: twelve tool positions, stepper-indexed, Mach3 driven.'),
+  turret: img('toolchanger', 'toolchanger-turret-render', 'ATC-12 final assembly, isometric render.'),
+  explodedRender: img('toolchanger', 'toolchanger-exploded-render', 'Exploded view: turret, main housing, drive, controller enclosure and display.'),
+  onLathe: plain('toolchanger', 'toolchanger-on-lathe', 'The ATC-12 on the cross-slide of a bench lathe.'),
+  explodedDrawing: plain('toolchanger', 'toolchanger-exploded-drawing', 'Exploded assembly drawing with numbered balloons and parts list.', 'png'),
+  housingDrawing: plain('toolchanger', 'toolchanger-drawing-main-housing-p1', 'Manufacturing drawing of the main housing.', 'png'),
+  camTop: plain('toolchanger', 'toolchanger-cam-turret-top', 'CAM setup for the turret top face: bore, pocket and keyslot toolpaths.'),
+  camPockets: plain('toolchanger', 'toolchanger-cam-turret-pockets', 'Toolpath preview for the turret pockets and bore.'),
+  print1: img('toolchanger', 'toolchanger-prototype-print-1', '3D-printed ATC-12 prototype: turret, housing, stepper and controller with display.'),
+  print2: img('toolchanger', 'toolchanger-prototype-print-2', '3D-printed prototype, turret end.'),
+  laserPlates: img('toolchanger', 'toolchanger-turret-plates-lasercut', 'Laser-cut steel turret plates for the prototype.'),
+  report: plain('toolchanger', 'toolchanger-report-cover', 'The ATC-12 design report (2022).'),
+};
+
+export const cam = {
+  boring: img('cam', 'cam-photo-01-gearbox-plate-boring', 'Boring a bearing seat in an aluminium plate on the 3-axis mill.'),
+  adaptive: img('cam', 'cam-photo-02-adaptive-aluminium-block', 'Adaptive roughing an aluminium block.'),
+  flyCut: img('cam', 'cam-photo-03-manifold-flange-fly-cut', 'Fly-cutting the flange face of a cast-iron exhaust manifold.'),
+  housingBore: img('cam', 'cam-photo-04-turbo-housing-bore', 'Machining the bearing-housing bore of a turbocharger centre section.'),
+  flangeHoles: img('cam', 'cam-photo-05-aluminium-flange-bolt-holes', 'Drilling the bolt pattern in a turned aluminium flange.'),
+  compressorFacing: img('cam', 'cam-photo-06-compressor-housing-facing', 'Compressor housing clamped for facing and bore work.'),
+  adapters: img('cam', 'cam-photo-07-charge-pipe-adapters', 'Turned aluminium hose adapters next to the charge pipe they were made for.'),
+  cabinet: img('cam', 'cam-photo-09-lathe-conversion-cabinet', 'Control cabinet for the CNC lathe conversion: VFD, servo drives, PSU and pendant.'),
+  drawingHousing: plain('cam', 'cam-drawing-01-is38-exhaust-housing-section', 'Machining drawing: section through a turbine housing with toleranced bore and face.', 'png'),
+  drawingCover: plain('cam', 'cam-drawing-02-compressor-cover-section', 'Machining drawing: half section of a compressor cover insert.', 'png'),
+  toolpathFacing: plain('cam', 'cam-toolpath-01-flange-facing-mill', 'Toolpath: fly-cutter facing program, 380 mm passes stepping down 0.1 mm.', 'png'),
+  toolpathBore: plain('cam', 'cam-toolpath-02-ball-housing-bore-lathe', 'Toolpath: lathe boring program for a ball housing.', 'png'),
+  toolpathAdaptive: plain('cam', 'cam-toolpath-03-icosahedron-adaptive-mill', 'Toolpath: adaptive clearing on a 20 mm aluminium icosahedron.', 'png'),
+  toolpathBush: plain('cam', 'cam-toolpath-04-bush-lathe', 'Toolpath: lathe program for a bush with a copper insert.', 'png'),
+  toolpathPiston: plain('cam', 'cam-toolpath-05-feed-piston-lathe', 'Toolpath: lathe program for a 45 mm feed piston with grooves.', 'png'),
+  toolpathGland: plain('cam', 'cam-toolpath-06-gland-lathe', 'Toolpath: lathe program for a large threaded gland.', 'png'),
+  generator: plain('cam', 'cam-generator-01-full-page', 'Our lathe G-code generator: six numbers in, a proven .nc program out.', 'png'),
+  generatorOutput: plain('cam', 'cam-generator-03-cut-summary-and-gcode', 'Cut summary and the generated program, ready to copy or download.', 'png'),
+};
+
+export const zd30 = {
+  full: v('zd30', 'zd30-full', 'ZD30 VNT turbocharger: the full 60 second explainer generated from our own model.'),
+  orbit: v('zd30', 'zd30-opening-orbit', 'Opening orbit: the housings fade to glass.'),
+  oil: v('zd30', 'zd30-oil-circuit', 'Oil circuit through the bearing housing.'),
+  stillOrbit: img('zd30', 'zd30-still-opening-orbit', 'Compressor housing, actuator and turbine housing.'),
+  stillActuator: img('zd30', 'zd30-still-actuator-cutaway', 'Actuator cutaway: spring, rolling diaphragm and rod.'),
+  stillVnt: img('zd30', 'zd30-still-vnt-from-below', 'VNT nozzle ring through the ghosted turbine housing.'),
+  stillOilIn: img('zd30', 'zd30-still-oil-in', 'Oil inlet side: the path from the banjo bolt into the gallery.'),
+  stillOilSide: img('zd30', 'zd30-still-oil-side', 'Oil circuit in profile.'),
+  stillOilDrain: img('zd30', 'zd30-still-oil-drain', 'Oil drain through the return flange.'),
+  render2017: plain('zd30', 'zd30-2017-inventor-rendering', 'The same turbocharger as first modelled in 2017.'),
+  render2016: img('zd30', 'zd30-2016-inventor-rendering', 'An early rendering of the model, exhaust flange and actuator side.'),
+};
+
+export const bloomforge = {
+  promo: v('bloomforge', 'bloomforge-promo', 'Bloomforge smart hearth: Closed, Boma, Braai, Rotisserie and Plancha modes in one film.'),
+  assemblyPreview: v('bloomforge', 'bloomforge-assembly-preview', 'From the exploded assembly film: the base drum and liner come together.'),
+  assemblyPetals: v('bloomforge', 'bloomforge-assembly-petals', 'From the exploded assembly film: petal cranks and knuckles.'),
+  closed: img('bloomforge', 'bloomforge-mode-closed', 'Closed mode.'),
+  boma: img('bloomforge', 'bloomforge-mode-boma', 'Boma mode: petals fully open.'),
+  braai: img('bloomforge', 'bloomforge-mode-braai', 'Braai mode: hearth raised.'),
+  rotisserie: img('bloomforge', 'bloomforge-mode-rotisserie', 'Rotisserie mode: spit masts up.'),
+  plancha: img('bloomforge', 'bloomforge-mode-plancha', 'Plancha mode: petals folded flat.'),
+  cutaway: img('bloomforge', 'bloomforge-drive-cutaway', 'Cutaway of the lift drive: lead screws and guides.'),
+  dusk: img('bloomforge', 'bloomforge-still-dusk', 'Closed at dusk under the lapa.'),
+  night: img('bloomforge', 'bloomforge-still-night', 'Night: petals part-open, lit from the hearth.'),
+  planchaStill: img('bloomforge', 'bloomforge-still-plancha', 'Plancha mode close-up.'),
+  guideCover: plain('bloomforge', 'bloomforge-guide-p01', 'The 135-page manufacturing guide, generated from the model.', 'png'),
+  guideBending: plain('bloomforge', 'bloomforge-guide-p10', 'Manufacturing guide: sheet-metal bending section.', 'png'),
+};

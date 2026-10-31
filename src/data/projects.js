@@ -1,7 +1,7 @@
 // Real SkillAxis projects only. Clients are never named on the site (confidentiality); describe them by industry.
 // Numbers must come from project records: reports, app docs, certificates or job systems.
 // `media` points at anonymised renders, films and photos in public/media (see src/data/media.js).
-import { plant, press, packs, software, turbo, motorarmour as ma, controls } from './media';
+import { plant, press, packs, software, turbo, motorarmour as ma, controls, toolchanger, cam, zd30, bloomforge } from './media';
 
 export const projects = [
   {
@@ -103,6 +103,51 @@ export const projects = [
     result: 'In use by the contractor on a live factory programme, with every change logged.',
     tags: ['Programme tracking', 'Drawing sign-off', 'Board reports', 'Daily briefings'],
     link: '/web-software-engineering',
+  },
+  {
+    id: 'atc12-tool-changer',
+    category: 'Engineering',
+    visual: 'cnc',
+    tag: 'Own design',
+    title: 'ATC-12: a twelve-position automatic tool changer for a CNC lathe',
+    client: 'SkillAxis own project, prototyped',
+    metric: 'Designed, drawn, machined, programmed',
+    media: { hero: toolchanger.render, gallery: [toolchanger.print1, toolchanger.explodedDrawing, toolchanger.camTop] },
+    problem: 'A converted bench lathe could run CNC programs but every tool change was by hand, which made short production runs slow and made unattended cycles impossible.',
+    solution: 'Designed a six-station turret carrying twelve tools, indexed by a stepper through a pawl and lock, with its own controller and display and a tool-change macro for the CNC control. Produced the full manufacturing drawing set and the exploded assembly drawing, programmed the turret machining in CAM, laser-cut the plates, 3D-printed and assembled a working prototype and wrote the design report.',
+    result: 'A complete mechanism from concept to working prototype by one engineer: mechanical design, drawings, CAM, electronics, firmware and documentation. The same skills now go into client machines.',
+    tags: ['Mechanism design', 'Manufacturing drawings', 'CAM', 'Electronics and firmware', 'Prototype'],
+    link: '/cnc-conversions',
+  },
+  {
+    id: 'zd30-animation',
+    category: 'Engineering',
+    visual: 'cnc',
+    tag: 'Explainer animation',
+    title: 'A VNT turbocharger explained in 60 seconds, generated from CAD',
+    client: 'SkillAxis own model, used on a turbo workshop website',
+    metric: '1,800 frames, nothing hand-animated',
+    media: { hero: zd30.full, gallery: [zd30.stillVnt, zd30.stillOilSide, zd30.render2017] },
+    problem: 'A turbo workshop wanted customers to understand what a variable-nozzle turbocharger does and why the work is precise, without a lecture.',
+    solution: 'Took our own Inventor model of a Nissan ZD30 VNT turbocharger, first modelled in 2017, and generated a 60 second film from it by code: housings fade to glass, the rotor spins up, air and exhaust flows appear, the actuator opens and closes the nozzle vanes and the oil circuit lights up. Camera, fades and flows are all scripted, so a change to the model regenerates the film.',
+    result: 'A website hero that scrubs with the scroll, a set of stills for explaining repairs to customers, and a repeatable pipeline for any manufacturer with a CAD model and a product to explain.',
+    tags: ['CAD to animation', 'Scripted camera and flows', 'Scroll-driven web video'],
+    link: '/design-pack',
+  },
+  {
+    id: 'bloomforge',
+    category: 'Engineering',
+    visual: 'drawing',
+    tag: 'Product concept',
+    title: 'Bloomforge: a motorised five-mode smart hearth, from concept to 135-page build guide',
+    client: 'SkillAxis product concept',
+    metric: '113 parts, 1,270 fasteners, zero clashes in five modes',
+    media: { hero: bloomforge.promo, gallery: [bloomforge.boma, bloomforge.cutaway, bloomforge.guideCover] },
+    problem: 'An outdoor fire appliance that could be a sealed table, an open boma, a braai at working height, a rotisserie and a plancha, with the motors and electronics kept cool and the whole thing manufacturable in a small batch.',
+    solution: 'Wrote the feasibility study against the thermal, patent and standards constraints, then generated the full Inventor assembly by code: a Corten drum, a stainless hearth on three belt-synchronised lead screws, eight petals on a rotating actuation ring, folding inner leaves and telescoping spit masts. Scripts checked every mode for clashes, lift sweeps and floating fasteners, and produced bolted and welded manufacturing guides with flat patterns and bend tables, plus a promo film and a narrated exploded assembly film.',
+    result: 'A costed, buildable concept with a realistic bill of materials and a film that shows every mode, produced in four days. Prototype and pricing decisions are the next step.',
+    tags: ['Feasibility study', 'Generated assembly', 'Manufacturing guides', 'Blender films'],
+    link: '/custom-machinery-design',
   },
   {
     id: 'press-design',
