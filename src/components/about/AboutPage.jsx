@@ -45,7 +45,7 @@ const AboutPage = () => (
       tag="About · Pretoria, South Africa"
       title="An engineering company built on the workshop floor."
       intro="SkillAxis Dynamics (Pty) Ltd started where most of our clients are: in a working turbocharger workshop, designing tools, converting machines to CNC and writing the software to run the place. Everything we sell today grew out of solving those problems for real."
-      meta={['Engineering, software and AI under one roof', 'Registered (Pty) Ltd', 'Pretoria, serving South Africa']}
+      meta={['Engineering and software under one roof', 'Registered (Pty) Ltd', 'Pretoria, serving South Africa']}
       service={SERVICE}
       waMessage="Hi, I'd like to find out more about SkillAxis Dynamics."
       primaryLabel="Talk to us"
@@ -62,7 +62,7 @@ const AboutPage = () => (
             SkillAxis was set up to close those gaps. The team that designs the part also draws it, programs the CNC, builds the fixture and writes the system that tracks the job. That is why our drawings machine properly, our machines get commissioned without drama, and our software gets used.
           </p>
           <p>
-            You deal with the engineers, not an account manager. Our AI team carries the drafting, documentation, reporting and campaign work behind every job, and for bigger builds we bring in trusted fabricators and electricians and manage them for you.
+            You deal with the engineers, not an account manager. Our team carries the drafting, documentation, reporting and campaign work behind every job, and for bigger builds we bring in trusted fabricators and electricians and manage them for you.
           </p>
         </div>
         <dl className="about-numbers">

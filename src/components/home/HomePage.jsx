@@ -26,7 +26,7 @@ const faqs = [
   },
   {
     q: 'Who will I be dealing with?',
-    a: 'Engineers. SkillAxis is an engineering and software company with a small core team and an AI team behind it, so the engineer who scopes your job is the one who does it, and the drafting, documentation and reporting around it are done fast. For larger builds we bring in trusted fabricators and electricians and manage them for you.',
+    a: 'Engineers. SkillAxis is an engineering and software company with a team of specialists behind every job, so the engineer who scopes your job is the one who does it, and the drafting, documentation and reporting around it are done fast. For larger builds we bring in trusted fabricators and electricians and manage them for you.',
   },
   {
     q: 'Can I see the work before I commit?',
