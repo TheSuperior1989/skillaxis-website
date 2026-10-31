@@ -121,7 +121,7 @@ export const pricing = [
     tiers: [
       { label: 'Engineering department', price: 'From R15,000/month', desc: 'A fixed block of design, drawing, CAM and analysis hours every month, with design-pack credits and priority turnaround', featured: true },
       { label: 'Software and marketing department', price: 'From R9,000/month', desc: 'Website, business software, hosting and Google Ads management in one invoice, with a monthly lead report' },
-      { label: 'Both', price: 'From R22,000/month', desc: 'One engineer running your drawings, machines, software and ads' },
+      { label: 'Both', price: 'From R22,000/month', desc: 'One team running your drawings, machines, software and ads' },
     ],
     factors: ['Hours per month', 'Response time required', 'Number of systems and sites maintained'],
   },

@@ -21,7 +21,7 @@ const orgSchema = {
   image: 'https://www.skillaxisdynamics.co.za/og/skillaxis-og.jpg',
   legalName: 'SkillAxis Dynamics (Pty) Ltd',
   description:
-    'Founder-led engineering and software company in Pretoria: CAD and plant drawings, CNC conversions and programming, custom machinery, workshop management software, MotorArmour motor protection and Google Ads.',
+    'Engineering and software company in Pretoria: CAD and plant drawings, CNC conversions and programming, custom machinery, workshop management software, MotorArmour motor protection and Google Ads.',
   address: {
     '@type': 'PostalAddress',
     addressLocality: 'Pretoria',

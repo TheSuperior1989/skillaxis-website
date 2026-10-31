@@ -15,7 +15,7 @@ const Footer = () => {
         <div className="footer-brand">
           <h3 className="footer-name">SkillAxis Dynamics</h3>
           <p className="footer-tagline">
-            Founder-led engineering and software company in Pretoria. We design, draw, machine and build the software for South African workshops and factories.
+            Engineering and software company in Pretoria. We design, draw, machine and build the software for South African workshops and factories.
           </p>
           <div className="footer-socials">
             <a href="https://www.facebook.com/profile.php?id=100092689467268" target="_blank" rel="noopener noreferrer" aria-label="Facebook">

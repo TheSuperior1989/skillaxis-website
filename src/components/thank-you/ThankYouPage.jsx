@@ -25,7 +25,7 @@ const ThankYouPage = () => {
         <div className="container">
           <div className="thankyou-icon">✓</div>
           <h1>Got it. Your enquiry is with us.</h1>
-          <p className="thankyou-sub">The engineer who will handle your job reads every enquiry personally. Here is what happens next.</p>
+          <p className="thankyou-sub">An engineer reads every enquiry personally. Here is what happens next.</p>
 
           <div className="thankyou-steps">
             <div className="thankyou-step">

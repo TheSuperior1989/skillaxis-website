@@ -152,3 +152,19 @@
 @media (max-width: 900px) {
   .about-story { grid-template-columns: 1fr; gap: 32px; }
 }
+
+/* AI team */
+.about-avatar--ai { background: linear-gradient(135deg, #1e3a8a, #00d4ff); color: #000; }
+.about-ai-badge {
+  display: inline-block;
+  margin-left: 8px;
+  font-size: 0.62rem;
+  font-weight: 800;
+  letter-spacing: 0.12em;
+  vertical-align: middle;
+  color: var(--accent);
+  border: 1px solid var(--accent-dim);
+  background: var(--accent-dim);
+  padding: 2px 7px;
+  border-radius: 4px;
+}

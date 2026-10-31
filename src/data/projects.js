@@ -115,7 +115,7 @@ export const projects = [
     media: { hero: toolchanger.render, gallery: [toolchanger.print1, toolchanger.explodedDrawing, toolchanger.camTop] },
     problem: 'A converted bench lathe could run CNC programs but every tool change was by hand, which made short production runs slow and made unattended cycles impossible.',
     solution: 'Designed a six-station turret carrying twelve tools, indexed by a stepper through a pawl and lock, with its own controller and display and a tool-change macro for the CNC control. Produced the full manufacturing drawing set and the exploded assembly drawing, programmed the turret machining in CAM, laser-cut the plates, 3D-printed and assembled a working prototype and wrote the design report.',
-    result: 'A complete mechanism from concept to working prototype by one engineer: mechanical design, drawings, CAM, electronics, firmware and documentation. The same skills now go into client machines.',
+    result: 'A complete mechanism from concept to working prototype, all in-house: mechanical design, drawings, CAM, electronics, firmware and documentation. The same skills now go into client machines.',
     tags: ['Mechanism design', 'Manufacturing drawings', 'CAM', 'Electronics and firmware', 'Prototype'],
     link: '/cnc-conversions',
   },

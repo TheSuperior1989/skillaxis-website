@@ -155,8 +155,8 @@ const ServicesPage = () => (
         <div className="sp-pain-grid">
           <div className="sp-pain-card">
             <span className="sp-pain-num">01</span>
-            <h3>One engineer, the whole chain</h3>
-            <p>The person who scopes your job designs, draws, programs or builds it. Our CNC work runs on machines we built, and our software runs real businesses daily.</p>
+            <h3>One team, the whole chain</h3>
+            <p>The engineers who scope your job design, draw, program or build it. Our CNC work runs on machines we built, and our software runs real businesses daily.</p>
           </div>
           <div className="sp-pain-card">
             <span className="sp-pain-num">02</span>

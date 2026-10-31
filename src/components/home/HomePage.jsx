@@ -25,8 +25,8 @@ const faqs = [
     a: 'Fixed prices only, never hourly. Each page lists a starting price so you know the ballpark before you contact us. Your written quote splits design, manufacturing and installation so you can see exactly what you are paying for.',
   },
   {
-    q: 'Are you a big company?',
-    a: 'No, and that is the point. SkillAxis is a small, founder-led engineering company. You get the engineer who does the work, not a junior and an account manager. For larger builds we bring in trusted fabricators and electricians and manage them for you.',
+    q: 'Who will I be dealing with?',
+    a: 'Engineers. SkillAxis is an engineering and software company with a small core team and an AI team behind it, so the engineer who scopes your job is the one who does it, and the drafting, documentation and reporting around it are done fast. For larger builds we bring in trusted fabricators and electricians and manage them for you.',
   },
   {
     q: 'Can I see the work before I commit?',

@@ -84,7 +84,7 @@ const Hero = () => {
               <br />Designed properly. Checked part by part. Delivered in days.
             </h1>
             <p className="hero-subtitle">
-              SkillAxis Dynamics is a hands-on engineering company for workshops, factories and technical businesses. Plant layouts and walkthrough films, machine design with finite-element checks, manufacturing drawings, CNC conversions and programming, workshop management software and MotorArmour motor protection, all from the engineer who does the work.
+              SkillAxis Dynamics is a hands-on engineering company for workshops, factories and technical businesses. Plant layouts and walkthrough films, machine design with finite-element checks, manufacturing drawings, CNC conversions and programming, workshop management software and MotorArmour motor protection, all from the team that does the work.
             </p>
             <ul className="hero-checks">
               <li><FontAwesomeIcon icon={faCheck} /> Fixed price in writing before we start</li>

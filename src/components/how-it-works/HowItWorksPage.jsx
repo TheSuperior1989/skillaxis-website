@@ -34,7 +34,7 @@ const HowItWorksPage = () => (
       tag="How it works · What to expect"
       title="From a WhatsApp photo to a finished job, in six steps."
       intro="Every job runs the same way, whether it is a drawing, a machine, a software system or a batch of motors. You always know what happens next, what you will receive and what we need from you."
-      meta={['Fixed price in writing before work starts', 'Design modelled and checked in days', 'You own the files on release', 'One engineer, start to finish']}
+      meta={['Fixed price in writing before work starts', 'Design modelled and checked in days', 'You own the files on release', 'One team, start to finish']}
       service={SERVICE}
       waMessage={WA}
       primaryLabel="Start a job"

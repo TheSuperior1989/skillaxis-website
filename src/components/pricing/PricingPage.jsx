@@ -74,7 +74,7 @@ const PricingPage = () => (
       <div className="container">
         <div className="pricing-value-section">
           <h2>How our pricing works</h2>
-          <p>We do not compete on being cheapest. You pay for certainty: a fixed price, a realistic deadline and work done by the engineer who scoped it.</p>
+          <p>We do not compete on being cheapest. You pay for certainty: a fixed price, a realistic deadline and work done by the engineers who scoped it.</p>
           <div className="pricing-value-grid">
             <div className="pricing-value-item">
               <div className="pricing-value-icon">✓</div>
@@ -87,7 +87,7 @@ const PricingPage = () => (
               <div className="pricing-value-icon">✓</div>
               <div>
                 <strong>The engineer does the work</strong>
-                <p>No juniors and no account managers. The person who quotes your job does it.</p>
+                <p>No account managers. The engineers who quote your job do it.</p>
               </div>
             </div>
             <div className="pricing-value-item">

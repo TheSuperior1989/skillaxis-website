@@ -58,7 +58,7 @@ const CNCConversionsPage = () => (
 
     <section className="sp-section">
       <div className="container">
-        <SectionHeader tag="Our own tool changer" title="ATC-12: twelve tools, one engineer, concept to prototype" subtitle="Designed, drawn, programmed in CAM, laser-cut, 3D-printed and wired with its own controller. The same skills go into your conversion." />
+        <SectionHeader tag="Our own tool changer" title="ATC-12: twelve tools, from concept to prototype in-house" subtitle="Designed, drawn, programmed in CAM, laser-cut, 3D-printed and wired with its own controller. The same skills go into your conversion." />
         <div className="offer-split" style={{ marginTop: 32 }}>
           <VideoLoop src={toolchanger.render.src} poster={toolchanger.render.poster} label={toolchanger.render.caption} />
           <VideoLoop src={toolchanger.exploded.src} poster={toolchanger.exploded.poster} label={toolchanger.exploded.caption} />
@@ -100,7 +100,7 @@ const CNCConversionsPage = () => (
 
     <Deliverables
       title="What a conversion includes"
-      lead="One engineer handles the mechanical design, the electrical layout and the programming, so the machine works as one system."
+      lead="Mechanical design, electrical layout and programming are done by the same team, so the machine works as one system."
       items={[
         'Machine assessment from photos and a site visit',
         '3D design of motor, encoder, gearbox and drive mounting parts',
@@ -125,7 +125,7 @@ const CNCConversionsPage = () => (
       title="A manual lathe, converted and making parts"
       situation="A client needed a manual lathe turned into a CNC production machine, and the parts it had to make programmed and running."
       work="Designed every mounting part for the conversion (servo, encoder, gearbox and drive brackets), laid out the control panel, then wrote the G-code for bushes with copper inserts, feed pistons, threaded glands and pulleys."
-      result="A working CNC lathe producing the client's own parts. Design, drawings, programming and commissioning from one engineer."
+      result="A working CNC lathe producing the client's own parts. Design, drawings, programming and commissioning from one team."
       link={{ to: '/case-studies', label: 'More CNC and machining projects' }}
     />
 

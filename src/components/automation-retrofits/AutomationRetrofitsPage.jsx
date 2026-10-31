@@ -52,7 +52,7 @@ const AutomationRetrofitsPage = () => (
 
     <section className="sp-section">
       <div className="container">
-        <SectionHeader tag="Controllers we built" title="Circuit, board, enclosure and firmware, from one engineer" subtitle="The tool changer controller: schematic, a two-layer shield board we laid out and had made, the enclosure, and the firmware that talks to the CNC control over Modbus. The same family of boards runs our electronic lead screw and balancer." />
+        <SectionHeader tag="Controllers we built" title="Circuit, board, enclosure and firmware, all in-house" subtitle="The tool changer controller: schematic, a two-layer shield board we laid out and had made, the enclosure, and the firmware that talks to the CNC control over Modbus. The same family of boards runs our electronic lead screw and balancer." />
         <MediaGrid items={[electronics.schematic, electronics.pcb, electronics.shieldPhoto, electronics.prototype, electronics.elsEnclosure, electronics.solenoid]} columns={3} />
       </div>
     </section>
