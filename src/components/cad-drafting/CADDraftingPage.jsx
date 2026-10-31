@@ -1,8 +1,11 @@
 import SEO from '../common/SEO';
+import { MediaGrid, VideoLoop } from '../common/Media';
+import { press, packs } from '../../data/media';
 import {
   PageHero, PainGrid, Deliverables, Steps, ProofBlock, PriceBlock, FaqSection, CtaSection, SectionHeader,
 } from '../common/ServiceBlocks';
 import { faqSchemaFrom, serviceSchema } from '../../data/schema';
+import '../offers/OfferPages.css';
 import './CADDraftingPage.css';
 
 const SERVICE = 'CAD Drawings';
@@ -104,6 +107,13 @@ const CADDraftingPage = () => (
       </div>
     </section>
 
+    <section className="sp-section">
+      <div className="container">
+        <SectionHeader tag="Drawn for the shop floor" title="Generated drawings, audited models" subtitle="A general arrangement with balloons and a section, tooling renders from a 60 t press, and a stress plot from the same model. Everything regenerates when a dimension changes." />
+        <MediaGrid items={[packs.ct12Drawing, press.toolingSet, press.feaReinforced, press.dieExploded, packs.motorFixtureSheet2, press.slide]} columns={3} />
+      </div>
+    </section>
+
     <Deliverables
       alt={false}
       title="What comes with every drawing job"
@@ -126,11 +136,21 @@ const CADDraftingPage = () => (
       ]}
     />
 
+    <section className="sp-section sp-alt">
+      <div className="container">
+        <SectionHeader tag="Reverse engineering" title="From a worn part to a better one" subtitle="A chain tensioner measured off the manufacturer's drawing, redesigned with a replaceable shoe, drawn, costed and filmed in a day." />
+        <div className="offer-split" style={{ marginTop: 32 }}>
+          <VideoLoop src={packs.ct12HowItWorks.src} poster={packs.ct12HowItWorks.poster} label={packs.ct12HowItWorks.caption} ratio="1920 / 904" />
+          <VideoLoop src={packs.ct12ShoeChange.src} poster={packs.ct12ShoeChange.poster} label={packs.ct12ShoeChange.caption} ratio="1920 / 904" />
+        </div>
+      </div>
+    </section>
+
     <ProofBlock
       title="Garage prototype to manufacturable design"
       situation="An inventor with a patent-pending wheel-chock mechanism for mining vehicles had a working garage prototype, but nothing a manufacturer could quote on."
-      work="Redesigned it around catalogue bearings, actuators and fasteners from standard suppliers, and produced the formal drawing set for the patent process."
-      result="A buildable design and a complete drawing package, ready for manufacturers and the patent attorney."
+      work="Modelled the mechanism, produced a 36-page drawing package with draft patent figures, then audited it, found the load path ran through a small motor, and redesigned it as a single-actuator mechanism with strength margins, an audited 115-part model, a motion assembly and a demo film."
+      result="From review to a redesigned, audited mechanism with client documents in three days, with the drawing and patent-figure generators ready for the next inventor."
       link={{ to: '/case-studies', label: 'See the plant layout and piping projects' }}
     />
 

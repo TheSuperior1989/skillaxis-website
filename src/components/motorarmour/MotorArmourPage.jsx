@@ -1,5 +1,6 @@
 import SEO from '../common/SEO';
-import ProjectVisual from '../common/ProjectVisual';
+import { MediaFigure, MediaGrid } from '../common/Media';
+import { motorarmour as ma } from '../../data/media';
 import {
   PageHero, PainGrid, Steps, ProofBlock, FaqSection, CtaSection, SectionHeader,
 } from '../common/ServiceBlocks';
@@ -39,7 +40,7 @@ const faqs = [
   },
   {
     q: 'How is it priced?',
-    a: 'Per motor, with a fixed price in writing. Pilot pricing applies to a first small batch so you can prove it on your own line, and volume pricing after that.',
+    a: 'Per motor, with a fixed price in writing: from R8,500 per motor for frame 112 and smaller, prepaid per batch, with pilot pricing for a first small batch and larger frames quoted by size.',
   },
 ];
 
@@ -59,7 +60,7 @@ const MotorArmourPage = () => (
       tag="MotorArmour™ · Motor protection"
       title="Stop losing electric motors to water and wash-down."
       intro="MotorArmour is our protection treatment for electric motors that work wet. Every motor is tested, certified and tracked by serial number, so you can see exactly what you are getting and how it performs on your line."
-      meta={['Paid pilot → repeat orders', 'Certificate per motor', 'Tracked by serial number', 'Pilot batch pricing']}
+      meta={['Paid pilot, then five repeat orders', 'Certificate per motor, tracked by serial number', 'From R8,500 per motor, prepaid per batch', 'Prices exclude VAT, none added']}
       service={SERVICE}
       waMessage={WA}
       primaryLabel="Ask about a pilot batch"
@@ -82,7 +83,7 @@ const MotorArmourPage = () => (
           subtitle="The treatment process is proprietary. The proof is not: every motor leaves us tested, certified and on record."
         />
         <div className="ma-layout">
-          <div className="ma-visual"><ProjectVisual variant="motor" /></div>
+          <div className="ma-visual"><MediaFigure src={ma.certificate.src} alt={ma.certificate.caption} caption={ma.certificate.caption} ratio="1240 / 1754" cover={false} /></div>
           <div className="ma-outcomes">
             {outcomes.map((o) => (
               <div key={o.value} className="ma-outcome">
@@ -92,6 +93,13 @@ const MotorArmourPage = () => (
             ))}
           </div>
         </div>
+      </div>
+    </section>
+
+    <section className="sp-section">
+      <div className="container">
+        <SectionHeader tag="On the line" title="Real motors, real plant" subtitle="Stripped and inspected, treated and sealed, installed on a high-pressure wash-down line. Serial numbers and client details are not shown." />
+        <MediaGrid items={[ma.installed, ma.treated, ma.dispatch, ma.terminalBox, ma.treatedFlange, ma.coupling]} columns={3} />
       </div>
     </section>
 

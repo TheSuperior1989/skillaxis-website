@@ -1,9 +1,12 @@
 import SEO from '../common/SEO';
+import { VideoLoop, MediaGrid } from '../common/Media';
+import { press, packs } from '../../data/media';
 import {
   PageHero, PainGrid, Deliverables, Steps, ProofBlock, FaqSection, CtaSection, SectionHeader,
 } from '../common/ServiceBlocks';
 import { faqSchemaFrom, serviceSchema } from '../../data/schema';
 import '../cad-drafting/CADDraftingPage.css';
+import '../offers/OfferPages.css';
 
 const SERVICE = 'Custom Machinery';
 const WA = 'Hi, I need a custom machine or piece of equipment designed. Here is what it has to do:';
@@ -58,7 +61,19 @@ const CustomMachineryPage = () => (
       waMessage={WA}
     />
 
+    <section className="sp-section">
+      <div className="container">
+        <SectionHeader tag="A machine in two days" title="A 60 t angle-flaring press: sized, designed, analysed and filmed" subtitle="Force calculations for every section, 69 parts around a standard cylinder and power pack, a 49-drawing set, finite-element checks on the frame and a film the client could show his team." />
+        <div className="offer-split" style={{ marginTop: 32 }}>
+          <VideoLoop src={press.cycle.src} poster={press.cycle.poster} label={press.cycle.caption} />
+          <VideoLoop src={press.hotbend.src} poster={press.hotbend.poster} label={press.hotbend.caption} />
+        </div>
+        <MediaGrid items={[press.overview, press.operator, press.pack, press.hotbendHot, press.adjustableDie, press.quickChange]} columns={3} />
+      </div>
+    </section>
+
     <PainGrid
+      alt
       title="Why clients ask for custom"
       items={[
         { title: 'Your process is unusual', text: 'Your part, product or space does not match anything you can buy. A machine designed for your job beats a standard one you have to work around.' },
@@ -81,6 +96,7 @@ const CustomMachineryPage = () => (
       sideTitle="Designed by SkillAxis"
       sideItems={[
         'Turbocharger tooling, fixtures and jigs designed and machined weekly',
+        'A 60 t angle-flaring press and adjustable hot-bend tooling for tower steel',
         'A two-plane dynamic balancer for turbochargers',
         'Factory equipment package: trays, blast-room racking, trolleys and a mixer',
         'An automatic tool changer and CNC conversion hardware',
@@ -106,7 +122,18 @@ const CustomMachineryPage = () => (
       </div>
     </section>
 
+    <section className="sp-section sp-alt">
+      <div className="container">
+        <SectionHeader tag="Process equipment" title="Stainless trays, racking and trolleys for a food factory" subtitle="Weld-free sheet-metal design with tab-locked fins, 27 drawings, 15 flat patterns and a costing, quoted in three days." />
+        <div className="offer-split" style={{ marginTop: 32 }}>
+          <VideoLoop src={packs.trayTabLock.src} poster={packs.trayTabLock.poster} label={packs.trayTabLock.caption} ratio="1280 / 570" />
+          <MediaGrid items={[packs.foodTray, packs.trayRack]} columns={2} />
+        </div>
+      </div>
+    </section>
+
     <ProofBlock
+      alt={false}
       title="Special tooling for a turbo workshop"
       situation="A turbocharger workshop needed special tools, jigs and fixtures that nobody sells: compressor wheel removal, balancing adapters, disassembly jigs and manifold flanges."
       work="Designed over a hundred tools, fixtures and adapters, drew them for manufacture and machined many of them on CNC machines we converted."

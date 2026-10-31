@@ -1,5 +1,6 @@
 import SEO from '../common/SEO';
-import ProjectVisual from '../common/ProjectVisual';
+import { PlayVideo, VideoLoop, MediaGrid } from '../common/Media';
+import { software } from '../../data/media';
 import {
   PageHero, PainGrid, Deliverables, Steps, ProofBlock, PriceBlock, FaqSection, CtaSection, SectionHeader,
 } from '../common/ServiceBlocks';
@@ -63,7 +64,7 @@ const WorkshopSoftwarePage = () => (
       tag="Workshop software · Proven in production"
       title="Run your workshop from one screen, not a stack of job cards."
       intro="The workshop management system behind a busy Pretoria turbocharger workshop, set up for yours. Job cards, live job status, customer history and parts in one app that works on the floor, in the office and offline."
-      meta={['3,300+ job cards in production', 'Android + web', 'Works offline', 'R7,500 setup + R2,500/month']}
+      meta={['3,300+ job cards in production', 'Android + web, works offline', 'R7,500 setup + R2,500/month', 'Prices exclude VAT, none added']}
       service={SERVICE}
       waMessage={WA}
       primaryLabel="Book a live demo"
@@ -78,11 +79,23 @@ const WorkshopSoftwarePage = () => (
       ]}
     />
 
+    <section className="sp-section">
+      <div className="container">
+        <SectionHeader tag="31 seconds" title="See it before you book a demo" subtitle="The promo below is the real system on a demonstration workshop with invented data. Sound on." />
+        <PlayVideo src={software.promo.src} poster={software.promo.poster} label="Turbo Management System in 31 seconds" />
+      </div>
+    </section>
+
     <section className="sp-section sp-alt">
       <div className="container">
         <SectionHeader tag="What it does" title="Everything a job touches, in one place" />
         <div className="ws-layout">
-          <div className="ws-visual"><ProjectVisual variant="app" /></div>
+          <div className="ws-visual ws-visual--clips">
+            <VideoLoop src={software.jobCards.src} poster={software.jobCards.poster} label={software.jobCards.caption} ratio="2.5 / 1" />
+            <VideoLoop src={software.inventory.src} poster={software.inventory.poster} label={software.inventory.caption} ratio="2.5 / 1" />
+            <VideoLoop src={software.warranty.src} poster={software.warranty.poster} label={software.warranty.caption} ratio="2.5 / 1" />
+            <VideoLoop src={software.reports.src} poster={software.reports.poster} label={software.reports.caption} ratio="2.5 / 1" />
+          </div>
           <div className="ws-features">
             {features.map((f) => (
               <div key={f.title} className="ws-feature">
@@ -92,6 +105,13 @@ const WorkshopSoftwarePage = () => (
             ))}
           </div>
         </div>
+      </div>
+    </section>
+
+    <section className="sp-section">
+      <div className="container">
+        <SectionHeader tag="Screens" title="The job board, the card, the quote and the stock" />
+        <MediaGrid items={[software.shotJobsBoard, software.shotJobCard, software.shotQuote, software.shotInventory, software.shotFailure, software.shotReports]} columns={3} />
       </div>
     </section>
 
@@ -133,7 +153,7 @@ const WorkshopSoftwarePage = () => (
       service={SERVICE}
       tiers={[
         { label: 'Once-off setup', price: 'R7,500', text: 'Configuration, branding, data import, device setup and training.', featured: true },
-        { label: 'Monthly', price: 'R2,500/month', text: 'Hosting, backups, updates and support.' },
+        { label: 'Monthly, up to 5 users', price: 'R2,500/month', text: 'Hosting, backups, updates and support. Extra users R350 each per month.' },
         { label: 'Extra modules', price: 'Fixed quote', text: 'Quotes, test reports, certificates or anything specific to your workshop.' },
       ]}
     />
