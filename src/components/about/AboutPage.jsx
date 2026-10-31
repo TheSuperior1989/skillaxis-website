@@ -30,7 +30,7 @@ const AboutPage = () => (
   <div className="service-page">
     <SEO
       title="About SkillAxis Dynamics | Engineering and Software Company, Pretoria"
-      description="SkillAxis Dynamics (Pty) Ltd is an engineering and software company in Pretoria. Design, drawings, CNC, custom machinery, workshop software and MotorArmour motor protection from one engineer."
+      description="SkillAxis Dynamics (Pty) Ltd is an engineering and software company in Pretoria. Design, drawings, CNC, custom machinery, workshop software and MotorArmour motor protection from one team."
       canonical="/about"
       schema={{
         '@context': 'https://schema.org',
