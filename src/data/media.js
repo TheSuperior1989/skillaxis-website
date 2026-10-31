@@ -193,3 +193,17 @@ export const bloomforge = {
   guideCover: plain('bloomforge', 'bloomforge-guide-p01', 'The 135-page manufacturing guide, generated from the model.', 'png'),
   guideBending: plain('bloomforge', 'bloomforge-guide-p10', 'Manufacturing guide: sheet-metal bending section.', 'png'),
 };
+
+// Own control electronics: the ATC-12 controller, the electronic lead screw and the balancer.
+const png = (name, caption, small = true) => ({ type: 'image', src: `/media/electronics/${name}.png`, srcSmall: small ? `/media/electronics/${name}-960.png` : undefined, caption });
+export const electronics = {
+  schematic: png('atc12_controller_schematic', 'ATC-12 controller schematic: stepper driver, solenoid driver, display, Bluetooth and the Modbus link to the CNC control.'),
+  pcb: png('atc12_pcb_layout', 'Two-layer shield PCB laid out for the controller.'),
+  pcbModel: png('atc12_shield_pcb_model_render', 'The shield board modelled in 3D before manufacture.'),
+  shieldPhoto: img('electronics', 'atc12_shield_pcb_on_mega', 'The manufactured shield fitted to the controller board.'),
+  prototype: img('electronics', 'atc12_prototype_print', 'The 3D-printed prototype running on the bench.'),
+  solenoid: png('atc12_solenoid_assembly', 'Solenoid lock assembly for the turret.', false),
+  explodedView: png('atc12_exploded_view', 'Exploded view from the design report.'),
+  elsEnclosure: png('els_controller_enclosure_render', 'Electronic lead screw controller: touch-screen enclosure, modelled and printed.'),
+  balancerParts: png('balancer_printed_parts_render', 'Two-plane balancer: printed frame parts from the design study.'),
+};

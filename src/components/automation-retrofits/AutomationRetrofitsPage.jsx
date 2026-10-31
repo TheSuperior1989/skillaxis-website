@@ -1,7 +1,10 @@
 import SEO from '../common/SEO';
+import { MediaGrid, VideoLoop } from '../common/Media';
+import { electronics, controls } from '../../data/media';
 import {
-  PageHero, PainGrid, Deliverables, Steps, ProofBlock, PriceBlock, FaqSection, CtaSection,
+  PageHero, PainGrid, Deliverables, Steps, ProofBlock, PriceBlock, FaqSection, CtaSection, SectionHeader,
 } from '../common/ServiceBlocks';
+import '../offers/OfferPages.css';
 import { faqSchemaFrom, serviceSchema } from '../../data/schema';
 
 const SERVICE = 'Machine Controls and Retrofits';
@@ -46,6 +49,30 @@ const AutomationRetrofitsPage = () => (
       service={SERVICE}
       waMessage={WA}
     />
+
+    <section className="sp-section">
+      <div className="container">
+        <SectionHeader tag="Controllers we built" title="Circuit, board, enclosure and firmware, from one engineer" subtitle="The tool changer controller: schematic, a two-layer shield board we laid out and had made, the enclosure, and the firmware that talks to the CNC control over Modbus. The same family of boards runs our electronic lead screw and balancer." />
+        <MediaGrid items={[electronics.schematic, electronics.pcb, electronics.shieldPhoto, electronics.prototype, electronics.elsEnclosure, electronics.solenoid]} columns={3} />
+      </div>
+    </section>
+
+    <section className="sp-section sp-alt">
+      <div className="container offer-split offer-split--text">
+        <div>
+          <SectionHeader tag="For client machines" title="A controller designed before the hardware is bought" />
+          <p className="sp-lead">For a client's vehicle-mounted mechanism we designed the enclosure, harness and schematics from one data file and ran the firmware through 160 bench-simulated checks, including a jammed drive, a slow motor, a broken sensor wire and a power loss mid-move, before a single part was ordered.</p>
+          <ul className="sp-list">
+            <li>Enclosure, drivers, terminals and harness generated from the same data</li>
+            <li>Schematics and a drilling template for the panel builder</li>
+            <li>Fault codes shown on the dash and explained on a card</li>
+          </ul>
+        </div>
+        <div>
+          <VideoLoop src={controls.boxBuild.src} poster={controls.boxBuild.poster} label={controls.boxBuild.caption} ratio="1920 / 1444" />
+        </div>
+      </div>
+    </section>
 
     <PainGrid
       title="When a controls retrofit makes sense"

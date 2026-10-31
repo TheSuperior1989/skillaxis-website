@@ -1,7 +1,7 @@
 // Real SkillAxis projects only. Clients are never named on the site (confidentiality); describe them by industry.
 // Numbers must come from project records: reports, app docs, certificates or job systems.
 // `media` points at anonymised renders, films and photos in public/media (see src/data/media.js).
-import { plant, press, packs, software, turbo, motorarmour as ma, controls, toolchanger, cam, zd30, bloomforge } from './media';
+import { plant, press, packs, software, turbo, motorarmour as ma, controls, toolchanger, cam, zd30, bloomforge, electronics } from './media';
 
 export const projects = [
   {
@@ -118,6 +118,21 @@ export const projects = [
     result: 'A complete mechanism from concept to working prototype by one engineer: mechanical design, drawings, CAM, electronics, firmware and documentation. The same skills now go into client machines.',
     tags: ['Mechanism design', 'Manufacturing drawings', 'CAM', 'Electronics and firmware', 'Prototype'],
     link: '/cnc-conversions',
+  },
+  {
+    id: 'machine-electronics',
+    category: 'Engineering',
+    visual: 'cnc',
+    tag: 'Controls and electronics',
+    title: 'Controllers we designed, built and programmed for our own machines',
+    client: 'SkillAxis own projects',
+    metric: '23 firmware sketches, 5,000 lines in service',
+    media: { hero: electronics.schematic, gallery: [electronics.shieldPhoto, electronics.pcb, electronics.elsEnclosure] },
+    problem: 'Converted machines need controls that nobody sells: a tool changer that talks to the CNC software, a lathe that cuts threads from a spindle encoder, a balancer that reads two accelerometers, a grow room that holds temperature and gas levels.',
+    solution: 'Designed the circuits, laid out and manufactured a two-layer shield board, modelled and printed the enclosures and wrote the firmware. The ATC-12 controller drives a stepper and a solenoid lock, shows status on a TFT, takes commands over Bluetooth and answers the CNC control over Modbus. The electronic lead screw reads a 4,096-pulse spindle encoder and drives a 1 kW AC servo to cut 15 metric pitches from 0.5 to 6 mm, handing over from the CNC controller by relay. The balancer samples two accelerometers and an infrared tacho. The environment controller reads temperature, humidity and gas sensors and switches four relays.',
+    result: 'Four working controllers on one family of boards, with every schematic, board file and sketch kept and versioned. The same approach now goes into client machines: the vehicle actuator controller shipped with 160 bench-simulated checks before any hardware was bought.',
+    tags: ['Circuit design', 'PCB layout', 'Firmware', 'Encoders and servos', 'Modbus'],
+    link: '/automation-retrofits',
   },
   {
     id: 'zd30-animation',
