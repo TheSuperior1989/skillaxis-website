@@ -1,5 +1,6 @@
 import { Head } from 'vite-react-ssg';
 import Hero from './Hero';
+import FlagshipFilm from './FlagshipFilm';
 import ServicesOverview from './ServicesOverview';
 import FeaturedProjects from './FeaturedProjects';
 import WhyUs from './WhyUs';
@@ -58,6 +59,7 @@ const HomePage = () => (
       <script type="application/ld+json">{JSON.stringify(faqSchemaFrom(faqs))}</script>
     </Head>
     <Hero />
+    <FlagshipFilm />
     <ServicesOverview />
     <FeaturedProjects />
     <WhyUs />
