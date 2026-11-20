@@ -12,6 +12,10 @@ import './ContactPage.css';
 const WA_URL = waLink();
 
 const SERVICE_OPTIONS = [
+  'Design Pack',
+  'Plant Layout and Visualisation',
+  'Machine Capacity Report',
+  'CT12-420 chain tensioner',
   'Workshop Management System',
   'MotorArmour Motor Protection',
   'CAD Drawings',

@@ -1,8 +1,11 @@
 import SEO from '../common/SEO';
+import { MediaGrid, VideoLoop } from '../common/Media';
+import { press, packs } from '../../data/media';
 import {
   PageHero, PainGrid, Deliverables, Steps, ProofBlock, PriceBlock, FaqSection, CtaSection, SectionHeader,
 } from '../common/ServiceBlocks';
 import { faqSchemaFrom, serviceSchema } from '../../data/schema';
+import '../offers/OfferPages.css';
 import './CADDraftingPage.css';
 
 const SERVICE = 'CAD Drawings';
@@ -25,7 +28,7 @@ const lanes = [
     title: 'Patent drawing sets',
     who: 'Inventors and patent attorneys',
     text: 'Formal drawing sets for patent applications, plus redesign around catalogue parts so the invention can actually be manufactured.',
-    price: 'Quoted per invention',
+    price: 'From R7,500',
   },
   {
     title: 'Reverse engineering',
@@ -62,7 +65,7 @@ const CADDraftingPage = () => (
   <div className="service-page">
     <SEO
       title="CAD Drawings, Plant Layouts and Patent Drawing Sets | South Africa"
-      description="Manufacturing drawings, BOMs, 3D factory layouts, patent drawing sets and reverse engineering from sketches, photos or parts. 9,400+ parts and assemblies modelled. From R3,500. SkillAxis Dynamics, Pretoria."
+      description="Manufacturing drawings, BOMs, 3D factory layouts, patent drawing sets and reverse engineering from sketches, photos or parts. Models, drawings and BOMs that fit together the first time, checked part by part. From R3,500. SkillAxis Dynamics, Pretoria."
       canonical="/cad-design-drafting"
       schema={[
         faqSchemaFrom(faqs),
@@ -74,7 +77,7 @@ const CADDraftingPage = () => (
       tag="CAD drawings · Plant layouts · Patent sets"
       title="Drawings a workshop can build from, the first time."
       intro="Manufacturing drawings, BOMs, 3D plant layouts and patent drawing sets, from a sketch, a photo or the part in your hand. Drawn by an engineer who machines and builds, so the drawings work on the shop floor."
-      meta={['From R3,500', '9,400+ parts and assemblies modelled', 'PDF, STEP and DXF delivered', 'Remote, nationwide']}
+      meta={['From R3,500', 'Every model checked for fit before you see it', 'PDF, STEP and DXF delivered', 'Remote, nationwide']}
       service={SERVICE}
       waMessage={WA}
     />
@@ -104,6 +107,13 @@ const CADDraftingPage = () => (
       </div>
     </section>
 
+    <section className="sp-section">
+      <div className="container">
+        <SectionHeader tag="Drawn for the shop floor" title="Drawings a fabricator can price from" subtitle="A general arrangement with balloons and a section, tooling renders from a 60 t press, and a stress plot from the same model. Change a dimension and every drawing, list and costing follows." />
+        <MediaGrid items={[packs.ct12Drawing, press.toolingSet, press.feaReinforced, press.dieExploded, packs.motorFixtureSheet2, press.slide]} columns={3} />
+      </div>
+    </section>
+
     <Deliverables
       alt={false}
       title="What comes with every drawing job"
@@ -126,11 +136,21 @@ const CADDraftingPage = () => (
       ]}
     />
 
+    <section className="sp-section sp-alt">
+      <div className="container">
+        <SectionHeader tag="Reverse engineering" title="From a worn part to a better one" subtitle="A chain tensioner measured off the manufacturer's drawing, redesigned with a replaceable shoe, drawn, costed and filmed in a day." />
+        <div className="offer-split" style={{ marginTop: 32 }}>
+          <VideoLoop src={packs.ct12HowItWorks.src} poster={packs.ct12HowItWorks.poster} label={packs.ct12HowItWorks.caption} ratio="1920 / 904" />
+          <VideoLoop src={packs.ct12ShoeChange.src} poster={packs.ct12ShoeChange.poster} label={packs.ct12ShoeChange.caption} ratio="1920 / 904" />
+        </div>
+      </div>
+    </section>
+
     <ProofBlock
       title="Garage prototype to manufacturable design"
       situation="An inventor with a patent-pending wheel-chock mechanism for mining vehicles had a working garage prototype, but nothing a manufacturer could quote on."
-      work="Redesigned it around catalogue bearings, actuators and fasteners from standard suppliers, and produced the formal drawing set for the patent process."
-      result="A buildable design and a complete drawing package, ready for manufacturers and the patent attorney."
+      work="Modelled the mechanism, produced a 36-page drawing package with draft patent figures, then reviewed it, found the load path ran through a small motor, and redesigned it as a single-actuator mechanism with strength margins, a 115-part model checked for clashes at every position, a motion assembly and a demo film."
+      result="From review to a redesigned, fully checked mechanism with client documents in three days."
       link={{ to: '/case-studies', label: 'See the plant layout and piping projects' }}
     />
 

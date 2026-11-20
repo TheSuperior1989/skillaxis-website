@@ -10,7 +10,6 @@ const categories = ['All', 'Engineering', 'Software', 'Marketing', 'Branding'];
 
 const CaseStudiesPage = () => {
   const [activeCategory, setActiveCategory] = useState('All');
-  const [activeCase, setActiveCase] = useState(null);
 
   const filtered = activeCategory === 'All'
     ? caseStudies
@@ -73,47 +72,15 @@ const CaseStudiesPage = () => {
                   <h3 className="cs-title">{cs.title}</h3>
                   <p className="cs-client">{cs.client}</p>
                   <p className="cs-problem-preview">{cs.problem}</p>
-                  <button className="cs-read-more" onClick={() => setActiveCase(cs)}>
+                  <Link to={`/projects/${cs.id}`} className="cs-read-more">
                     Read the project →
-                  </button>
+                  </Link>
                 </div>
               </div>
             ))}
           </div>
         </div>
       </section>
-
-      {activeCase && (
-        <div className="cs-modal-overlay" onClick={() => setActiveCase(null)}>
-          <div className="cs-modal" onClick={e => e.stopPropagation()}>
-            <button className="cs-modal-close" onClick={() => setActiveCase(null)} aria-label="Close">×</button>
-            <span className="cs-tag" style={{ marginBottom: '12px', display: 'inline-block' }}>{activeCase.tag}</span>
-            <h2 className="cs-modal-title">{activeCase.title}</h2>
-            <p className="cs-client">{activeCase.client}</p>
-            <div className="cs-modal-body">
-              <div className="cs-modal-section">
-                <span className="cs-modal-label">The Problem</span>
-                <p>{activeCase.problem}</p>
-              </div>
-              <div className="cs-modal-section">
-                <span className="cs-modal-label">The Solution</span>
-                <p>{activeCase.solution}</p>
-              </div>
-              <div className="cs-modal-section cs-modal-result">
-                <span className="cs-modal-label result">The Result</span>
-                <p>{activeCase.result}</p>
-              </div>
-              <div className="cs-modal-section">
-                <span className="cs-modal-label">Scope</span>
-                <div className="cs-tech-tags">
-                  {activeCase.tags.map(t => <span key={t}>{t}</span>)}
-                </div>
-              </div>
-              <Link to={activeCase.link} className="btn btn-primary cs-modal-cta">See the related service</Link>
-            </div>
-          </div>
-        </div>
-      )}
 
       <CtaSection
         title="Have a similar job?"

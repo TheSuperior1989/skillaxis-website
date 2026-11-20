@@ -1,9 +1,13 @@
 import SEO from '../common/SEO';
+import { VideoLoop, MediaGrid, PlayVideo } from '../common/Media';
+import { toolchanger, cam, zd30 } from '../../data/media';
 import {
   PageHero, PainGrid, Deliverables, Steps, ProofBlock, PriceBlock, FaqSection, CtaSection,
+  SectionHeader,
 } from '../common/ServiceBlocks';
 import { faqSchemaFrom, serviceSchema } from '../../data/schema';
 import './CNCConversionsPage.css';
+import '../offers/OfferPages.css';
 
 const SERVICE = 'CNC Conversion';
 const WA = 'Hi, I would like a quote for a CNC conversion or CNC programming. Here are photos of the machine:';
@@ -11,7 +15,7 @@ const WA = 'Hi, I would like a quote for a CNC conversion or CNC programming. He
 const faqs = [
   {
     q: 'How much does a CNC conversion cost in South Africa?',
-    a: 'A conversion starts from about R25,000 for a smaller machine. The final price depends on the number of axes, the size and condition of the machine, the drives you choose and whether you need a tool changer or a new control panel. You get a fixed price in writing after we have seen the machine.',
+    a: 'A single-axis retrofit starts from about R25,000 and a full lathe or mill conversion from about R95,000; the last lathe we converted was R132,500 under a written agreement. The final price depends on the number of axes, the size and condition of the machine, the drives you choose and whether you need a tool changer or a new control panel. You get a fixed price in writing after we have seen the machine.',
   },
   {
     q: 'Which machines can be converted?',
@@ -35,7 +39,7 @@ const CNCConversionsPage = () => (
   <div className="service-page">
     <SEO
       title="CNC Mill and Lathe Conversions and G-code Programming | Pretoria, South Africa"
-      description="Convert a manual mill or lathe to CNC, add a tool changer, or get production parts programmed. 1,000+ CNC programs written on machines we built ourselves. From R25,000. Pretoria, nationwide."
+      description="Convert a manual mill or lathe to CNC, add a tool changer, or get production parts programmed. A R132,500 lathe conversion delivered under a written agreement, and production programs written remotely at a fixed price. Pretoria, nationwide."
       canonical="/cnc-conversions"
       schema={[
         faqSchemaFrom(faqs),
@@ -47,10 +51,43 @@ const CNCConversionsPage = () => (
       tag="CNC conversions · CAM and G-code · Pretoria"
       title="Turn your manual mill or lathe into a CNC production machine."
       intro="We design the mounting parts, lay out the control panel, fit the drives, commission the machine and write the programs for your parts. The CNC work we quote on runs on machines we converted and built ourselves."
-      meta={['From R25,000', '1,000+ CNC programs written', '56 machining jobs in five months', 'Remote G-code programming']}
+      meta={['Written agreement, 50% deposit', 'Positioning to 0.01 mm on the last conversion', 'Remote G-code programming at a fixed price per program', 'Training and warranty included']}
       service={SERVICE}
       waMessage={WA}
     />
+
+    <section className="sp-section">
+      <div className="container">
+        <SectionHeader tag="Our own tool changer" title="ATC-12: twelve tools, from concept to prototype in-house" subtitle="Designed, drawn, programmed in CAM, laser-cut, 3D-printed and wired with its own controller. The same skills go into your conversion." />
+        <div className="offer-split" style={{ marginTop: 32 }}>
+          <VideoLoop src={toolchanger.render.src} poster={toolchanger.render.poster} label={toolchanger.render.caption} />
+          <VideoLoop src={toolchanger.exploded.src} poster={toolchanger.exploded.poster} label={toolchanger.exploded.caption} />
+        </div>
+        <MediaGrid items={[toolchanger.print1, toolchanger.explodedDrawing, toolchanger.camTop, toolchanger.laserPlates, toolchanger.housingDrawing, toolchanger.onLathe]} columns={3} />
+      </div>
+    </section>
+
+    <section className="sp-section sp-alt">
+      <div className="container">
+        <SectionHeader tag="CAM and machining" title="Programs written, parts made" subtitle="Toolpaths from real production programs, machining drawings and the parts on the machine: turbo housings, flanges, adapters and jigs." />
+        <MediaGrid items={[cam.housingBore, cam.toolpathBore, cam.flyCut, cam.toolpathGland, cam.adaptive, cam.toolpathAdaptive, cam.compressorFacing, cam.drawingHousing, cam.cabinet]} columns={3} />
+      </div>
+    </section>
+
+    <section className="sp-section">
+      <div className="container">
+        <SectionHeader tag="Remote programming" title="Six numbers in, a proven program out" subtitle="Our own lathe G-code generator writes roughing programs from stock and target sizes, tested byte for byte against a CAM reference. Production programs for your parts are R550 each, delivered by email." />
+        <MediaGrid items={[cam.generator, cam.generatorOutput, cam.toolpathPiston]} columns={3} />
+      </div>
+    </section>
+
+    <section className="sp-section sp-alt">
+      <div className="container">
+        <SectionHeader tag="We know what we machine" title="A turbocharger explained from our own model" subtitle="The ZD30 VNT turbocharger we first modelled in 2017, turned into a 60 second explainer film. Sound off, it speaks for itself." />
+        <PlayVideo src={zd30.full.src} poster={zd30.full.poster} label={zd30.full.caption} />
+        <MediaGrid items={[zd30.stillVnt, zd30.stillActuator, zd30.render2017]} columns={3} />
+      </div>
+    </section>
 
     <PainGrid
       title="Why workshops call us"
@@ -63,7 +100,7 @@ const CNCConversionsPage = () => (
 
     <Deliverables
       title="What a conversion includes"
-      lead="One engineer handles the mechanical design, the electrical layout and the programming, so the machine works as one system."
+      lead="Mechanical design, electrical layout and programming are done by the same team, so the machine works as one system."
       items={[
         'Machine assessment from photos and a site visit',
         '3D design of motor, encoder, gearbox and drive mounting parts',
@@ -88,7 +125,7 @@ const CNCConversionsPage = () => (
       title="A manual lathe, converted and making parts"
       situation="A client needed a manual lathe turned into a CNC production machine, and the parts it had to make programmed and running."
       work="Designed every mounting part for the conversion (servo, encoder, gearbox and drive brackets), laid out the control panel, then wrote the G-code for bushes with copper inserts, feed pistons, threaded glands and pulleys."
-      result="A working CNC lathe producing the client's own parts. Design, drawings, programming and commissioning from one engineer."
+      result="A working CNC lathe producing the client's own parts. Design, drawings, programming and commissioning from one team."
       link={{ to: '/case-studies', label: 'More CNC and machining projects' }}
     />
 
@@ -105,9 +142,9 @@ const CNCConversionsPage = () => (
     <PriceBlock
       service={SERVICE}
       tiers={[
-        { label: 'Single-axis retrofit', price: 'From R15,000', text: 'One axis driven, for example a power feed or lead screw upgrade.' },
-        { label: 'Full mill or lathe conversion', price: 'From R25,000', text: 'All axes, control panel, spindle control, commissioning and training.', featured: true },
-        { label: 'Conversion with tool changer', price: 'From R45,000', text: 'Larger or more complex machines, automatic tool changer and custom programming.' },
+        { label: 'Single-axis retrofit', price: 'From R25,000', text: 'One axis driven, for example a power feed or lead screw upgrade.' },
+        { label: 'Full lathe or mill conversion', price: 'From R95,000', text: 'All axes, control panel, spindle control, commissioning, training and warranty under a written agreement. The last lathe conversion was R132,500.', featured: true },
+        { label: 'Production programs, remote', price: 'R550 per program', text: 'G-code written and proven for your parts from a drawing or sample, delivered by email.' },
       ]}
     />
 

@@ -152,3 +152,4 @@
 @media (max-width: 900px) {
   .about-story { grid-template-columns: 1fr; gap: 32px; }
 }
+

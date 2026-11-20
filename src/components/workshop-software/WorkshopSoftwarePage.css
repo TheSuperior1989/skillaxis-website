@@ -38,3 +38,5 @@
 @media (max-width: 600px) {
   .ws-features { grid-template-columns: 1fr; }
 }
+
+.ws-visual--clips { display: grid; gap: 12px; align-content: start; }

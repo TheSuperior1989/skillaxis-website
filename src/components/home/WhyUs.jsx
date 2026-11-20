@@ -5,8 +5,8 @@ import './WhyUs.css';
 const reasons = [
   {
     icon: faUserCog,
-    title: 'You deal with the engineer',
-    text: 'No account managers and no hand-offs. The person who scopes your job is the person who designs, draws, programs or builds it.',
+    title: 'You deal with engineers',
+    text: 'No account managers and no hand-offs. The engineers who scope your job are the ones who design, draw, program or build it.',
   },
   {
     icon: faFileSignature,
@@ -44,7 +44,7 @@ const WhyUs = () => (
     <div className="container">
       <div className="section-header">
         <span className="section-tag">Why SkillAxis</span>
-        <h2 className="section-title">One engineer for the whole chain</h2>
+        <h2 className="section-title">One team for the whole chain</h2>
         <p className="section-subtitle">
           Most firms do one piece and hand the rest to someone else. We cover design, drawings, machining, controls and software, so nothing gets lost between suppliers.
         </p>

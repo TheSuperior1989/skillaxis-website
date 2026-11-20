@@ -196,3 +196,5 @@
     grid-template-columns: 1fr;
   }
 }
+
+.pricing-tier-card--featured { border-color: var(--accent); box-shadow: 0 0 0 1px var(--accent-dim); }
