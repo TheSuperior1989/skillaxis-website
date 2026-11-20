@@ -1,0 +1,31 @@
+.route-error {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 24px 16px;
+  background: var(--bg-primary);
+}
+
+.route-error-card {
+  max-width: 520px;
+  text-align: center;
+}
+
+.route-error-card h1 {
+  font-size: 1.8rem;
+  margin-bottom: 12px;
+  color: var(--text-primary);
+}
+
+.route-error-card p {
+  color: var(--text-muted);
+  margin-bottom: 24px;
+}
+
+.route-error-actions {
+  display: flex;
+  gap: 12px;
+  justify-content: center;
+  flex-wrap: wrap;
+}

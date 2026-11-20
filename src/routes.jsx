@@ -1,5 +1,6 @@
 import { Navigate } from 'react-router-dom';
 import Layout from './components/layout/Layout';
+import RouteError from './components/common/RouteError';
 import HomePage from './components/home/HomePage';
 import AboutPage from './components/about/AboutPage';
 import ServicesPage from './components/services/ServicesPage';
@@ -27,6 +28,7 @@ export const routes = [
   {
     path: '/',
     element: <Layout />,
+    errorElement: <RouteError />,
     children: [
       { index: true, element: <HomePage /> },
       { path: 'about', element: <AboutPage /> },
