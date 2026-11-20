@@ -81,14 +81,14 @@ const Hero = () => {
             <span className="hero-tag"><span className="hero-dot" /> Engineering and software · Pretoria, South Africa</span>
             <h1 className="hero-title">
               We <span className="hero-accent hero-rotate" key={lines[i]}>{lines[i]}</span>.
-              <br />Designed properly. Checked part by part. Delivered in days.
+              <br />Designed properly. Checked part by part.
             </h1>
             <p className="hero-subtitle">
               SkillAxis Dynamics is a hands-on engineering company for workshops, factories and technical businesses. Plant layouts and walkthrough films, machine design with finite-element checks, manufacturing drawings, CNC conversions and programming, workshop management software and MotorArmour motor protection, all from the team that does the work.
             </p>
             <ul className="hero-checks">
               <li><FontAwesomeIcon icon={faCheck} /> Fixed price in writing before we start</li>
-              <li><FontAwesomeIcon icon={faCheck} /> Design packs in two to five working days</li>
+              <li><FontAwesomeIcon icon={faCheck} /> One team, start to finish</li>
               <li><FontAwesomeIcon icon={faCheck} /> You own the drawings, files and programs</li>
             </ul>
             <div className="hero-buttons">
