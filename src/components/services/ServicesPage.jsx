@@ -15,7 +15,7 @@ const services = [
     title: 'Plant Layouts and Walkthrough Films',
     description: 'Your factory modelled machine by machine with flow, clearances and crane reach checked, plus 4K stills, A1 boards and a film for the board or the tender.',
     from: 'From R45,000',
-    link: '/plant-visualisation',
+    link: '/cad-design-drafting',
   },
   {
     tag: 'Engineering',

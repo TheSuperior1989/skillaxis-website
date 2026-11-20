@@ -31,7 +31,6 @@ const Footer = () => {
           <h4 className="footer-col-title">Services</h4>
           <ul>
             <li><Link to="/design-pack">Design Pack</Link></li>
-            <li><Link to="/plant-visualisation">Plant Layouts &amp; Films</Link></li>
             <li><Link to="/machine-capacity-report">Capacity Reports</Link></li>
             <li><Link to="/workshop-software">Workshop Management System</Link></li>
             <li><Link to="/motorarmour">MotorArmour™</Link></li>

@@ -1,12 +1,11 @@
 import { Link } from 'react-router-dom';
 import { VideoLoop, MediaFigure } from '../common/Media';
-import { plant, press, packs, software, motorarmour, bloomforge, toolchanger, zd30 } from '../../data/media';
+import { press, packs, software, motorarmour, bloomforge, toolchanger, zd30 } from '../../data/media';
 import './Showreel.css';
 
 // What the work looks like: short muted loops and stills from real jobs, each linked to
 // the page that sells that kind of work.
 const reel = [
-  { media: plant.process, title: 'Plant layouts and walkthrough films', text: 'A two-phase steel fabrication plant modelled machine by machine, then filmed for the board.', to: '/plant-visualisation', span: 2 },
   { media: press.cycle, title: 'Machine design with FEA', text: 'A 60 t angle-flaring press: force sizing, 49 drawings, stress checks and a film in two days.', to: '/custom-machinery-design' },
   { media: bloomforge.promo, title: 'Products from concept to build guide', text: 'Bloomforge: a motorised five-mode hearth, 113 parts checked for fit in every mode, manufacturing guides and films, in four days.', to: '/projects/bloomforge' },
   { media: zd30.orbit, title: 'Explainer animations from CAD', text: 'A VNT turbocharger explained, animated from our own 3D model.', to: '/projects/zd30-animation' },

@@ -6,7 +6,7 @@ import { faWhatsapp } from '@fortawesome/free-brands-svg-icons';
 import { faCheck } from '@fortawesome/free-solid-svg-icons';
 import SEO from '../common/SEO';
 import { waLink, trackLead } from '../../data/contact';
-import { plant } from '../../data/media';
+import { toolchanger } from '../../data/media';
 import './Hero.css';
 
 const proof = [
@@ -18,7 +18,7 @@ const proof = [
 
 const lines = ['design it', 'draw it', 'analyse it', 'film it', 'machine it', 'build the software that runs it'];
 
-// Background film: the plant walkthrough loop, muted, started after first paint so the
+// Background film: the ATC-12 tool changer loop, muted, started after first paint so the
 // text renders immediately. Respects prefers-reduced-motion by leaving the poster in place.
 const HeroFilm = () => {
   const ref = useRef(null);
@@ -36,8 +36,8 @@ const HeroFilm = () => {
     <div className="hero-film" aria-hidden="true">
       <video
         ref={ref}
-        src={play ? plant.heroLoop.src : undefined}
-        poster={plant.heroLoop.poster}
+        src={play ? toolchanger.render.src : undefined}
+        poster={toolchanger.render.poster}
         muted
         loop
         playsInline

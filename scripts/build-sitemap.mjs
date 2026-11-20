@@ -8,7 +8,6 @@ const today = new Date().toISOString().slice(0, 10);
 const pages = [
   ['/', 1.0, 'weekly'],
   ['/design-pack', 0.9, 'monthly'],
-  ['/plant-visualisation', 0.9, 'monthly'],
   ['/machine-capacity-report', 0.9, 'monthly'],
   ['/workshop-software', 0.9, 'monthly'],
   ['/motorarmour', 0.9, 'monthly'],

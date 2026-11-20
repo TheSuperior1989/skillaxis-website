@@ -7,7 +7,6 @@ import './Navbar.css';
 
 const services = [
   { label: 'Design Pack: model, drawings, costing, film', path: '/design-pack' },
-  { label: 'Plant Layouts & Walkthrough Films', path: '/plant-visualisation' },
   { label: 'Machine Capacity & Stress Reports', path: '/machine-capacity-report' },
   { label: 'Workshop Management System', path: '/workshop-software', divider: true },
   { label: 'MotorArmour™ Motor Protection', path: '/motorarmour' },

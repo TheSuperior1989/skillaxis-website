@@ -30,7 +30,7 @@ const services = [
     title: 'Plant Layouts & Walkthrough Films',
     description: 'Every machine placed and checked for flow, clearance and crane reach, then filmed for the board, the bank or the tender.',
     price: 'From R45,000',
-    link: '/plant-visualisation',
+    link: '/cad-design-drafting',
   },
   {
     id: 'capacity',

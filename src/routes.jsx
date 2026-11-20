@@ -19,7 +19,6 @@ import MotorArmourPage from './components/motorarmour/MotorArmourPage';
 import ProjectPage from './components/projects/ProjectPage';
 import HowItWorksPage from './components/how-it-works/HowItWorksPage';
 import DesignPackPage from './components/offers/DesignPackPage';
-import PlantVisualisationPage from './components/offers/PlantVisualisationPage';
 import CapacityReportPage from './components/offers/CapacityReportPage';
 import CT12ProductPage from './components/offers/CT12ProductPage';
 import { projects } from './data/projects';
@@ -48,7 +47,8 @@ export const routes = [
       { path: 'case-studies', element: <CaseStudiesPage /> },
       { path: 'how-it-works', element: <HowItWorksPage /> },
       { path: 'design-pack', element: <DesignPackPage /> },
-      { path: 'plant-visualisation', element: <PlantVisualisationPage /> },
+      // Parked until the client consents to the plant images (Tiaan, 20 Nov 2026). Page: components/offers/PlantVisualisationPage.jsx
+      { path: 'plant-visualisation', element: <Navigate to="/services" replace /> },
       { path: 'machine-capacity-report', element: <CapacityReportPage /> },
       { path: 'products/ct12-420', element: <CT12ProductPage /> },
       { path: 'pricing', element: <PricingPage /> },

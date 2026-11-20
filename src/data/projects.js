@@ -1,7 +1,7 @@
 // Real SkillAxis projects only. Clients are never named on the site (confidentiality); describe them by industry.
 // Numbers must come from project records: reports, app docs, certificates or job systems.
 // `media` points at anonymised renders, films and photos in public/media (see src/data/media.js).
-import { plant, press, packs, software, turbo, motorarmour as ma, controls, toolchanger, cam, zd30, bloomforge, electronics } from './media';
+import { press, packs, software, turbo, motorarmour as ma, controls, toolchanger, cam, zd30, bloomforge, electronics } from './media';
 
 export const projects = [
   {
@@ -193,21 +193,6 @@ export const projects = [
     result: 'From brief to a quotable package in three days. The client can take the drawings to any fabricator, and a change in tray size flows through the whole set instead of redrawing it.',
     tags: ['Sheet-metal design', 'Flat patterns', 'Costing', 'Explainer films'],
     link: '/design-pack',
-  },
-  {
-    id: 'plant-layout',
-    media: { hero: plant.heroLoop, gallery: [plant.overviewAerial, plant.punchLinesHigh, plant.drillLine] },
-    category: 'Engineering',
-    visual: 'layout',
-    tag: 'Plant layout',
-    title: 'Production line layout for a steel fabrication factory',
-    client: 'Steel fabrication factory, South Africa',
-    metric: 'Two full process flows',
-    problem: 'A new factory had to fit two production flows, angle-iron lattice work and flat-sheet work, with cranes and gas services, before money was spent on floors and machines.',
-    solution: 'A full 3D plant layout and bill of materials: the angle-iron flow with 5 traverse conveyors, 5 feeding conveyors, 5 lattice punching lines, a heating station, a heat-bending press, a straightening machine and a CNC mill; the sheet flow with laser, jib crane, bender, two punching machines and a cropper; plus gas and compressor stations, renders and walk-through videos.',
-    result: 'The client could check flow, clearances and crane reach on screen and plan the build from drawings instead of guesswork.',
-    tags: ['3D plant model', 'Bill of materials', 'Renders and videos'],
-    link: '/cad-design-drafting',
   },
   {
     id: 'piping',

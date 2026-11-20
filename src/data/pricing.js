@@ -32,7 +32,7 @@ export const pricing = [
   {
     id: 'plant',
     service: 'Plant Layouts and Walkthrough Films',
-    link: '/plant-visualisation',
+    link: '/cad-design-drafting',
     from: 'From R45,000',
     tiers: [
       { label: 'Layout and stills', price: 'From R45,000', desc: 'Building and machines modelled, clearance and flow checks, layout drawing, machine schedule, 4K stills.' },
