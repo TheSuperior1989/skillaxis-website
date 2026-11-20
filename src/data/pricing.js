@@ -11,8 +11,8 @@ export const pricing = [
     link: '/design-pack',
     from: 'From R18,000',
     tiers: [
-      { label: 'Sketch-to-Pack', price: 'From R18,000', desc: 'One part, fixture, stand or bracket: model, drawings, flat patterns, BOM, costing, datasheet and film. 2 to 3 working days.' },
-      { label: 'Equipment Pack', price: 'From R45,000', desc: 'A machine or equipment set: everything above plus motion and strength checks and a bought-item register. 3 to 5 working days.', featured: true },
+      { label: 'Sketch-to-Pack', price: 'From R18,000', desc: 'One part, fixture, stand or bracket: model, drawings, flat patterns, BOM, costing, datasheet and film.' },
+      { label: 'Equipment Pack', price: 'From R45,000', desc: 'A machine or equipment set: everything above plus motion and strength checks and a bought-item register.', featured: true },
       { label: 'Line or Plant Pack', price: 'Fixed quote', desc: 'A production line or plant with layout, every machine, flows, films and boards.' },
     ],
     factors: ['Number of made parts and bought items', 'Moving parts and load cases to check', 'Revisions beyond the included round', 'Export clients quoted in USD (from USD 1,100)'],
@@ -85,7 +85,7 @@ export const pricing = [
     tiers: [
       { label: 'Single detail drawing', price: 'From R3,500', desc: 'One part or assembly drawing, dimensioned and toleranced, PDF plus 3D or DXF files' },
       { label: 'Drawing package (5 to 10 drawings)', price: 'From R8,000', desc: 'General assembly, parts list and detail drawings for a full assembly' },
-      { label: 'Patent-ready drawing set', price: 'From R7,500', desc: 'Formal figures with reference numerals for your attorney, from your prototype or sketch, in 48 hours' },
+      { label: 'Patent-ready drawing set', price: 'From R7,500', desc: 'Formal figures with reference numerals for your attorney, from your prototype or sketch' },
     ],
     factors: ['Number of drawings', 'Machined parts vs fabrications', 'Whether redesign is needed', 'Reverse engineering from physical parts'],
   },

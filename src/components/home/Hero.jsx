@@ -59,7 +59,7 @@ const Hero = () => {
     <>
       <SEO
         title="Engineering, CNC, Drawings and Workshop Software | Pretoria"
-        description="SkillAxis Dynamics designs, draws, analyses, films, machines and builds the software for South African workshops and factories. Design packs in days, CNC conversions, custom machinery, workshop management software, MotorArmour motor protection and Google Ads. Fixed prices. Pretoria."
+        description="SkillAxis Dynamics designs, draws, analyses, films, machines and builds the software for South African workshops and factories. Design packs, CNC conversions, custom machinery, workshop management software, MotorArmour motor protection and Google Ads. Fixed prices. Pretoria."
         canonical="/"
         schema={{
           '@context': 'https://schema.org',

@@ -12,7 +12,7 @@ const reel = [
   { media: zd30.orbit, title: 'Explainer animations from CAD', text: 'A VNT turbocharger explained, animated from our own 3D model.', to: '/projects/zd30-animation' },
   { media: toolchanger.render, title: 'Our own tool changer', text: 'ATC-12: twelve tools on a stepper-indexed turret, from concept to a working prototype.', to: '/projects/atc12-tool-changer' },
   { media: software.promoMuted, title: 'Workshop management software', text: 'Job cards, inventory, warranty claims and reports, live in a workshop every day.', to: '/workshop-software' },
-  { media: packs.ct12HowItWorks, title: 'Design packs in days', text: 'A chain tensioner from reference to drawings, costing and films in one day.', to: '/design-pack' },
+  { media: packs.ct12HowItWorks, title: 'Build-ready design packs', text: 'A chain tensioner from reference to drawings, costing and films in one day.', to: '/design-pack' },
   { media: motorarmour.installed, title: 'MotorArmour motor protection', text: 'Treated motors on a wash-down line, each tested and certified.', to: '/motorarmour' },
   { media: press.feaAsFound, title: 'Press and machine capacity reports', text: 'Is the press in the corner really 100 t? A report with the numbers, from photos and a measurement sheet.', to: '/machine-capacity-report' },
 ];

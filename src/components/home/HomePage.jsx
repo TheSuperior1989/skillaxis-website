@@ -47,7 +47,7 @@ const HomePage = () => (
     <FeaturedProjects />
     <section className="sp-section sp-alt home-timeline">
       <div className="container">
-        <SectionHeader tag="How it works" title="From a WhatsApp photo to a finished job" subtitle="Six stages, each with a fixed price, a check and a handover. The full version shows typical timelines and payment points." />
+        <SectionHeader tag="How it works" title="From a WhatsApp photo to a finished job" subtitle="Six stages, each with a fixed price, a check and a handover. The full version shows what you get, what we need and when you pay." />
         <Timeline compact />
         <div className="sb-center">
           <Link to="/how-it-works" className="btn btn-ghost">See the full journey, timelines and payment points</Link>

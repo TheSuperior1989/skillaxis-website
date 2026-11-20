@@ -15,7 +15,7 @@ const faqs = [
   { q: 'What can you rate?', a: 'Presses and press frames, jigs and fixtures, stands, lifting beams, racks, roof and canopy frames, machine bases and brackets. If it carries a load and nobody knows the number, send photos.' },
   { q: 'How do you analyse it?', a: 'A 3D model is built from your photos, sketch and measurement sheet; hand calculations size the loads and the finite-element model checks stress and deflection against the material yield with a stated safety factor. Every input is labelled measured, estimated or assumed, and the report lists what to measure to firm it up.' },
   { q: 'Is the report a legal certificate?', a: 'No. SkillAxis Dynamics is not registered with the Engineering Council of South Africa. The report is the engineering assessment: model, loads, stresses, limits and recommendations. Where the law requires a registered professional to sign (lifting equipment, pressure systems, structures for occupancy), we work with one and quote the sign-off as its own line.' },
-  { q: 'How fast?', a: 'A preliminary report within five working days of receiving photos and the measurement sheet, and a re-issue on measured values included. On a recent press the capacity moved from 28 t to 95 t between preliminary and measured, which is exactly why the measurement step is in the price.' },
+  { q: 'Why a preliminary and a measured report?', a: 'A preliminary report comes first from your photos and the measurement sheet, and a re-issue on measured values is included. The dates are in your written quote. On a recent press the capacity moved from 28 t to 95 t between preliminary and measured, which is exactly why the measurement step is in the price.' },
   { q: 'What if the machine is not safe?', a: 'The report says so in plain language, gives the load at which it is safe, and shows what to change. On presses that usually means a relief-valve setting you can apply the same day.' },
 ];
 
@@ -23,7 +23,7 @@ const CapacityReportPage = () => (
   <div className="service-page">
     <SEO
       title="Machine Capacity Report: Is Your Press Really 100 t? | FEA Stress Report"
-      description="A fixed-price engineering report that rates your press, jig, stand, lifting beam or frame from photos and a measurement sheet: 3D model, hand calculations, finite-element stress check, safe load, relief-valve setting and what to change. Preliminary in five working days. From R12,000. SkillAxis Dynamics."
+      description="A fixed-price engineering report that rates your press, jig, stand, lifting beam or frame from photos and a measurement sheet: 3D model, hand calculations, finite-element stress check, safe load, relief-valve setting and what to change. Preliminary report first, re-issue on measured values. From R12,000. SkillAxis Dynamics."
       canonical="/machine-capacity-report"
       schema={[
         faqSchemaFrom(faqs),
@@ -35,7 +35,7 @@ const CapacityReportPage = () => (
       tag="Capacity reports · FEA · Fixed price"
       title="Is the press in the corner really 100 tonnes? Find out before it tells you."
       intro="Send photos and fill in a one-page measurement sheet. You get a 3D model of your machine, hand calculations, a finite-element stress check, the load it can safely carry, the relief-valve setting to apply and a list of what to change, in plain language with every assumption labelled."
-      meta={['Preliminary report in 5 working days', 'Re-issue on measured values included', 'From R12,000, fixed', 'Presses, jigs, stands, beams, frames']}
+      meta={['Preliminary report from photos first', 'Re-issue on measured values included', 'From R12,000, fixed', 'Presses, jigs, stands, beams, frames']}
       service={SERVICE}
       waMessage={WA}
       primaryLabel="Get a report quoted"
@@ -117,7 +117,7 @@ const CapacityReportPage = () => (
       alt
       steps={[
         { title: 'Photos and sheet', text: 'Ten photos and our one-page measurement sheet. We confirm the jobs the machine runs.' },
-        { title: 'Preliminary report', text: 'Model, loads, stresses and a rating per hypothesis within five working days, with what to measure.' },
+        { title: 'Preliminary report', text: 'Model, loads, stresses and a rating per hypothesis, with what to measure.' },
         { title: 'Measure', text: 'You measure the items on the sheet, or we visit.' },
         { title: 'Final report', text: 'Re-issued on measured values with the setting to apply and the changes to make.' },
       ]}

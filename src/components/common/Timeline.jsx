@@ -15,7 +15,6 @@ const Stage = ({ stage, compact, index }) => {
     >
       <div className="tl-marker" aria-hidden="true"><span>{String(stage.n).padStart(2, '0')}</span></div>
       <div className="tl-card">
-        <span className="tl-when">{stage.when}</span>
         <h3>{stage.title}</h3>
         <p>{stage.text}</p>
         {!compact && (

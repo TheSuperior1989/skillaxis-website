@@ -5,8 +5,8 @@ import './ServicesPage.css';
 const services = [
   {
     tag: 'Engineering',
-    title: 'Design Pack: Model, Drawings, Costing and Film in Days',
-    description: 'A complete build-ready package from one set of dimensions: parametric model, drawings, flat patterns, BOM, costing, datasheet and a how-it-works film. Two to five working days.',
+    title: 'Design Pack: Model, Drawings, Costing and Film',
+    description: 'A complete build-ready package from one set of dimensions: parametric model, drawings, flat patterns, BOM, costing, datasheet and a how-it-works film.',
     from: 'From R18,000',
     link: '/design-pack',
   },

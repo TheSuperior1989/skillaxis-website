@@ -6,7 +6,7 @@ import skillAxisLogo from '../../assets/skillaxis-logo.svg';
 import './Navbar.css';
 
 const services = [
-  { label: 'Design Pack: model, drawings, costing, film in days', path: '/design-pack' },
+  { label: 'Design Pack: model, drawings, costing, film', path: '/design-pack' },
   { label: 'Plant Layouts & Walkthrough Films', path: '/plant-visualisation' },
   { label: 'Machine Capacity & Stress Reports', path: '/machine-capacity-report' },
   { label: 'Workshop Management System', path: '/workshop-software', divider: true },

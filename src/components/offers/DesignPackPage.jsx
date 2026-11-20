@@ -23,20 +23,20 @@ const faqs = [
 const DesignPackPage = () => (
   <div className="service-page">
     <SEO
-      title="Design Pack: Model, Drawings, BOM, Costing and Film in Days"
-      description="A complete engineering design pack in two to five working days: parametric 3D model, drawings, DXF flat patterns, bill of materials, costing, datasheet, renders and a how-it-works film. Checked part by part. From R18,000. SkillAxis Dynamics, Pretoria."
+      title="Design Pack: Model, Drawings, BOM, Costing and Film"
+      description="A complete engineering design pack: parametric 3D model, drawings, DXF flat patterns, bill of materials, costing, datasheet, renders and a how-it-works film. Checked part by part. From R18,000. SkillAxis Dynamics, Pretoria."
       canonical="/design-pack"
       schema={[
         faqSchemaFrom(faqs),
-        serviceSchema('Engineering Design Pack', 'Complete design package: 3D model, drawings, flat patterns, BOM, costing, datasheet and explainer film, delivered in days.', '18000'),
+        serviceSchema('Engineering Design Pack', 'Complete design package: 3D model, drawings, flat patterns, BOM, costing, datasheet and explainer film.', '18000'),
       ]}
     />
 
     <PageHero
-      tag="Design Pack · Days, not weeks"
-      title="A complete, build-ready design package in two to five working days."
+      tag="Design Pack · Build-ready"
+      title="A complete, build-ready design package from one set of dimensions."
       intro="Model, drawings, flat patterns, bill of materials, costing, datasheet and a short film of the thing working, all from one set of agreed dimensions. Built as one model, so a change flows through the whole pack and what you receive fits together."
-      meta={['From R18,000, fixed', '2 to 5 working days from deposit', 'PDF, STEP and DXF released to you', 'Local and export clients']}
+      meta={['From R18,000, fixed', 'One revision round included', 'PDF, STEP and DXF released to you', 'Local and export clients']}
       service={SERVICE}
       waMessage={WA}
       primaryLabel="Get a fixed price"
