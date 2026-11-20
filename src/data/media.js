@@ -19,12 +19,12 @@ const img = (group, name, caption, ext = 'jpg') => ({
 });
 
 export const plant = {
-  heroLoop: v('plant', 'plant-hero-loop', 'Entering an 8,000 t/month steel lattice-fabrication plant through the receiving bay. Layout and film by SkillAxis.'),
+  heroLoop: v('plant', 'plant-hero-loop', 'Entering a steel lattice-fabrication plant through the receiving bay. Layout and film by SkillAxis.'),
   latticeLines: v('plant', 'plant-lattice-lines', 'Walking the CNC angle punching lines: feeder carriages, punch heads and hydraulic power packs.'),
   drillLine: v('plant', 'plant-drill-line', 'Heavy-section CNC drill line with infeed and outfeed roller conveyors.'),
   process: v('plant', 'plant-process', 'Angle bar fed into the punch head, then formed on the 60 t angle-flaring press we designed.'),
   flyover: v('plant', 'plant-flyover', 'Aerial orbit over the complete two-phase plant.'),
-  overviewAerial: img('plant', 'plant-overview-aerial', 'Aerial overview of a 4,000 t/month steel lattice-fabrication plant: punch lines, drill line, material store and crane aisles.'),
+  overviewAerial: img('plant', 'plant-overview-aerial', 'Aerial overview of a steel lattice-fabrication plant: punch lines, drill line, material store and crane aisles.'),
   overviewLines: img('plant', 'plant-overview-lines', 'High overview of the CNC angle punch lines and roller conveyors inside the hall.'),
   punchLinesHigh: img('plant', 'plant-punch-lines-high', 'Looking down the row of CNC angle punching lines with their infeed conveyors.'),
   punchAndDrill: img('plant', 'plant-punch-line-drill-line', 'Punch line in the foreground with the heavy-section drill line and roller return beyond.'),

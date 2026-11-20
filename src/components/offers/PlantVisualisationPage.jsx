@@ -58,7 +58,7 @@ const PlantVisualisationPage = () => (
       alt
       items={[
         { title: 'The crane cannot reach', text: 'A machine goes in where the drawing said it fits, and the crane hook stops a metre short of the feed table.' },
-        { title: 'Flow that fights itself', text: 'Raw material and finished product cross paths, forklifts queue, and a line that should do 4,000 tonnes a month does 2,500.' },
+        { title: 'Flow that fights itself', text: 'Raw material and finished product cross paths, forklifts queue, and a line runs well below the rate it was bought for.' },
         { title: 'Nobody can picture it', text: 'The board, the bank and the tender panel see a 2D drawing and ask the same questions. A film answers them before they are asked.' },
       ]}
     />
@@ -95,7 +95,7 @@ const PlantVisualisationPage = () => (
 
     <ProofBlock
       alt={false}
-      title="A 4,000 t/month plant, modelled and filmed for a R16M fit-out"
+      title="A steel fabrication plant, modelled and filmed before the fit-out"
       situation="A fabricator was fitting out a hall to make transmission-tower angle iron, with nine punching lines, a drill line and a heat-bend line to place around cranes, services and a second phase."
       work="Modelled the building from the structural drawings and every machine from drawings and brochures, built the layout from a machine list so lanes could be moved, checked crane reach and walkway widths, then rendered three walkthrough films, 30 stills and two A1 boards."
       result="The client pitched the programme with the renderings and sold the next stage off the back of them. The same model now carries the machine design work for the line."
