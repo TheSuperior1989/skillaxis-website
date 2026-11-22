@@ -81,8 +81,8 @@ const AboutPage = () => (
         <SectionHeader tag="People" title="Who you will work with" />
         <div className="about-team-grid">
           <div className="about-team-member">
-            <div className="about-avatar" aria-hidden="true">CvS</div>
-            <h3>Christiaan von Stade</h3>
+            <div className="about-avatar" aria-hidden="true">T</div>
+            <h3>Tiaan</h3>
             <p className="about-team-role">Managing Director and Lead Engineer</p>
             <p className="about-team-bio">
               Turbomachinery engineer and draughtsman. Designs, draws, programs and builds: CNC conversions, tooling, plant layouts, custom machinery and the software behind it. Leads every engineering job personally.
@@ -92,8 +92,8 @@ const AboutPage = () => (
             </div>
           </div>
           <div className="about-team-member">
-            <div className="about-avatar" aria-hidden="true">RvS</div>
-            <h3>Ruan von Stade</h3>
+            <div className="about-avatar" aria-hidden="true">R</div>
+            <h3>Ruan</h3>
             <p className="about-team-role">Turbocharger and Machining Specialist</p>
             <p className="about-team-bio">
               Turbocharger builds, billet upgrades and the CNC machining behind them: housings, flanges, jigs and fixtures made to the drawing.
@@ -103,8 +103,8 @@ const AboutPage = () => (
             </div>
           </div>
           <div className="about-team-member">
-            <div className="about-avatar" aria-hidden="true">SvS</div>
-            <h3>Sure von Stade</h3>
+            <div className="about-avatar" aria-hidden="true">S</div>
+            <h3>Sure</h3>
             <p className="about-team-role">Director, Design and Brand</p>
             <p className="about-team-bio">
               Handles brand identity, graphic design and marketing material for SkillAxis clients.
