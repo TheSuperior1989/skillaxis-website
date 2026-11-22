@@ -1,7 +1,6 @@
 import { Head } from 'vite-react-ssg';
 import { Link } from 'react-router-dom';
 import Hero from './Hero';
-import FlagshipFilm from './FlagshipFilm';
 import Showreel from './Showreel';
 import Timeline from '../common/Timeline';
 import ServicesOverview from './ServicesOverview';
@@ -41,7 +40,7 @@ const HomePage = () => (
       <script type="application/ld+json">{JSON.stringify(faqSchemaFrom(faqs))}</script>
     </Head>
     <Hero />
-    <FlagshipFilm />
+    {/* ONE LINE film parked until the client plant clips are cut out (Tiaan, 22 Nov 2026). Restore: import FlagshipFilm and put <FlagshipFilm /> back here. */}
     <Showreel />
     <ServicesOverview />
     <FeaturedProjects />
