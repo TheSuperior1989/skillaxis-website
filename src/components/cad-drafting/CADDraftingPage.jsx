@@ -1,6 +1,6 @@
 import SEO from '../common/SEO';
 import { MediaGrid, VideoLoop } from '../common/Media';
-import { press, packs } from '../../data/media';
+import { packs, toolchanger } from '../../data/media';
 import {
   PageHero, PainGrid, Deliverables, Steps, ProofBlock, PriceBlock, FaqSection, CtaSection, SectionHeader,
 } from '../common/ServiceBlocks';
@@ -109,8 +109,8 @@ const CADDraftingPage = () => (
 
     <section className="sp-section">
       <div className="container">
-        <SectionHeader tag="Drawn for the shop floor" title="Drawings a fabricator can price from" subtitle="A general arrangement with balloons and a section, tooling renders from a 60 t press, and a stress plot from the same model. Change a dimension and every drawing, list and costing follows." />
-        <MediaGrid items={[packs.ct12Drawing, press.toolingSet, press.feaReinforced, press.dieExploded, packs.motorFixtureSheet2, press.slide]} columns={3} />
+        <SectionHeader tag="Drawn for the shop floor" title="Drawings a fabricator can price from" subtitle="A general arrangement with balloons and a section, assembly renders and a stress plot from the same model. Change a dimension and every drawing, list and costing follows." />
+        <MediaGrid items={[packs.ct12Drawing, packs.ct12Ga, toolchanger.explodedRender, packs.roofFea, packs.motorFixtureSheet2, toolchanger.laserPlates]} columns={3} />
       </div>
     </section>
 

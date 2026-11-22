@@ -1,19 +1,18 @@
 import { Link } from 'react-router-dom';
 import { VideoLoop, MediaFigure } from '../common/Media';
-import { press, packs, software, motorarmour, bloomforge, toolchanger, zd30 } from '../../data/media';
+import { packs, software, motorarmour, bloomforge, toolchanger, zd30 } from '../../data/media';
 import './Showreel.css';
 
 // What the work looks like: short muted loops and stills from real jobs, each linked to
 // the page that sells that kind of work.
 const reel = [
-  { media: press.cycle, title: 'Machine design with FEA', text: 'A 60 t angle-flaring press: force sizing, 49 drawings, stress checks and a film in two days.', to: '/custom-machinery-design' },
   { media: bloomforge.promo, title: 'Products from concept to build guide', text: 'Bloomforge: a motorised five-mode hearth, 113 parts checked for fit in every mode, manufacturing guides and films, in four days.', to: '/projects/bloomforge' },
   { media: zd30.orbit, title: 'Explainer animations from CAD', text: 'A VNT turbocharger explained, animated from our own 3D model.', to: '/projects/zd30-animation' },
   { media: toolchanger.render, title: 'Our own tool changer', text: 'ATC-12: twelve tools on a stepper-indexed turret, from concept to a working prototype.', to: '/projects/atc12-tool-changer' },
   { media: software.promoMuted, title: 'Workshop management software', text: 'Job cards, inventory, warranty claims and reports, live in a workshop every day.', to: '/workshop-software' },
   { media: packs.ct12HowItWorks, title: 'Build-ready design packs', text: 'A chain tensioner from reference to drawings, costing and films in one day.', to: '/design-pack' },
   { media: motorarmour.installed, title: 'MotorArmour motor protection', text: 'Treated motors on a wash-down line, each tested and certified.', to: '/motorarmour' },
-  { media: press.feaAsFound, title: 'Press and machine capacity reports', text: 'Is the press in the corner really 100 t? A report with the numbers, from photos and a measurement sheet.', to: '/machine-capacity-report' },
+  { media: packs.roofFea, title: 'Press and machine capacity reports', text: 'Is the press in the corner really 100 t? A report with the numbers, from photos and a measurement sheet.', to: '/machine-capacity-report' },
 ];
 
 const Showreel = () => (

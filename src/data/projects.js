@@ -1,7 +1,7 @@
 // Real SkillAxis projects only. Clients are never named on the site (confidentiality); describe them by industry.
 // Numbers must come from project records: reports, app docs, certificates or job systems.
 // `media` points at anonymised renders, films and photos in public/media (see src/data/media.js).
-import { press, packs, software, turbo, motorarmour as ma, controls, toolchanger, cam, zd30, bloomforge, electronics } from './media';
+import { packs, software, turbo, motorarmour as ma, controls, toolchanger, cam, zd30, bloomforge, electronics } from './media';
 
 export const projects = [
   {
@@ -162,21 +162,6 @@ export const projects = [
     solution: 'Wrote the feasibility study against the thermal, patent and standards constraints, then built the full 3D assembly: a Corten drum, a stainless hearth on three belt-synchronised lead screws, eight petals on a rotating actuation ring, folding inner leaves and telescoping spit masts. Every mode was checked for clashes, lift sweeps and loose fasteners, and bolted and welded manufacturing guides were produced with flat patterns and bend tables, plus a promo film and a narrated exploded assembly film.',
     result: 'A costed, buildable concept with a realistic bill of materials and a film that shows every mode, produced in four days. Prototype and pricing decisions are the next step.',
     tags: ['Feasibility study', 'Full 3D assembly', 'Manufacturing guides', 'Films'],
-    link: '/custom-machinery-design',
-  },
-  {
-    id: 'press-design',
-    category: 'Engineering',
-    visual: 'drawing',
-    tag: 'Machine design + FEA',
-    title: '60 t angle-flaring press and hot-bend tooling for a tower-steel fabricator',
-    client: 'Steel fabrication plant making transmission-tower angle iron',
-    metric: 'Brief to 49 drawings and a film in 2 days',
-    media: { hero: press.cycle, gallery: [press.overview, press.feaAsFound, press.hotbend] },
-    problem: 'A fabricator needed to open and close the leg angle of L80 to L200x24 angle sections, hot and cold, on a production line. The home-made press on site was slow and had no known rating, and nobody could say what tonnage the job needed.',
-    solution: 'Calculated the forming force for every section size, hot and cold, then designed a 60 t horizontal clamp-and-form press around a standard cylinder, a 15 kW power pack and a PLC with two-hand start: 69 parts, a 49-drawing set, a bought-item register, finite-element checks on the frame and a 136 second explainer film. Then rated the existing 100 t press by FEA, designed adjustable V-tooling for it and issued a measurement sheet so the preliminary numbers could be confirmed on site.',
-    result: 'Three engineering reports, two machine designs and three client packages delivered between 17 and 30 October 2026. The client can now choose between a new press and tooling for the old one with the tonnage, stresses and costs in front of him.',
-    tags: ['Force sizing', 'Finite-element analysis', 'Hydraulic press design', 'Drawing set', 'Explainer film'],
     link: '/custom-machinery-design',
   },
   {

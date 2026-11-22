@@ -3,7 +3,7 @@ import {
   PageHero, PainGrid, Deliverables, Steps, ProofBlock, PriceBlock, FaqSection, CtaSection, SectionHeader,
 } from '../common/ServiceBlocks';
 import { VideoLoop, MediaGrid } from '../common/Media';
-import { packs, press } from '../../data/media';
+import { packs } from '../../data/media';
 import { faqSchemaFrom, serviceSchema } from '../../data/schema';
 import '../cnc-conversions/CNCConversionsPage.css';
 import './OfferPages.css';
@@ -92,24 +92,6 @@ const DesignPackPage = () => (
       <div className="container">
         <SectionHeader tag="More packs" title="Sheet metal, weldments and structures" />
         <MediaGrid items={[packs.foodTray, packs.trayRack, packs.motorFixture, packs.motorFixtureSheet2, packs.roofFrame, packs.roofFea]} columns={3} />
-      </div>
-    </section>
-
-    <ProofBlock
-      alt={false}
-      title="A press designed, analysed and filmed in two days"
-      situation="A fabricator needed a press to open and close the legs of angle sections for transmission towers, and nobody could say what force the job needed."
-      work="Calculated the forming force for every section, designed a 60 t press around a standard cylinder and power pack, produced the 49-drawing set and a bought-item register, ran finite-element checks on the frame and produced a 136 second explainer film."
-      result="The client had a priced, checked machine design to decide on within two days of the brief."
-      link={{ to: '/projects/press-design', label: 'See the press project' }}
-    />
-
-    <section className="sp-section">
-      <div className="container">
-        <div className="offer-split">
-          <VideoLoop src={press.cycle.src} poster={press.cycle.poster} label={press.cycle.caption} />
-          <VideoLoop src={press.tooling.src} poster={press.tooling.poster} label={press.tooling.caption} />
-        </div>
       </div>
     </section>
 

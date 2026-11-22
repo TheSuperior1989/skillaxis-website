@@ -3,7 +3,7 @@ import Timeline from '../common/Timeline';
 import { PageHero, FaqSection, CtaSection, SectionHeader } from '../common/ServiceBlocks';
 import { VideoLoop } from '../common/Media';
 import { payment } from '../../data/timeline';
-import { press, packs } from '../../data/media';
+import { packs, toolchanger } from '../../data/media';
 import { faqSchemaFrom } from '../../data/schema';
 import '../cnc-conversions/CNCConversionsPage.css';
 import '../common/Timeline.css';
@@ -59,7 +59,7 @@ const HowItWorksPage = () => (
           </ul>
         </div>
         <div className="hw-media">
-          <VideoLoop src={press.cycle.src} poster={press.cycle.poster} label="A 60 t press designed, analysed and filmed in two days" />
+          <VideoLoop src={toolchanger.render.src} poster={toolchanger.render.poster} label="ATC-12: our own tool changer, modelled, checked and filmed" />
           <VideoLoop src={packs.ct12HowItWorks.src} poster={packs.ct12HowItWorks.poster} label="A chain tensioner: model, drawings, costing and films in one day" ratio="1920 / 904" />
         </div>
       </div>

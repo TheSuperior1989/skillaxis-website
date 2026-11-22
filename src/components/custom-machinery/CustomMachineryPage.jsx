@@ -1,6 +1,6 @@
 import SEO from '../common/SEO';
 import { VideoLoop, MediaGrid, PlayVideo } from '../common/Media';
-import { press, packs, bloomforge } from '../../data/media';
+import { packs, bloomforge } from '../../data/media';
 import {
   PageHero, PainGrid, Deliverables, Steps, ProofBlock, FaqSection, CtaSection, SectionHeader,
 } from '../common/ServiceBlocks';
@@ -61,17 +61,6 @@ const CustomMachineryPage = () => (
       waMessage={WA}
     />
 
-    <section className="sp-section">
-      <div className="container">
-        <SectionHeader tag="A machine in two days" title="A 60 t angle-flaring press: sized, designed, analysed and filmed" subtitle="Force calculations for every section, 69 parts around a standard cylinder and power pack, a 49-drawing set, finite-element checks on the frame and a film the client could show his team." />
-        <div className="offer-split" style={{ marginTop: 32 }}>
-          <VideoLoop src={press.cycle.src} poster={press.cycle.poster} label={press.cycle.caption} />
-          <VideoLoop src={press.hotbend.src} poster={press.hotbend.poster} label={press.hotbend.caption} />
-        </div>
-        <MediaGrid items={[press.overview, press.operator, press.pack, press.hotbendHot, press.adjustableDie, press.quickChange]} columns={3} />
-      </div>
-    </section>
-
     <PainGrid
       alt
       title="Why clients ask for custom"
@@ -96,7 +85,6 @@ const CustomMachineryPage = () => (
       sideTitle="Designed by SkillAxis"
       sideItems={[
         'Turbocharger tooling, fixtures and jigs designed and machined weekly',
-        'A 60 t angle-flaring press and adjustable hot-bend tooling for tower steel',
         'A two-plane dynamic balancer for turbochargers',
         'Factory equipment package: trays, blast-room racking, trolleys and a mixer',
         'An automatic tool changer and CNC conversion hardware',
